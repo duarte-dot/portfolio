@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/assets/css/thanks.css">
+  <title>thanks</title>
+</head>
+<body>
+  <div class="page__thanks">
+    <h1 class="thanks__title" translation="thank-you">thank you</h1>
+    <p style="margin-top: 5px; margin-bottom: 30px;" translation="thank-you-subtitle">i will be in touch</p>
+    <a href="https://duarte-dot.surge.sh/" translation="go-back">go back</a>
+    <button style="cursor: pointer; border: none; background-color: white; margin-top: 30px; font-size: 20px;" id="translationButton" onclick="toggleTranslation()">🇧🇷</button>
+  </div>
+
+  <script>
+    var currentLanguage = 'english'; // Mantém o controle do idioma atual
+
+    function toggleTranslation() {
+      // Seleciona todos os elementos com atributo "translation"
+      var elements = document.querySelectorAll('[translation]');
+
+      // Define as traduções em inglês e português
+      var translations = {
+        'english': {
+          'thank-you': 'thank you',
+          'thank-you-subtitle': 'i will be in touch',
+          'go-back': 'go back'
+        },
+        'portuguese': {
+          'thank-you': 'obrigado',
+          'thank-you-subtitle': 'entrarei em contato',
+          'go-back': 'voltar'
+        }
+      };
+
+      // Alterna o idioma atual
+      currentLanguage = currentLanguage === 'english' ? 'portuguese' : 'english';
+
+      // Percorre todos os elementos e atualiza o texto para o idioma correspondente
+      elements.forEach(function(element) {
+        var translationKey = element.getAttribute('translation');
+        var translation;
+
+        // Obtém a tradução correspondente à chave de tradução e idioma atual
+        if (translationKey in translations[currentLanguage]) {
+          translation = translations[currentLanguage][translationKey];
+        } else {
+          // Se não houver tradução disponível, mantém o texto original
+          translation = element.innerText;
+        }
+
+        // Atualiza o texto do elemento com a tradução
+        element.innerText = translation;
+      });
+
+      // Atualiza o texto do botão de tradução
+      var translationButton = document.getElementById('translationButton');
+      translationButton.innerText = currentLanguage === 'english' ? '🇧🇷' : '🇺🇸';
+    }
+  </script>
+</body>
+</html>
