@@ -96,14 +96,17 @@ if (selectedTheme) {
 }
 
 const trybetunesImg = document.getElementById('trybetunes__img')
+const forumAppImg = document.getElementById('forumapp__img')
 const comingsoonImg = document.getElementById('comingsoon__img')
 
 function changePortfolioImages() {
   console.log(getCurrentTheme())
   if (getCurrentTheme() == 'dark') {
+    forumAppImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/45a6c670-72ba-482a-adc8-2aafe6693915'
     trybetunesImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/491028e2-b346-4ff7-8713-bdc96c1e88f3'
     comingsoonImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/f7fe2eb4-2977-46c6-9aa9-b0ccc613842e'
   } else {
+    forumAppImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/45a6c670-72ba-482a-adc8-2aafe6693915'
     trybetunesImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/a743e946-ad63-4970-a694-f1c70b6a97b9'
     comingsoonImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/dc369211-ae89-4c69-9313-33cb33e5190a'
   }

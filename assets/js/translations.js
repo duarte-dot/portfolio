@@ -8,8 +8,8 @@ let traducoes = {
     'en': 'Fullstack developer'
   },
   'description': {
-     'pt': 'Estudante de desenvolvimento Fullstack na Trybe, tentando fazer um trabalho de qualidade',
-     'en': 'Fullstack development student at Trybe, trying to produce some quality work'
+     'pt': 'Sou um Desenvolvedor Web Fullstack com conhecimentos em Frontend e Backend, atualmente me aprofundando um pouco mais em ciência da computação.',
+     'en': 'I am a Fullstack Web Developer with knowledge in Frontend and Backend, currently delving a little deeper into computer science.'
   },
   'contactme': {
      'pt': 'Entre em contato',
@@ -28,8 +28,8 @@ let traducoes = {
     'en': 'Hi, my name is Gabriel Duarte'
   },
   'aboutme-p-1': {
-    'pt': 'Eu sou um Desenvolvedor Web Full Stack em busca de novas oportunidades para crescer profissionalmente. Atualmente, estou estudando na Trybe e possuo conhecimento e experiência em diversas tecnologias e algumas metodologias ágeis.',
-    'en': "I am a Fullstack Web Developer looking for new opportunities to grow professionally. I'm currently studying at Trybe and have knowledge and experience in various technologies and some agile methodologies."
+    'pt': 'Eu sou um Desenvolvedor Web Full Stack em busca de novas oportunidades para crescer profissionalmente. Atualmente, possuo conhecimento e experiência em diversas tecnologias e algumas metodologias ágeis.',
+    'en': "I'm a Full Stack Web Developer looking for new opportunities to grow professionally. Currently, I have knowledge and experience in several technologies and some agile methodologies."
   },
   'aboutme-p-2': {
     'pt': "ADORO aprender mais sobre tudo relacionado à tecnologia e desenvolvimento web. Se você está procurando por um desenvolvedor júnior com paixão por aprender, sinta-se à vontade para <a href='#contact'>entrar em contato</a> comigo!",
@@ -109,6 +109,18 @@ let traducoes = {
   'send-message': {
     'pt': 'Enviar mensagem',
     'en': 'Send message'
+  },
+  'forum': {
+    'pt': 'App de Fórum!',
+    'en': 'Forum app!'
+  },
+  "soon": {
+    'pt': 'Em breve',
+    'en': 'Soon'
+  },
+  'forum-description': {
+    'pt': 'App de fórum com frontend feito em React e backend em PHP/Laravel',
+    'en': 'Forum app with React frontend and PHP/Laravel backend'
   },
   'coming-soon': {
     'pt': 'Vem aí',
