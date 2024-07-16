@@ -1,188 +1,197 @@
 let traducoes = {
   greetings: {
-     'pt': 'Olá, eu sou Gabriel',
-     'en': "Hi, i'm Gabriel"
+    pt: "Olá, eu sou Gabriel",
+    en: "Hi, i'm Gabriel",
   },
-  'fullstack-developer': {
-    'pt': 'Desenvolvedor Fullstack',
-    'en': 'Fullstack developer'
+  "fullstack-developer": {
+    pt: "Desenvolvedor Fullstack",
+    en: "Fullstack developer",
   },
-  'description': {
-     'pt': 'Sou um Desenvolvedor Web Fullstack com conhecimentos em Frontend e Backend, atualmente me aprofundando um pouco mais em ciência da computação.',
-     'en': 'I am a Fullstack Web Developer with knowledge in Frontend and Backend, currently delving a little deeper into computer science.'
+  description: {
+    pt: "Sou um Desenvolvedor Web Fullstack atualmente focado em React e Node.",
+    en: "I am a Fullstack Web Developer currently focused on working with React and Node.",
   },
-  'contactme': {
-     'pt': 'Entre em contato',
-     'en': 'Contact me'
+  contactme: {
+    pt: "Entre em contato",
+    en: "Contact me",
   },
-  'aboutme': {
-    'pt': 'Sobre mim',
-    'en': 'About me'
+  aboutme: {
+    pt: "Sobre mim",
+    en: "About me",
   },
-  'about': {
-    'pt': '<i class="uil uil-user nav__icon"></i> Sobre mim',
-    'en': '<i class="uil uil-user nav__icon"></i> About'
+  about: {
+    pt: '<i class="uil uil-user nav__icon"></i> Sobre mim',
+    en: '<i class="uil uil-user nav__icon"></i> About',
   },
-  'aboutme-subtitle': {
-    'pt': 'Olá, meu nome é Gabriel Duarte',
-    'en': 'Hi, my name is Gabriel Duarte'
+  "aboutme-subtitle": {
+    pt: "Olá, meu nome é Gabriel Duarte",
+    en: "Hi, my name is Gabriel Duarte",
   },
-  'aboutme-p-1': {
-    'pt': 'Eu sou um Desenvolvedor Web Full Stack em busca de novas oportunidades para crescer profissionalmente. Atualmente, possuo conhecimento e experiência em diversas tecnologias e algumas metodologias ágeis.',
-    'en': "I'm a Full Stack Web Developer looking for new opportunities to grow professionally. Currently, I have knowledge and experience in several technologies and some agile methodologies."
+  "aboutme-p-1": {
+    pt: "Sou desenvolvedor de qualquer coisa. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço. Atualmente estou mais focado no desenvolvimento web e mobile, criando projetos utilizando React, React Native e Node.",
+    en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do. Currently, I’m more focused on web and mobile development, creating projects using React, React Native, and Node.",
   },
-  'aboutme-p-2': {
-    'pt': "ADORO aprender mais sobre tudo relacionado à tecnologia e desenvolvimento web. Se você está procurando por um desenvolvedor júnior com paixão por aprender, sinta-se à vontade para <a href='#contact'>entrar em contato</a> comigo!",
-    'en': "I LOVE learning more about everything related to technology and web development. If you're looking for a junior developer with a passion for learning, please feel free to <a href='#contact'>contact me!</a>"
-  },'months-studying': {
-    'pt': 'Meses <br> estudando',
-    'en': 'Months <br> studying'
+  "aboutme-p-2": {
+    pt: "Se não me encontrar codando, provavelmente me encontrará tomando um cafézinho em alguma starbucks ☕️, aproveitando um tempo com a minha família 👩🏻‍❤️‍👨🏻, ou na academia 💪.",
+    en: "If you don’t find me coding, you’ll probably find me enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.",
   },
-  '1-year': {
-    'pt': '1 ano',
-    'en': '1 year'
+  "years-of-code": {
+    pt: "Anos <br> codando",
+    en: "Years <br> coding",
   },
-  '6-months': {
-    'pt': '6 meses',
-    'en': '6 months'
+  "3-years": {
+    pt: "3+ anos",
+    en: "3+ years",
   },
-  'projects-done': {
-    'pt': 'Projetos <br> feitos',
-    'en': 'Projects <br> done'
+  "4-years": {
+    pt: "4+ anos",
+    en: "4+ years",
   },
-  'my-technical-level': {
-    'pt': 'Meu nível técnico',
-    'en': 'My technical level'
+  "projects-done": {
+    pt: "Projetos <br> feitos",
+    en: "Projects <br> done",
   },
-  'projects': {
-    'pt': 'Projetos',
-    'en': 'Projects'
+  "my-technical-level": {
+    pt: "Minhas habilidades",
+    en: "My skills",
   },
-  'projects-nav': {
-    'pt': '<i class="uil uil-briefcase-alt nav__icon"></i> Projetos',
-    'en': '<i class="uil uil-briefcase-alt nav__icon"></i> Projects'
+  projects: {
+    pt: "Projetos",
+    en: "Projects",
   },
-  'contactme-nav': {
-    'pt': '<i class="uil uil-envelope nav__icon"></i> Contato',
-    'en': '<i class="uil uil-envelope nav__icon"></i> Contact me'
+  "projects-nav": {
+    pt: '<i class="uil uil-briefcase-alt nav__icon"></i> Projetos',
+    en: '<i class="uil uil-briefcase-alt nav__icon"></i> Projects',
   },
-  'check-more': {
-    'pt': 'Você pode ver mais no meu <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
-    'en': 'You can check more on my <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
+  "contactme-nav": {
+    pt: '<i class="uil uil-envelope nav__icon"></i> Contato',
+    en: '<i class="uil uil-envelope nav__icon"></i> Contact me',
   },
-  'trybetunes': {
-    'pt': 'Pesquise por álbuns de seus artistas favoritos e escute previews de suas músicas!',
-    'en': 'Search for albums by your favorite artists and listen to previews of their songs'
+  "check-more": {
+    pt: 'Você pode ver mais no meu <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
+    en: 'You can check more on my <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
   },
-  'contact-me': {
-    'pt': 'Entre em contato',
-    'en': 'Contact-me'
+  trybetunes: {
+    pt: "Pesquise por álbuns de seus artistas favoritos e escute previews de suas músicas! Feito com React e Spotify API",
+    en: "Search for albums by your favorite artists and listen to previews of their songs! Made with React and Spotify API",
   },
-  'get-in-touch': {
-    'pt': 'Me manda uma mensagem!',
-    'en': 'Get in touch'
+  "contact-me": {
+    pt: "Entre em contato",
+    en: "Contact-me",
   },
-  'location': {
-    'pt': 'Localização',
-    'en': 'Location'
+  "get-in-touch": {
+    pt: "Me manda uma mensagem!",
+    en: "Get in touch",
   },
-  'call-me': {
-    'pt': 'Meu número',
-    'en': 'Call me',
+  location: {
+    pt: "Localização",
+    en: "Location",
   },
-  'name': {
-    'pt': 'Nome',
-    'en': 'Name'
+  "call-me": {
+    pt: "Meu número",
+    en: "Call me",
   },
-  'email': {
-    'pt': 'Seu Email',
-    'en': 'Your Email'
+  name: {
+    pt: "Nome",
+    en: "Name",
   },
-  'message': {
-    'pt': 'Mensagem',
-    'en': 'Message'
+  email: {
+    pt: "Seu Email",
+    en: "Your Email",
   },
-  'rj-br': {
-    'pt': 'Rio de Janeiro - Brasil',
-    'en': 'Rio de Janeiro - Brazil'
+  message: {
+    pt: "Mensagem",
+    en: "Message",
   },
-  'send-message': {
-    'pt': 'Enviar mensagem',
-    'en': 'Send message'
+  "rj-br": {
+    pt: "Rio de Janeiro - Brasil",
+    en: "Rio de Janeiro - Brazil",
   },
-  'forum': {
-    'pt': 'App de Fórum!',
-    'en': 'Forum app!'
+  "send-message": {
+    pt: "Enviar mensagem",
+    en: "Send message",
   },
-  "soon": {
-    'pt': 'Em breve',
-    'en': 'Soon'
+  forum: {
+    pt: "Página de Fórum",
+    en: "Forum page",
   },
-  'forum-description': {
-    'pt': 'App de fórum com frontend feito em React e backend em PHP/Laravel',
-    'en': 'Forum app with React frontend and PHP/Laravel backend'
+  soon: {
+    pt: "Em breve",
+    en: "Soon",
   },
-  'coming-soon': {
-    'pt': 'Vem aí',
-    'en': 'Coming soon'
+  "forum-description": {
+    pt: "Página de fórum com frontend. Feito em React e Laravel",
+    en: "Forum page. Made with React and Laravel",
   },
-  'coming-soon-description': {
-    'pt': 'Mais projetos Front e Backend estão por vir!',
-    'en': 'More Front and Backend projects are coming soon!'
+  "chats-app-description": {
+    pt: "App de Chat. Feito em Next com Upstash Redis",
+    en: "Chat app. Made with Next and Upstash Redis",
   },
-  'thank-you': {
-    'pt': 'obrigado',
-    'en': 'thank you'
+  "trybe-wallet-description": {
+    pt: "Aplicativo de carteira virtual para monitorar seus gastos. Feito em React e Redux",
+    en: "Virtual wallet app to monitorate your expenses. Made with React and Redux",
   },
-  'thank-you-subtitle': {
-    'pt': 'entrarei em contato',
-    'en': 'i will be in touch'
+  "coming-soon": {
+    pt: "Vem aí",
+    en: "Coming soon",
   },
-  'go-back': {
-    'pt': 'voltar',
-    'en': 'go back'
+  "coming-soon-description": {
+    pt: "Mais projetos estão por vir!",
+    en: "More projects are coming soon!",
+  },
+  "thank-you": {
+    pt: "obrigado",
+    en: "thank you",
+  },
+  "thank-you-subtitle": {
+    pt: "entrarei em contato",
+    en: "i will be in touch",
+  },
+  "go-back": {
+    pt: "voltar",
+    en: "go back",
   },
 };
 
 function traduzirSite(idioma) {
-  var elementos = document.querySelectorAll('[translation]');
+  var elementos = document.querySelectorAll("[translation]");
 
   for (var i = 0; i < elementos.length; i++) {
-    var chave = elementos[i].getAttribute('translation');
+    var chave = elementos[i].getAttribute("translation");
     elementos[i].innerHTML = traducoes[chave][idioma];
   }
 }
 
 // Verifica se já existe um valor salvo no localStorage
-var language = localStorage.getItem('language');
+var language = localStorage.getItem("language");
 
 // Caso não exista um valor salvo, define a linguagem padrão como 'en'
 if (!language) {
-  language = 'en';
+  language = "en";
 }
 
-var changeLanguage = document.getElementById('change-language');
+var changeLanguage = document.getElementById("change-language");
 
-changeLanguage.addEventListener('click', function() {
-  if (language === 'en') {
-    traduzirSite('pt');
-    language = 'pt';
-    changeLanguage.innerHTML = '🇺🇸';
+changeLanguage.addEventListener("click", function () {
+  if (language === "en") {
+    traduzirSite("pt");
+    language = "pt";
+    changeLanguage.innerHTML = "🇺🇸";
   } else {
-    traduzirSite('en');
-    language = 'en';
-    changeLanguage.innerHTML = '🇧🇷';
+    traduzirSite("en");
+    language = "en";
+    changeLanguage.innerHTML = "🇧🇷";
   }
 
   // Salva a linguagem escolhida no localStorage
-  localStorage.setItem('language', language);
+  localStorage.setItem("language", language);
 });
 
 // Atualiza o texto do botão com base na linguagem atual
-if (language === 'en') {
-  changeLanguage.innerHTML = '🇧🇷';
+if (language === "en") {
+  changeLanguage.innerHTML = "🇧🇷";
 } else {
-  changeLanguage.innerHTML = '🇺🇸';
+  changeLanguage.innerHTML = "🇺🇸";
 }
 
 // Aplica a tradução inicial com base na linguagem salva

@@ -98,19 +98,25 @@ if (selectedTheme) {
 const trybetunesImg = document.getElementById('trybetunes__img')
 const forumAppImg = document.getElementById('forumapp__img')
 const comingsoonImg = document.getElementById('comingsoon__img')
+const chatsAppImg = document.getElementById('chatsapp__img')
+const walletImg = document.getElementById('trybewallet__img')
 
 function changePortfolioImages() {
-  console.log(getCurrentTheme())
   if (getCurrentTheme() == 'dark') {
-    forumAppImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/45a6c670-72ba-482a-adc8-2aafe6693915'
+    forumAppImg.src = 'https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004'
     trybetunesImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/491028e2-b346-4ff7-8713-bdc96c1e88f3'
-    comingsoonImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/f7fe2eb4-2977-46c6-9aa9-b0ccc613842e'
+    comingsoonImg.src = 'https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4'
+    chatsAppImg.src = 'https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3'
+    walletImg.src = 'https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1'
   } else {
-    forumAppImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/45a6c670-72ba-482a-adc8-2aafe6693915'
+    forumAppImg.src = 'https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004'
     trybetunesImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/a743e946-ad63-4970-a694-f1c70b6a97b9'
-    comingsoonImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/dc369211-ae89-4c69-9313-33cb33e5190a'
+    comingsoonImg.src = 'https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4'
+    chatsAppImg.src = 'https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3'
+    walletImg.src = 'https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1'
   }
 }
+
 changePortfolioImages();
 
 themeButton.addEventListener('click', () => {
