@@ -131,6 +131,14 @@ let traducoes = {
     pt: "Aplicativo de carteira virtual para monitorar seus gastos. Feito em React e Redux",
     en: "Virtual wallet app to monitorate your expenses. Made with React and Redux",
   },
+  "duck-zelda-description": {
+    pt: "Jogo estilo zelda com pato. Feito em Java (ainda em progresso)",
+    en: "Duck zelda styled game. Made in Java (still in progress)",
+  },
+  "pong-game-description": {
+    pt: "Jogo de pong. Feito em Java",
+    en: "Pong game. Made in Java",
+  },
   "coming-soon": {
     pt: "Vem aí",
     en: "Coming soon",

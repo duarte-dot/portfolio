@@ -100,6 +100,8 @@ const forumAppImg = document.getElementById('forumapp__img')
 const comingsoonImg = document.getElementById('comingsoon__img')
 const chatsAppImg = document.getElementById('chatsapp__img')
 const walletImg = document.getElementById('trybewallet__img')
+const duckZeldaImg = document.getElementById('duckzelda__img')
+const pongGameImg = document.getElementById('pong__img')
 
 function changePortfolioImages() {
   if (getCurrentTheme() == 'dark') {
@@ -108,12 +110,16 @@ function changePortfolioImages() {
     comingsoonImg.src = 'https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4'
     chatsAppImg.src = 'https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3'
     walletImg.src = 'https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1'
+    duckZeldaImg.src = 'https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679'
+    pongGameImg.src = 'https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9'
   } else {
     forumAppImg.src = 'https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004'
     trybetunesImg.src = 'https://github.com/duarte-dot/image-uploads/assets/78454964/a743e946-ad63-4970-a694-f1c70b6a97b9'
     comingsoonImg.src = 'https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4'
     chatsAppImg.src = 'https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3'
     walletImg.src = 'https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1'
+    duckZeldaImg.src = 'https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679'
+    pongGameImg.src = 'https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9'
   }
 }
 
