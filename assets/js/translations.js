@@ -28,7 +28,7 @@ let traducoes = {
     en: "Hi, my name is Gabriel Duarte",
   },
   "aboutme-p-1": {
-    pt: "Sou desenvolvedor de qualquer coisa. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço. Atualmente estou mais focado em aprender engenharia de software, aprofundando meus conhecimentos em boas práticas de desenvolvimento, padrões de projeto e arquiteturas de sistemas.",
+    pt: "Sou um desenvolvedor com experiência em diversas áreas. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço. Atualmente estou mais focado em aprender engenharia de software, aprofundando meus conhecimentos em boas práticas de desenvolvimento, padrões de projeto e arquiteturas de sistemas.",
     en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do. Currently, I’m more focused on learning software engineering, deepening my knowledge in development best practices, design patterns, and system architectures.",
   },
   "aboutme-p-2": {
