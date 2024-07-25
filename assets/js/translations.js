@@ -8,8 +8,8 @@ let traducoes = {
     en: "Fullstack developer",
   },
   description: {
-    pt: "Sou um Desenvolvedor Web Fullstack atualmente focado em React e Node.",
-    en: "I am a Fullstack Web Developer currently focused on working with React and Node.",
+    pt: "Atualmente focado em aprender engenharia de software, aprofundando meus conhecimentos nas melhores práticas de desenvolvimento, padrões de design e arquiteturas de sistemas.",
+    en: "Currently focused on learning software engineering, deepening my knowledge in development best practices, design patterns, and system architectures.",
   },
   contactme: {
     pt: "Entre em contato",
@@ -28,8 +28,8 @@ let traducoes = {
     en: "Hi, my name is Gabriel Duarte",
   },
   "aboutme-p-1": {
-    pt: "Sou desenvolvedor de qualquer coisa. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço. Atualmente estou mais focado no desenvolvimento web e mobile, criando projetos utilizando React, React Native e Node.",
-    en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do. Currently, I’m more focused on web and mobile development, creating projects using React, React Native, and Node.",
+    pt: "Sou desenvolvedor de qualquer coisa. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço. Atualmente estou mais focado em aprender engenharia de software, aprofundando meus conhecimentos em boas práticas de desenvolvimento, padrões de projeto e arquiteturas de sistemas.",
+    en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do. Currently, I’m more focused on learning software engineering, deepening my knowledge in development best practices, design patterns, and system architectures.",
   },
   "aboutme-p-2": {
     pt: "Se não me encontrar codando, provavelmente me encontrará tomando um cafézinho em alguma starbucks ☕️, aproveitando um tempo com a minha família 👩🏻‍❤️‍👨🏻, ou na academia 💪.",
@@ -39,13 +39,9 @@ let traducoes = {
     pt: "Anos <br> codando",
     en: "Years <br> coding",
   },
-  "3-years": {
-    pt: "3+ anos",
-    en: "3+ years",
-  },
-  "4-years": {
-    pt: "4+ anos",
-    en: "4+ years",
+  "2-years": {
+    pt: "2+ anos",
+    en: "2+ years",
   },
   "projects-done": {
     pt: "Projetos <br> feitos",
