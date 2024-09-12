@@ -28,10 +28,14 @@ let traducoes = {
     en: "Hi, my name is Gabriel Duarte",
   },
   "aboutme-p-1": {
-    pt: "Sou um desenvolvedor com experiência em diversas áreas. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço. Atualmente estou mais focado em aprender engenharia de software, aprofundando meus conhecimentos em boas práticas de desenvolvimento, padrões de projeto e arquiteturas de sistemas.",
-    en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do. Currently, I’m more focused on learning software engineering, deepening my knowledge in development best practices, design patterns, and system architectures.",
+    pt: "Sou um desenvolvedor com experiência em diversas áreas. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço.",
+    en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do.",
   },
   "aboutme-p-2": {
+    pt: "Atualmente, estou focado em aprender engenharia de software, aprofundando meu conhecimento em boas práticas de desenvolvimento, padrões de design e arquiteturas de sistemas web e mobile. Estou estudando principalmente Java para aprimorar ainda mais minhas habilidades.",
+    en: "Currently, I am focused on learning software engineering, deepening my knowledge of development best practices, design patterns, and web and mobile system architectures. I am primarily studying Java to enhance my skills further.",
+  },
+  "aboutme-p-3": {
     pt: "Se não me encontrar codando, provavelmente me encontrará tomando um cafézinho em alguma starbucks ☕️, aproveitando um tempo com a minha família 👩🏻‍❤️‍👨🏻, ou na academia 💪.",
     en: "If you don’t find me coding, you’ll probably find me enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.",
   },

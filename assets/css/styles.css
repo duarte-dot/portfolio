@@ -407,6 +407,12 @@ img {
   line-height: 1.5;
 }
 
+.about__description_3 {
+  text-align: justify;
+  margin-bottom: var(--mb-2-5);
+  line-height: 1.5;
+}
+
 .about__info {
   display: flex;
   justify-content: space-evenly;
