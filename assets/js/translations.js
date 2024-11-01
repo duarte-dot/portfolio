@@ -139,6 +139,14 @@ let traducoes = {
     pt: "Jogo de pong. Feito em Java",
     en: "Pong game. Made in Java",
   },
+  "rick-and-morty-description": {
+    pt: "Projeto fullstack de Rick and Morty. Feito com Python/flask!",
+    en: "Rick and Morty fullstack project. Done with Python/flask!",
+  },
+  "fitclub-description": {
+    pt: "Projeto frontend de um Fitclub. Feito com React",
+    en: "Fitclub frontend project. Made with React",
+  },
   "coming-soon": {
     pt: "Vem aí",
     en: "Coming soon",
