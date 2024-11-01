@@ -32,8 +32,8 @@ let traducoes = {
     en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do.",
   },
   "aboutme-p-2": {
-    pt: "Atualmente, estou focado em aprender engenharia de software, aprofundando meu conhecimento em boas práticas de desenvolvimento, padrões de design e arquiteturas de sistemas web e mobile. Estou estudando principalmente Java para aprimorar ainda mais minhas habilidades.",
-    en: "Currently, I am focused on learning software engineering, deepening my knowledge of development best practices, design patterns, and web and mobile system architectures. I am primarily studying Java to enhance my skills further.",
+    pt: "Atualmente, estou cursando Sistemas de Informação na Universidade Veiga de Almeida (UVA), com um forte foco no aprimoramento das minhas habilidades em engenharia de software. Estou me dedicando ao aprofundamento em boas práticas de desenvolvimento, padrões de design e arquiteturas de sistemas, tanto para web quanto para mobile.",
+    en: "Currently, I am studying Information Systems at Veiga de Almeida University (UVA), with a strong focus on improving my skills in software engineering. I am dedicating myself to deepening my knowledge of best development practices, design patterns, and system architectures, both for web and mobile.",
   },
   "aboutme-p-3": {
     pt: "Se não me encontrar codando, provavelmente me encontrará tomando um cafézinho em alguma starbucks ☕️, aproveitando um tempo com a minha família 👩🏻‍❤️‍👨🏻, ou na academia 💪.",
