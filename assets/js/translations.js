@@ -203,13 +203,13 @@ changeLanguage.addEventListener("click", function () {
     language = "pt";
     changeLanguage.innerHTML = "🇺🇸";
     downloadCVButton.href =
-      "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=sharing";
+      "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
   } else {
     traduzirSite("en");
     language = "en";
     changeLanguage.innerHTML = "🇧🇷";
     downloadCVButton.href =
-      "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
+      "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
   }
 
   // Salva a linguagem escolhida no localStorage
@@ -220,11 +220,11 @@ changeLanguage.addEventListener("click", function () {
 if (language === "en") {
   changeLanguage.innerHTML = "🇧🇷";
   downloadCVButton.href =
-    "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
+    "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
 } else {
   changeLanguage.innerHTML = "🇺🇸";
   downloadCVButton.href =
-    "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=sharing";
+    "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
 }
 
 // Aplica a tradução inicial com base na linguagem salva
