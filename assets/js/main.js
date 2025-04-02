@@ -106,7 +106,6 @@ const trybetunesImg = document.getElementById("trybetunes__img");
 const forumAppImg = document.getElementById("forumapp__img");
 const comingsoonImg = document.getElementById("comingsoon__img");
 const chatsAppImg = document.getElementById("chatsapp__img");
-const walletImg = document.getElementById("trybewallet__img");
 const duckZeldaImg = document.getElementById("duckzelda__img");
 const pongGameImg = document.getElementById("pong__img");
 const rickAndMortyImg = document.getElementById("rickandmorty__img");
@@ -122,8 +121,6 @@ function changePortfolioImages() {
       "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
     chatsAppImg.src =
       "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
-    walletImg.src =
-      "https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1";
     duckZeldaImg.src =
       "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
     pongGameImg.src =
@@ -141,8 +138,6 @@ function changePortfolioImages() {
       "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
     chatsAppImg.src =
       "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
-    walletImg.src =
-      "https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1";
     duckZeldaImg.src =
       "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
     pongGameImg.src =
