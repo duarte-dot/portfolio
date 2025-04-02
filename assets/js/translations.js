@@ -191,27 +191,36 @@ if (!language) {
 }
 
 var changeLanguage = document.getElementById("change-language");
+var downloadCVButton = document.getElementById("cv-button");
 
 changeLanguage.addEventListener("click", function () {
   if (language === "en") {
     traduzirSite("pt");
     language = "pt";
     changeLanguage.innerHTML = "🇺🇸";
+    downloadCVButton.href =
+      "https://drive.google.com/file/d/1noZ0B_K3UViruoSPHRrQ7ykv6HDwoJOW/view?usp=drive_link";
   } else {
     traduzirSite("en");
     language = "en";
     changeLanguage.innerHTML = "🇧🇷";
+    downloadCVButton.href =
+      "https://drive.google.com/file/d/1mReqSoe_u5RQ09qJV3H4lWKxSoTg8Sy9/view?usp=drive_link";
   }
 
   // Salva a linguagem escolhida no localStorage
   localStorage.setItem("language", language);
 });
 
-// Atualiza o texto do botão com base na linguagem atual
+// Atualiza o texto do botão e o conteúdo do currículo com base na linguagem atual
 if (language === "en") {
   changeLanguage.innerHTML = "🇧🇷";
+  downloadCVButton.href =
+    "https://drive.google.com/file/d/1mReqSoe_u5RQ09qJV3H4lWKxSoTg8Sy9/view?usp=drive_link";
 } else {
   changeLanguage.innerHTML = "🇺🇸";
+  downloadCVButton.href =
+    "https://drive.google.com/file/d/1noZ0B_K3UViruoSPHRrQ7ykv6HDwoJOW/view?usp=drive_link";
 }
 
 // Aplica a tradução inicial com base na linguagem salva
