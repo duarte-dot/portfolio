@@ -320,6 +320,7 @@ img {
 
 .home__title {
   font-size: var(--big-font-size);
+  line-height: 1.2;
 }
 
 .home__subtitle {
