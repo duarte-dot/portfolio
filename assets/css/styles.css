@@ -388,6 +388,14 @@ img {
   align-items: center;
 }
 
+#cv-button {
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 /* ========== ABOUT ========== */
 .about__img {
   width: 200px;

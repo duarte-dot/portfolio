@@ -171,6 +171,10 @@ let traducoes = {
     pt: "voltar",
     en: "go back",
   },
+  "download-cv": {
+    pt: "Baixar CV",
+    en: "Download CV",
+  },
 };
 
 function traduzirSite(idioma) {
