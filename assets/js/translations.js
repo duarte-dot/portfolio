@@ -91,6 +91,10 @@ let traducoes = {
     pt: "Meu número",
     en: "Call me",
   },
+  "phone-number": {
+    pt: "+55 21 99575-7262",
+    en: "+55 21 99575-7262",
+  },
   name: {
     pt: "Nome",
     en: "Name",
