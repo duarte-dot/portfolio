@@ -72,8 +72,8 @@ let traducoes = {
     en: 'You can check more on my <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
   },
   trybetunes: {
-    pt: "Pesquise por álbuns de seus artistas favoritos e escute previews de suas músicas! Feito com React e Spotify API",
-    en: "Search for albums by your favorite artists and listen to previews of their songs! Made with React and Spotify API",
+    pt: "Pesquise por álbuns de seus artistas favoritos e escute previews de suas músicas! Feito com React e Itunes API",
+    en: "Search for albums by your favorite artists and listen to previews of their songs! Made with React and Itunes API",
   },
   "contact-me": {
     pt: "Entre em contato",
