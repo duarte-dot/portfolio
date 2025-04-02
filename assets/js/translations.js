@@ -92,7 +92,7 @@ let traducoes = {
     en: "Call me",
   },
   "phone-number": {
-    pt: "+55 21 99575-7262",
+    pt: "21 99575-7262",
     en: "+55 21 99575-7262",
   },
   name: {
