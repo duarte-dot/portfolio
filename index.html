@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +18,7 @@
 
   <title>DEV | Gabriel Duarte</title>
 </head>
+
 <body>
   <!--========== HEADER ==========-->
   <header class="header" id="header">
@@ -36,7 +38,7 @@
             </a>
           </li>
           <li class="nav__item">
-            <a href="#skills" class="nav__link"> 
+            <a href="#skills" class="nav__link">
               <i class="uil uil-file-alt nav__icon"></i> Skills
             </a>
           </li>
@@ -65,68 +67,79 @@
     </nav>
   </header>
 
-<!--========== MAIN ==========-->
-<main class="main">
+  <!--========== MAIN ==========-->
+  <main class="main">
 
-  <!--========== HOME ==========-->
-  <section class="home section" id="home">
-    <div class="home__container container grid">
-      <div class="home__content grid">
-        <div class="home__social">
-          <a href="https://www.linkedin.com/in/gabriel-duarte-44b25220a/" target="_blank" class="home__social-icon">
-            <i class="uil uil-linkedin-alt"></i>
-          </a>
+    <!--========== HOME ==========-->
+    <section class="home section" id="home">
+      <div class="home__container container grid">
+        <div class="home__content grid">
+          <div class="home__social">
+            <a href="https://www.linkedin.com/in/gabriel-duarte-44b25220a/" target="_blank" class="home__social-icon">
+              <i class="uil uil-linkedin-alt"></i>
+            </a>
 
-          <a href="https://github.com/duarte-dot" target="_blank" class="home__social-icon">
-            <i class="uil uil-github-alt"></i>
-          </a>
+            <a href="https://github.com/duarte-dot" target="_blank" class="home__social-icon">
+              <i class="uil uil-github-alt"></i>
+            </a>
 
+          </div>
+
+          <div class="home__img">
+            <svg class="home__blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <mask id="mask0" mask-type="alpha">
+                <path
+                  d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z"
+                  transform="translate(100 100)" />
+              </mask>
+              <g mask="url(#mask0)">
+                <path class="fill-blob"
+                  d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z"
+                  transform="translate(100 100)" />
+                <image class="home__blob-img" xlink:href="assets/img/perfil2.png" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="home__data">
+            <h1 class="home__title" translation="greetings">Hi, i'm Gabriel</h1>
+            <h3 class="home__subtitle" translation="fullstack-developer">Fullstack developer</h3>
+            <p class="home__description" translation="description">Currently focused on learning software engineering,
+              deepening my knowledge in development best practices, design patterns, and system architectures.</p>
+            <a href="#contact" class="button button--flex" translation="contactme">
+              Contact Me <i class="uil uil-message button__icon"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="home__img">
-          <svg class="home__blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <mask id="mask0" mask-type="alpha">
-              <path d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z" transform="translate(100 100)"/>
-            </mask>
-            <g mask="url(#mask0)">
-              <path class="fill-blob" d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z" transform="translate(100 100)"/>
-              <image class="home__blob-img" xlink:href="assets/img/perfil2.png"/>
-            </g>
-          </svg>
-        </div>
-
-        <div class="home__data">
-          <h1 class="home__title" translation="greetings">Hi, i'm Gabriel</h1>
-          <h3 class="home__subtitle" translation="fullstack-developer">Fullstack developer</h3>
-          <p class="home__description" translation="description">Currently focused on learning software engineering, deepening my knowledge in development best practices, design patterns, and system architectures.</p>
-          <a href="#contact" class="button button--flex" translation="contactme">
-            Contact Me <i class="uil uil-message button__icon"></i>
+        <div class="home__scroll">
+          <a href="#about" class="home__scroll-button button--flex">
+            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+            <span class="home__scroll-name">Scroll down</span>
+            <i class="uil uil-arrow-down home__scroll-arrow"></i>
           </a>
         </div>
       </div>
+    </section>
 
-      <div class="home__scroll">
-        <a href="#about" class="home__scroll-button button--flex">
-          <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-          <span class="home__scroll-name">Scroll down</span>
-          <i class="uil uil-arrow-down home__scroll-arrow"></i>
-        </a>
-      </div>
-    </div>
-  </section>
+    <!--========== ABOUT ==========-->
+    <section class="about__section section" id="about">
+      <h2 class="section__title" translation="aboutme">About me</h2>
+      <span class="section__subtitle" translation="aboutme-subtitle">Hi, my name is Gabriel Duarte</span>
 
-  <!--========== ABOUT ==========-->
-  <section class="about__section section" id="about">
-    <h2 class="section__title" translation="aboutme">About me</h2>
-    <span class="section__subtitle" translation="aboutme-subtitle">Hi, my name is Gabriel Duarte</span>
+      <div class="about__container container grid">
+        <img src="/assets/img/about.gif" alt="" class="about__img">
 
-    <div class="about__container container grid">
-      <img src="/assets/img/about.gif" alt="" class="about__img">
-
-      <div class="about__data">
-        <p class="about__description_1" translation="aboutme-p-1">I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do.</p>          
-        <p class="about__description_2" translation="aboutme-p-2">Currently, I am studying Information Systems at Veiga de Almeida University (UVA), with a strong focus on improving my skills in software engineering. I am dedicating myself to deepening my knowledge of best development practices, design patterns, and system architectures, both for web and mobile.</a></p>
-        <p class="about__description_3" translation="aboutme-p-3">If you don’t find me coding, you’ll probably find me enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.</a></p>
+        <div class="about__data">
+          <p class="about__description_1" translation="aboutme-p-1">I’m a developer of anything. I’ve been interested in
+            game, website, software, and mobile development, knowing a bit about all of it and passionate about what I
+            do.</p>
+          <p class="about__description_2" translation="aboutme-p-2">Currently, I am studying Information Systems at
+            Veiga de Almeida University (UVA), with a strong focus on improving my skills in software engineering. I am
+            dedicating myself to deepening my knowledge of best development practices, design patterns, and system
+            architectures, both for web and mobile.</a></p>
+          <p class="about__description_3" translation="aboutme-p-3">If you don’t find me coding, you’ll probably find me
+            enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.</a></p>
 
           <div class="about__info">
             <div>
@@ -141,20 +154,21 @@
           </div>
 
           <div class="about__buttons">
-            <a target="_blank" href="https://drive.google.com/file/d/1qRCorpK_WZj5lXSpAVVbR7Aq6zC645Oi/view?usp=sharing" class="button button--flex">
+            <a target="_blank" href="https://drive.google.com/file/d/1qRCorpK_WZj5lXSpAVVbR7Aq6zC645Oi/view?usp=sharing"
+              class="button button--flex">
               Download CV<i class="uil uil-download-alt button__icon"></i>
             </a>
           </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!--========== SKILLS ==========-->
-  <section class="skills section" id="skills">
-    <h2 class="section__title">Skills</h2>
-    <span class="section__subtitle" translation="my-technical-level">My skills</span>
+    <!--========== SKILLS ==========-->
+    <section class="skills section" id="skills">
+      <h2 class="section__title">Skills</h2>
+      <span class="section__subtitle" translation="my-technical-level">My skills</span>
 
-    <div class="skills__container container grid">
+      <div class="skills__container container grid">
         <!--========== SKILLS 1 ==========-->
         <div class="skills__content skills__open">
           <div class="skills__header">
@@ -171,7 +185,8 @@
           <div class="skills__list flex">
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" />
               </div>
             </div>
 
@@ -183,49 +198,57 @@
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" />
+                <img
+                  src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" />
+                <img
+                  src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/Angular-0F0F11.svg?style=for-the-badge&logo=Angular&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/Angular-0F0F11.svg?style=for-the-badge&logo=Angular&logoColor=white" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/Testing%20Library-E33332.svg?style=for-the-badge&logo=Testing-Library&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/Testing%20Library-E33332.svg?style=for-the-badge&logo=Testing-Library&logoColor=white" />
               </div>
             </div>
           </div>
@@ -237,7 +260,7 @@
             <i class="uil uil-server-network skills__icon"></i>
 
             <div>
-            <h1 class="skills__titles">Backend</h1>
+              <h1 class="skills__titles">Backend</h1>
               <span class="skills__subtitle" translation="2-years">2+ years</span>
             </div>
 
@@ -248,7 +271,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -256,7 +280,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -264,7 +289,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -280,7 +306,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Laravel-FF2D20.svg?style=for-the-badge&logo=Laravel&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Laravel-FF2D20.svg?style=for-the-badge&logo=Laravel&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -288,7 +315,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -296,7 +324,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Sequelize-52B0E7.svg?style=for-the-badge&logo=Sequelize&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Sequelize-52B0E7.svg?style=for-the-badge&logo=Sequelize&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -304,29 +333,24 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white" />
                 </div>
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
-                <img src="https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white" />
+                <img
+                  src="https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white" />
               </div>
             </div>
 
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" />
-                </div>
-              </div>
-            </div>
-
-            <div class="skills__data">
-              <div class="skills__titles">
-                <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Nodemon-76D04B.svg?style=for-the-badge&logo=Nodemon&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -334,7 +358,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Nodemon-76D04B.svg?style=for-the-badge&logo=Nodemon&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -342,7 +367,8 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" />
                 </div>
               </div>
             </div>
@@ -350,282 +376,290 @@
             <div class="skills__data">
               <div class="skills__titles">
                 <div class="skills__titles">
-                  <img src="https://img.shields.io/badge/Mocha-8D6748.svg?style=for-the-badge&logo=Mocha&logoColor=white" />
+                  <img
+                    src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" />
                 </div>
               </div>
             </div>
+
+            <div class="skills__data">
+              <div class="skills__titles">
+                <div class="skills__titles">
+                  <img
+                    src="https://img.shields.io/badge/Mocha-8D6748.svg?style=for-the-badge&logo=Mocha&logoColor=white" />
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-  </section>
+    </section>
 
-  <!--========== QUALIFICATION ==========-->
-
-
-  <!--========== SERVICES ==========-->
+    <!--========== QUALIFICATION ==========-->
 
 
-  <!--========== PORTFOLIO ==========-->
-  <section class="portfolio section" id="portfolio">
-    <h2 class="section__title" translation="projects">Projects</h2>
-    <span class="section__subtitle" translation="check-more">You can check more on my <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!</span>
+    <!--========== SERVICES ==========-->
 
 
-    <div class="portfolio__container container swiper mySwiper">
-      <div class="swiper-wrapper">
+    <!--========== PORTFOLIO ==========-->
+    <section class="portfolio section" id="portfolio">
+      <h2 class="section__title" translation="projects">Projects</h2>
+      <span class="section__subtitle" translation="check-more">You can check more on my <a target="_blank"
+          href="https://github.com/duarte-dot">GitHub</a>!</span>
 
-        <!--========== PORTFOLIO 1 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="trybetunes__img" class="portfolio__img">
 
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">Trybe Tunes</h3>
-            <p class="portfolio__description" translation="trybetunes">Search for albums by your favorite artists and listen to previews of their songs! Made with React and Spotify API</p>
-            <div class="portfolio__buttons">
-              <a target="_blank" href="https://duarte-dot-trybetunes.surge.sh/" class="button button--flex button--small portfolio__button">
-                Demo
+      <div class="portfolio__container container swiper mySwiper">
+        <div class="swiper-wrapper">
+
+          <!--========== PORTFOLIO 1 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="trybetunes__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Trybe Tunes</h3>
+              <p class="portfolio__description" translation="trybetunes">Search for albums by your favorite artists and
+                listen to previews of their songs! Made with React and Spotify API</p>
+              <div class="portfolio__buttons">
+                <a target="_blank" href="https://trybetunes.duarte-dot.com.br"
+                  class="button button--flex button--small portfolio__button">
+                  Demo
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+                <a target="_blank" href="https://github.com/duarte-dot/trybe-tunes"
+                  class="button button--flex button--small portfolio__button">
+                  Github Doc
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 2 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="forumapp__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title" translation="forum">Forum</h3>
+              <p class="portfolio__description" translation="forum-description">Forum page. Made with React frontend and
+                PHP/Laravel backend</p>
+              <a target="_blank" href="https://github.com/duarte-dot/g1learn-fullstack"
+                class="button button--flex button--small portfolio__button">
+                GitHub Doc
                 <i class="uil uil-arrow-right button__icon"></i>
               </a>
-              <a target="_blank" href="https://github.com/duarte-dot/trybe-tunes" class="button button--flex button--small portfolio__button">
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 3 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="chatsapp__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Chats app</h3>
+              <p class="portfolio__description" translation="chats-app-description">Chat app. Made with Next and Upstash
+                Redis</p>
+              <div class="portfolio__buttons">
+                <a target="_blank" href="https://duarte-dot-chat-app.vercel.app/login"
+                  class="button button--flex button--small portfolio__button">
+                  Demo
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+                <a target="_blank" href="https://github.com/duarte-dot/chat-app"
+                  class="button button--flex button--small portfolio__button">
+                  Github Doc
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1 -->
+
+          <!--========== PORTFOLIO 4 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="fitclub__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">FitClub</h3>
+              <p class="portfolio__description" translation="fitclub-description">Fitclub frontend project. Made with
+                React</p>
+              <div class="portfolio__buttons">
+                <a target="_blank" href="https://duarte-dot-fitclub.vercel.app/"
+                  class="button button--flex button--small portfolio__button">
+                  Demo
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+                <a target="_blank" href="https://github.com/duarte-dot/fitclub"
+                  class="button button--flex button--small portfolio__button">
+                  Github Doc
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 5 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="pong__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Pong</h3>
+              <p class="portfolio__description" translation="pong-game-description">Pong game. Made in Java</p>
+              <div class="portfolio__buttons">
+                <a target="_blank" href="https://github.com/duarte-dot/pong"
+                  class="button button--flex button--small portfolio__button">
+                  Github Doc
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 6 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="duckzelda__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Duck Zelda</h3>
+              <p class="portfolio__description" translation="duck-zelda-description">Duck zelda styled game. Made in
+                Java (still in progress)</p>
+              <div class="portfolio__buttons">
+                <a target="_blank" href="https://github.com/duarte-dot/duck-zelda"
+                  class="button button--flex button--small portfolio__button">
+                  Github Doc
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 7 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="rickandmorty__img" />
+
+            <div class="portfolio__data">
+              <h3 class="portfolio__title">Rick and Morty API</h3>
+              <p class="portfolio__description" translation="rick-and-morty-description">Rick and Morty fullstack
+                project. Made with python/flask!</p>
+              <a target="_blank" href="https://github.com/duarte-dot/rickandmorty-api"
+                class="button button--flex button--small portfolio__button">
                 Github Doc
                 <i class="uil uil-arrow-right button__icon"></i>
               </a>
             </div>
           </div>
-        </div>
 
-        <!--========== PORTFOLIO 2 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="forumapp__img" class="portfolio__img">
+          <!--========== PORTFOLIO 8 ==========-->
+          <div class="portfolio__content grid swiper-slide">
+            <img src="" alt="" id="comingsoon__img" />
 
-          <div class="portfolio__data">
-            <h3 class="portfolio__title" translation="forum">Forum</h3>
-            <p class="portfolio__description" translation="forum-description">Forum page. Made with React frontend and PHP/Laravel backend</p>
-            <a target="_blank" href="https://github.com/duarte-dot/g1learn-fullstack" class="button button--flex button--small portfolio__button">
-              GitHub Doc
-              <i class="uil uil-arrow-right button__icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!--========== PORTFOLIO 3 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="chatsapp__img" class="portfolio__img">
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">Chats app</h3>
-            <p class="portfolio__description" translation="chats-app-description">Chat app. Made with Next and Upstash Redis</p>
-            <div class="portfolio__buttons">
-              <a target="_blank" href="https://duarte-dot-chat-app.vercel.app/login" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-              <a target="_blank" href="https://github.com/duarte-dot/chat-app" class="button button--flex button--small portfolio__button">
-                Github Doc
+            <div class="portfolio__data">
+              <h3 class="portfolio__title" translation="coming-soon">Coming soon!</h3>
+              <p class="portfolio__description" translation="coming-soon-description">More projects are coming soon!</p>
+              <a href="#portfolio" translation="soon" class="button button--flex button--small portfolio__button">
+                Soon
                 <i class="uil uil-arrow-right button__icon"></i>
               </a>
             </div>
           </div>
+
         </div>
-
-        <!-- https://github.com/user-attachments/assets/df268866-8387-4648-b90a-2bd9519547b1 -->
-
-        <!--========== PORTFOLIO 4 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="trybewallet__img" class="portfolio__img">
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">Trybe Wallet</h3>
-            <p class="portfolio__description" translation="trybe-wallet-description">Virtual wallet app to monitorate your expenses. Made with React and Redux</p>
-            <div class="portfolio__buttons">
-              <a target="_blank" href="https://duarte-dot-trybewallet.surge.sh/" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-              <a target="_blank" href="https://github.com/duarte-dot/trybe-wallet" class="button button--flex button--small portfolio__button">
-                Github Doc
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
+        <div class="swiper-button-next">
+          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
         </div>
-
-        <!--========== PORTFOLIO 5 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="duckzelda__img" class="portfolio__img">
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">Duck Zelda</h3>
-            <p class="portfolio__description" translation="duck-zelda-description">Duck zelda styled game. Made in Java (still in progress)</p>
-            <div class="portfolio__buttons">
-              <a target="_blank" href="https://github.com/duarte-dot/duck-zelda" class="button button--flex button--small portfolio__button">
-                Github Doc
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
+        <div class="swiper-button-prev">
+          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
         </div>
-
-        <!--========== PORTFOLIO 6 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="pong__img" class="portfolio__img">
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">Pong</h3>
-            <p class="portfolio__description" translation="pong-game-description">Pong game. Made in Java</p>
-            <div class="portfolio__buttons">
-              <a target="_blank" href="https://github.com/duarte-dot/pong" class="button button--flex button--small portfolio__button">
-                Github Doc
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!--========== PORTFOLIO 7 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="rickandmorty__img" />
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">Rick and Morty API</h3>
-            <p class="portfolio__description" translation="rick-and-morty-description">Rick and Morty fullstack project. Made with python/flask!</p>
-            <a target="_blank" href="https://github.com/duarte-dot/rickandmorty-api" class="button button--flex button--small portfolio__button">
-              Github Doc
-              <i class="uil uil-arrow-right button__icon"></i>
-            </a>
-          </div>
-        </div>
-
-        <!--========== PORTFOLIO 8 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="fitclub__img" class="portfolio__img">
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title">FitClub</h3>
-            <p class="portfolio__description" translation="fitclub-description">Fitclub frontend project. Made with React</p>
-            <div class="portfolio__buttons">
-              <a target="_blank" href="https://duarte-dot-fitclub.vercel.app/" class="button button--flex button--small portfolio__button">
-                Demo
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-              <a target="_blank" href="https://github.com/duarte-dot/fitclub" class="button button--flex button--small portfolio__button">
-                Github Doc
-                <i class="uil uil-arrow-right button__icon"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!--========== PORTFOLIO 9 ==========-->
-        <div class="portfolio__content grid swiper-slide">
-          <img src="" alt="" id="comingsoon__img" />
-
-          <div class="portfolio__data">
-            <h3 class="portfolio__title" translation="coming-soon">Coming soon!</h3>
-            <p class="portfolio__description" translation="coming-soon-description">More projects are coming soon!</p>
-            <a href="#portfolio" translation="soon" class="button button--flex button--small portfolio__button">
-              Soon
-              <i class="uil uil-arrow-right button__icon"></i>
-            </a>
-          </div>
-        </div>
-
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-button-next">
-        <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-      </div>
-      <div class="swiper-button-prev">
-        <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+    </section>
 
 
-  <section class="contact section" id="contact">
-    <h2 class="section__title" translation="contactme">Contact me</h2>
-    <span class="section__subtitle" translation="get-in-touch">Get in touch</span>
+    <section class="contact section" id="contact">
+      <h2 class="section__title" translation="contactme">Contact me</h2>
+      <span class="section__subtitle" translation="get-in-touch">Get in touch</span>
 
-    <div class="contact__container container grid">
-      <div>
+      <div class="contact__container container grid">
         <div>
-          <div class="contact__information">
-            <i class="uil uil-phone contact__icon"></i>
-            <div>
-              <h3 class="contact__title" translation="call-me">Call me</h3>
-              <span class="contact__subtitle">21 97568-1618</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="contact__information">
-            <i class="uil uil-envelope contact__icon"></i>
-            <div>
-              <h3 class="contact__title">Email</h3>
-              <span class="contact__subtitle">gabrieldvr@outlook.com</span>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="contact__information">
-            <i class="uil uil-location-point contact__icon"></i>
-            <div>
-              <h3 class="contact__title" translation="location">Location</h3>
-              <span class="contact__subtitle" translation="rj-br">Rio de Janeiro - Brazil</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <form target="_self" action="https://formsubmit.co/gabrieldvr@outlook.com" method="POST" class="contact__form grid" id="contactForm">
-        <div class="contact__inputs grid">
-          <div class="contact__content">
-            <label for="name" class="contact__label" translation="name">Name</label>
-            <input type="text" name="name" class="contact__input" id="name" required>
-          </div>
-          <div class="contact__content">
-            <label for="email" class="contact__label" translation="email">Your Email</label>
-            <input type="email" name="email" class="contact__input" id="email" required>
-          </div>
-          <div class="contact__content">
-            <label for="message" class="contact__label" translation="message">Message</label>
-            <textarea id="message" name="message" cols="0" rows="7" class="contact__input" required></textarea>
-          </div>
-          <input type="hidden" name="_next" value="http://duarte-dot.surge.sh/thanks.html">
           <div>
-            <button type="submit" class="button button--flex" translation="send-message">
-              Send Message
-              <i class="uil uil-message button__icon"></i>
-            </button>
+            <div class="contact__information">
+              <i class="uil uil-phone contact__icon"></i>
+              <div>
+                <h3 class="contact__title" translation="call-me">Call me</h3>
+                <span class="contact__subtitle">21 97568-1618</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="contact__information">
+              <i class="uil uil-envelope contact__icon"></i>
+              <div>
+                <h3 class="contact__title">Email</h3>
+                <span class="contact__subtitle">gabrieldvr@outlook.com</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="contact__information">
+              <i class="uil uil-location-point contact__icon"></i>
+              <div>
+                <h3 class="contact__title" translation="location">Location</h3>
+                <span class="contact__subtitle" translation="rj-br">Rio de Janeiro - Brazil</span>
+              </div>
+            </div>
           </div>
         </div>
-      </form>
-    </div>
-  </section>
-</main>
+
+        <form target="_self" action="https://formsubmit.co/gabrieldvr@outlook.com" method="POST"
+          class="contact__form grid" id="contactForm">
+          <div class="contact__inputs grid">
+            <div class="contact__content">
+              <label for="name" class="contact__label" translation="name">Name</label>
+              <input type="text" name="name" class="contact__input" id="name" required>
+            </div>
+            <div class="contact__content">
+              <label for="email" class="contact__label" translation="email">Your Email</label>
+              <input type="email" name="email" class="contact__input" id="email" required>
+            </div>
+            <div class="contact__content">
+              <label for="message" class="contact__label" translation="message">Message</label>
+              <textarea id="message" name="message" cols="0" rows="7" class="contact__input" required></textarea>
+            </div>
+            <input type="hidden" name="_next" value="http://duarte-dot.com.br/thanks.html">
+            <div>
+              <button type="submit" class="button button--flex" translation="send-message">
+                Send Message
+                <i class="uil uil-message button__icon"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
 
   <!--========== FOOTER ==========-->
-<footer class="footer">
-  <div class="footer__bg">
-    <div class="footer_container container grid">
-      <div>
-        <h1 class="footer__title">Gabriel Duarte</h1>
-        <span class="footer__subtitle" translation="fullstack-developer">Fullstack Developer</span>
-      </div>
+  <footer class="footer">
+    <div class="footer__bg">
+      <div class="footer_container container grid">
+        <div>
+          <h1 class="footer__title">Gabriel Duarte</h1>
+          <span class="footer__subtitle" translation="fullstack-developer">Fullstack Developer</span>
+        </div>
 
-      <div class="footer__socials">
-        <a href="https://www.facebook.com/padna8/" class="footer__social" target="_blank">
-          <i class="uil uil-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/8padna/" class="footer__social" target="_blank">
-          <i class="uil uil-instagram"></i>
-        </a>
-        <a href="https://twitter.com/8padna" class="footer__social" target="_blank">
-          <i class="uil uil-twitter"></i>
-        </a>
+        <div class="footer__socials">
+          <a href="https://www.facebook.com/padna8/" class="footer__social" target="_blank">
+            <i class="uil uil-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/8padna/" class="footer__social" target="_blank">
+            <i class="uil uil-instagram"></i>
+          </a>
+          <a href="https://twitter.com/8padna" class="footer__social" target="_blank">
+            <i class="uil uil-twitter"></i>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
   <!--========== SCROLL TOP ==========-->
   <a href="#" class="scrollup" id="scroll-up">
@@ -645,6 +679,7 @@
   <script src="/assets/js/translations.js"></script>
 
 
-  
+
 </body>
+
 </html>
