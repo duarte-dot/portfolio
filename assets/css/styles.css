@@ -310,8 +310,8 @@ img {
 }
 
 .home__blob-img {
-  width: 170px;
-  transform: translateX(15px);
+  width: 120px;
+  transform: translate(45px, 12px);
 }
 
 .home__data {
