@@ -127,6 +127,10 @@ let traducoes = {
     pt: "Página de fórum com frontend. Feito em React e Laravel",
     en: "Forum page. Made with React and Laravel",
   },
+  "lovu-app-description": {
+    pt: "É uma plataforma onde você pode criar um site personalizado para o seu parceiro romântico. Adicione fotos, músicas, vídeos e mensagens sinceras que representem sua história e os momentos especiais que vocês compartilharam. Uma forma única e digital de celebrar o amor e criar memórias inesquecíveis.",
+    en: "It’s a platform where you can create a personalized website for your romantic partner. Add photos, music, videos, and heartfelt messages that represent your story and the special moments you’ve shared. A unique and digital way to celebrate love and create unforgettable memories.",
+  },
   "chats-app-description": {
     pt: "App de Chat. Feito em Next com Upstash Redis",
     en: "Chat app. Made with Next and Upstash Redis",
@@ -175,6 +179,10 @@ let traducoes = {
     pt: "Baixar CV",
     en: "Download CV",
   },
+  "try-it": {
+    pt: "Experimente",
+    en: "Try it",
+  },
 };
 
 function traduzirSite(idioma) {
@@ -202,14 +210,12 @@ changeLanguage.addEventListener("click", function () {
     traduzirSite("pt");
     language = "pt";
     changeLanguage.innerHTML = "🇺🇸";
-    downloadCVButton.href =
-      "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
+    downloadCVButton.href = "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
   } else {
     traduzirSite("en");
     language = "en";
     changeLanguage.innerHTML = "🇧🇷";
-    downloadCVButton.href =
-      "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
+    downloadCVButton.href = "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
   }
 
   // Salva a linguagem escolhida no localStorage
@@ -219,12 +225,10 @@ changeLanguage.addEventListener("click", function () {
 // Atualiza o texto do botão e o conteúdo do currículo com base na linguagem atual
 if (language === "en") {
   changeLanguage.innerHTML = "🇧🇷";
-  downloadCVButton.href =
-    "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
+  downloadCVButton.href = "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
 } else {
   changeLanguage.innerHTML = "🇺🇸";
-  downloadCVButton.href =
-    "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
+  downloadCVButton.href = "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
 }
 
 // Aplica a tradução inicial com base na linguagem salva

@@ -88,20 +88,15 @@ const iconTheme = "uil-sun";
 const selectedTheme = localStorage.getItem("selected-theme");
 const selectedIcon = localStorage.getItem("selected-icon");
 
-const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "dark" : "light";
-const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun";
+const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
+const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun");
 
 if (selectedTheme) {
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme
-  );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
-    iconTheme
-  );
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
+  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](iconTheme);
 }
 
+const lovuappImg = document.getElementById("lovuapp__img");
 const trybetunesImg = document.getElementById("trybetunes__img");
 const forumAppImg = document.getElementById("forumapp__img");
 const comingsoonImg = document.getElementById("comingsoon__img");
@@ -113,39 +108,27 @@ const fitclubImg = document.getElementById("fitclub__img");
 
 function changePortfolioImages() {
   if (getCurrentTheme() == "dark") {
-    forumAppImg.src =
-      "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
+    lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
+    forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
     trybetunesImg.src =
       "https://github.com/duarte-dot/image-uploads/assets/78454964/491028e2-b346-4ff7-8713-bdc96c1e88f3";
-    comingsoonImg.src =
-      "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
-    chatsAppImg.src =
-      "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
-    duckZeldaImg.src =
-      "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
-    pongGameImg.src =
-      "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
-    rickAndMortyImg.src =
-      "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
-    fitclubImg.src =
-      "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
+    comingsoonImg.src = "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
+    chatsAppImg.src = "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
+    duckZeldaImg.src = "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
+    pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
+    rickAndMortyImg.src = "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
+    fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
   } else {
-    forumAppImg.src =
-      "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
+    lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
+    forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
     trybetunesImg.src =
       "https://github.com/duarte-dot/image-uploads/assets/78454964/a743e946-ad63-4970-a694-f1c70b6a97b9";
-    comingsoonImg.src =
-      "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
-    chatsAppImg.src =
-      "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
-    duckZeldaImg.src =
-      "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
-    pongGameImg.src =
-      "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
-    rickAndMortyImg.src =
-      "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
-    fitclubImg.src =
-      "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
+    comingsoonImg.src = "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
+    chatsAppImg.src = "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
+    duckZeldaImg.src = "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
+    pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
+    rickAndMortyImg.src = "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
+    fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
   }
 }
 
