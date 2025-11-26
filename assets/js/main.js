@@ -104,7 +104,6 @@ const comingsoonImg = document.getElementById("comingsoon__img");
 const chatsAppImg = document.getElementById("chatsapp__img");
 const duckZeldaImg = document.getElementById("duckzelda__img");
 const pongGameImg = document.getElementById("pong__img");
-const rickAndMortyImg = document.getElementById("rickandmorty__img");
 const fitclubImg = document.getElementById("fitclub__img");
 
 function changePortfolioImages() {
@@ -118,7 +117,6 @@ function changePortfolioImages() {
     chatsAppImg.src = "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
     duckZeldaImg.src = "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
     pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
-    rickAndMortyImg.src = "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
     fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
   } else {
     piratasLanchesImg.src = "https://pirataslanches.com.br/logo.png";
@@ -130,7 +128,6 @@ function changePortfolioImages() {
     chatsAppImg.src = "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
     duckZeldaImg.src = "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
     pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
-    rickAndMortyImg.src = "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
     fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
   }
 }
