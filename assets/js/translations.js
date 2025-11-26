@@ -123,6 +123,10 @@ let traducoes = {
     pt: "Em breve",
     en: "Soon",
   },
+  "piratas-lanches-description": {
+    pt: "Piratas Lanches é um cardápio online que criei para o lanchonete do meu pai, com um design temático de pirata, categorias organizadas e uma interface simples para que os clientes possam explorar rapidamente os sanduíches, bebidas e outros itens diretamente do celular.",
+    en: "Piratas Lanches is an online menu I built for my father’s snack bar, with a pirate-themed design, organized categories, and a simple interface so customers can quickly explore sandwiches, drinks, and other items directly from their phone.",
+  },
   "forum-description": {
     pt: "Página de fórum com frontend. Feito em React e Laravel",
     en: "Forum page. Made with React and Laravel",
@@ -146,10 +150,6 @@ let traducoes = {
   "pong-game-description": {
     pt: "Jogo de pong. Feito em Java",
     en: "Pong game. Made in Java",
-  },
-  "rick-and-morty-description": {
-    pt: "Projeto fullstack de Rick and Morty. Feito com Python/flask!",
-    en: "Rick and Morty fullstack project. Done with Python/flask!",
   },
   "fitclub-description": {
     pt: "Projeto frontend de um Fitclub. Feito com React",

@@ -96,6 +96,7 @@ if (selectedTheme) {
   themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](iconTheme);
 }
 
+const piratasLanchesImg = document.getElementById("pirataslanches__img");
 const lovuappImg = document.getElementById("lovuapp__img");
 const trybetunesImg = document.getElementById("trybetunes__img");
 const forumAppImg = document.getElementById("forumapp__img");
@@ -108,6 +109,7 @@ const fitclubImg = document.getElementById("fitclub__img");
 
 function changePortfolioImages() {
   if (getCurrentTheme() == "dark") {
+    piratasLanchesImg.src = "https://pirataslanches.com.br/logo.png";
     lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
     forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
     trybetunesImg.src =
@@ -119,6 +121,7 @@ function changePortfolioImages() {
     rickAndMortyImg.src = "https://github.com/user-attachments/assets/5c334ca1-e6a9-4529-a00f-cd9d3dad68c7";
     fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
   } else {
+    piratasLanchesImg.src = "https://pirataslanches.com.br/logo.png";
     lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
     forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
     trybetunesImg.src =
