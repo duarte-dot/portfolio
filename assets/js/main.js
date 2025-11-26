@@ -108,7 +108,7 @@ const fitclubImg = document.getElementById("fitclub__img");
 
 function changePortfolioImages() {
   if (getCurrentTheme() == "dark") {
-    piratasLanchesImg.src = "https://pirataslanches.com.br/logo.png";
+    piratasLanchesImg.src = "https://github.com/user-attachments/assets/a33e5d16-ab68-46ea-ba28-96df8dfa4909";
     lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
     forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
     trybetunesImg.src =
@@ -119,7 +119,7 @@ function changePortfolioImages() {
     pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
     fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
   } else {
-    piratasLanchesImg.src = "https://pirataslanches.com.br/logo.png";
+    piratasLanchesImg.src = "https://github.com/user-attachments/assets/a33e5d16-ab68-46ea-ba28-96df8dfa4909";
     lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
     forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
     trybetunesImg.src =
