@@ -180,8 +180,8 @@ let traducoes = {
     en: "Download CV",
   },
   "try-it": {
-    pt: "Experimente",
-    en: "Try it",
+    pt: "Experimente!",
+    en: "Try it!",
   },
 };
 
