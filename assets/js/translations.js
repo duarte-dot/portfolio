@@ -188,10 +188,22 @@ let traducoes = {
 function traduzirSite(idioma) {
   var elementos = document.querySelectorAll("[translation]");
 
-  for (var i = 0; i < elementos.length; i++) {
-    var chave = elementos[i].getAttribute("translation");
-    elementos[i].innerHTML = traducoes[chave][idioma];
-  }
+  elementos.forEach((el) => {
+    var chave = el.getAttribute("translation");
+    var traducao = traducoes[chave][idioma];
+
+    const icon = el.querySelector(".button__icon");
+
+    if (icon) {
+      // troca apenas o texto antes do ícone
+      // se houver texto, fica assim: "Texto traduzido <i class=...>"
+      el.innerHTML = traducao + " ";
+      el.appendChild(icon); // recoloca o ícone no final
+    } else {
+      // elementos normais seguem como antes
+      el.innerHTML = traducao;
+    }
+  });
 }
 
 // Verifica se já existe um valor salvo no localStorage
