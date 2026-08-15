@@ -87,11 +87,22 @@ body.dark-theme {
   align-items: center;
 }
 
+/* shared reset for the icon-only controls in the header */
+#change-language,
+.change-theme,
+.nav__toggle,
+.nav__close {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
 .change-theme {
   font-size: 1.25rem;
   color: var(--title-color);
   margin-right: var(--mb-1);
-  cursor: pointer;
 }
 
 .change-theme:hover {
@@ -102,9 +113,6 @@ body.dark-theme {
   font-size: 1.25rem;
   color: var(--title-color);
   margin-right: var(--mb-1);
-  cursor: pointer;
-  border: none;
-  background-color: none;
   line-height: 0;
 }
 
@@ -117,6 +125,24 @@ body.dark-theme {
 
 html {
   scroll-behavior: smooth;
+}
+
+/* visible keyboard focus indicator */
+:focus-visible {
+  outline: 2px solid var(--first-color);
+  outline-offset: 3px;
+  border-radius: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -459,6 +485,24 @@ img {
   align-items: center;
   margin-bottom: var(--mb-2-5);
   cursor: pointer;
+  /* reset, since this is a <button> for keyboard accessibility */
+  width: 100%;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  text-align: left;
+}
+
+.skills__header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills__group-title {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
 }
 
 .skills__icon,
@@ -483,6 +527,13 @@ img {
 
 .skills__list {
   flex-wrap: wrap;
+  gap: 0.5rem;
+  align-content: flex-start;
+}
+
+.skills__badge {
+  height: 28px;
+  width: auto;
 }
 
 .skills__titles {
@@ -560,6 +611,112 @@ img {
   transform: rotate(-180deg);
 }
 
+/* ========== EXPERIENCE ========== */
+.experience__container {
+  row-gap: 0;
+}
+
+.experience__item {
+  position: relative;
+  padding-left: 2rem;
+  padding-bottom: var(--mb-2-5);
+}
+
+/* the timeline rail */
+.experience__item::before {
+  content: "";
+  position: absolute;
+  top: 0.6rem;
+  left: 0.3rem;
+  width: 2px;
+  height: 100%;
+  background-color: var(--first-color-lighter);
+}
+
+.experience__item:last-child::before {
+  display: none;
+}
+
+.experience__marker {
+  position: absolute;
+  top: 0.35rem;
+  left: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: var(--first-color);
+}
+
+.experience__role {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.experience__company {
+  display: block;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--first-color);
+  margin-bottom: var(--mb-0-25);
+}
+
+.experience__date {
+  display: flex;
+  align-items: center;
+  column-gap: 0.4rem;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+  margin-bottom: var(--mb-1);
+}
+
+.experience__list {
+  display: grid;
+  row-gap: var(--mb-0-5);
+  margin-bottom: var(--mb-1);
+}
+
+.experience__list li {
+  position: relative;
+  padding-left: 1rem;
+  font-size: var(--small-font-size);
+  line-height: 1.6;
+}
+
+.experience__list li::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background-color: var(--first-color);
+}
+
+.experience__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.experience__tags span {
+  font-size: var(--smaller-font-size);
+  color: var(--title-color);
+  background-color: var(--first-color-lighter);
+  padding: 0.25rem 0.6rem;
+  border-radius: 0.25rem;
+}
+
+body.dark-theme .experience__tags span {
+  color: var(--title-color);
+  background-color: var(--first-color-second);
+}
+
+body.dark-theme .experience__item::before {
+  background-color: var(--first-color-second);
+}
+
 /* ========== PORTFOLIO ========== */
 .portfolio__container {
   overflow: initial;
@@ -572,6 +729,9 @@ img {
 
 .portfolio__img {
   width: 265px;
+  /* the width/height attributes on the markup are only there so the browser can
+     reserve space; height must stay auto so the aspect ratio is preserved */
+  height: auto;
   border-radius: 0.5rem;
   justify-self: center;
   /* margin-bottom: var(--mb-2); */
@@ -880,7 +1040,7 @@ a {
 
   .nav__icon,
   .nav__close,
-  .nav__togle {
+  .nav__toggle {
     display: none;
   }
 
@@ -919,8 +1079,12 @@ a {
     width: 450px;
   }
 
+  .experience__container {
+    max-width: 768px;
+  }
+
   .portfolio__img {
-    width: 320;
+    width: 320px;
   }
 
   #rickandmorty__img {

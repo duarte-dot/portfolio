@@ -3,47 +3,48 @@ const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle"),
   navClose = document.getElementById("nav-close");
 
+function setMenu(open) {
+  navMenu.classList.toggle("show-menu", open);
+  if (navToggle) navToggle.setAttribute("aria-expanded", String(open));
+}
+
 /* ===== Menu Show ===== */
 /* validates if constant exists */
 if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.add("show-menu");
-  });
+  navToggle.addEventListener("click", () => setMenu(true));
 }
 
 /* ===== Menu Hidden ===== */
 /* validates if constant exists */
 if (navClose) {
-  navClose.addEventListener("click", () => {
-    navMenu.classList.remove("show-menu");
-  });
+  navClose.addEventListener("click", () => setMenu(false));
 }
 
 /* ========== REMOVE MENU MOBILE ========== */
 const navLink = document.querySelectorAll(".nav__link");
-console.log(navLink);
-function linkAction() {
-  const navMenu = document.getElementById("nav-menu");
-  navMenu.classList.remove("show-menu");
-}
 
-navLink.forEach((n) => n.addEventListener("click", linkAction));
-
-/* ========== MENU SHOW & HIDDEN ========== */
+navLink.forEach((n) => n.addEventListener("click", () => setMenu(false)));
 
 /* ========== ACCORDION SKILLS ========== */
-const skillsContent = document.getElementsByClassName("skills__content");
+const skillsContent = document.querySelectorAll(".skills__content");
 const skillsHeader = document.querySelectorAll(".skills__header");
 
 function toggleSkills() {
-  let itemClass = this.parentNode.className;
+  const parent = this.parentNode;
+  const wasOpen = parent.classList.contains("skills__open");
 
-  for (i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = "skills__content skills__close";
-  }
+  skillsContent.forEach((content) => {
+    content.classList.remove("skills__open");
+    content.classList.add("skills__close");
+    const header = content.querySelector(".skills__header");
+    if (header) header.setAttribute("aria-expanded", "false");
+  });
 
-  if (itemClass === "skills__content skills__close") {
-    this.parentNode.className = "skills__content skills__open";
+  /* clicking the open panel closes it, otherwise open the clicked one */
+  if (!wasOpen) {
+    parent.classList.remove("skills__close");
+    parent.classList.add("skills__open");
+    this.setAttribute("aria-expanded", "true");
   }
 }
 
@@ -67,7 +68,7 @@ let swiper = new Swiper(".portfolio__container", {
 /* ========== CHANGE BACKGROUND HEADER ========== */
 function scrollHeader() {
   const nav = document.getElementById("header");
-  if (this.scrollY >= 80) nav.classList.add("scroll-header");
+  if (window.scrollY >= 80) nav.classList.add("scroll-header");
   else nav.classList.remove("scroll-header");
 }
 window.addEventListener("scroll", scrollHeader);
@@ -75,7 +76,7 @@ window.addEventListener("scroll", scrollHeader);
 /* ========== SHOW SCROLL UP ========== */
 function scrollUp() {
   const scrollup = document.getElementById("scroll-up");
-  if (this.scrollY >= 560) scrollup.classList.add("show-scroll");
+  if (window.scrollY >= 560) scrollup.classList.add("show-scroll");
   else scrollup.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollUp);
@@ -85,60 +86,25 @@ const themeButton = document.getElementById("theme-button");
 const darkTheme = "dark-theme";
 const iconTheme = "uil-sun";
 
-const selectedTheme = localStorage.getItem("selected-theme");
-const selectedIcon = localStorage.getItem("selected-icon");
-
 const getCurrentTheme = () => (document.body.classList.contains(darkTheme) ? "dark" : "light");
-const getCurrentIcon = () => (themeButton.classList.contains(iconTheme) ? "uil-moon" : "uil-sun");
 
-if (selectedTheme) {
-  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](iconTheme);
+function applyTheme(theme) {
+  const isDark = theme === "dark";
+  document.body.classList.toggle(darkTheme, isDark);
+  themeButton.classList.toggle(iconTheme, isDark);
+  themeButton.classList.toggle("uil-moon", !isDark);
+  themeButton.setAttribute("aria-pressed", String(isDark));
 }
 
-const piratasLanchesImg = document.getElementById("pirataslanches__img");
-const lovuappImg = document.getElementById("lovuapp__img");
-const trybetunesImg = document.getElementById("trybetunes__img");
-const forumAppImg = document.getElementById("forumapp__img");
-const comingsoonImg = document.getElementById("comingsoon__img");
-const chatsAppImg = document.getElementById("chatsapp__img");
-const duckZeldaImg = document.getElementById("duckzelda__img");
-const pongGameImg = document.getElementById("pong__img");
-const fitclubImg = document.getElementById("fitclub__img");
+/* saved choice wins, otherwise follow the operating system preference */
+const savedTheme = localStorage.getItem("selected-theme");
+const prefersDark =
+  typeof window.matchMedia === "function" && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-function changePortfolioImages() {
-  if (getCurrentTheme() == "dark") {
-    piratasLanchesImg.src = "https://github.com/user-attachments/assets/a33e5d16-ab68-46ea-ba28-96df8dfa4909";
-    lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
-    forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
-    trybetunesImg.src =
-      "https://github.com/duarte-dot/image-uploads/assets/78454964/491028e2-b346-4ff7-8713-bdc96c1e88f3";
-    comingsoonImg.src = "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
-    chatsAppImg.src = "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
-    duckZeldaImg.src = "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
-    pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
-    fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
-  } else {
-    piratasLanchesImg.src = "https://github.com/user-attachments/assets/a33e5d16-ab68-46ea-ba28-96df8dfa4909";
-    lovuappImg.src = "https://github.com/user-attachments/assets/39aae76e-eea3-45b4-9065-3c695fc90dc9";
-    forumAppImg.src = "https://github.com/user-attachments/assets/33df4e7f-35c8-44cf-8bc1-d27c4c72d004";
-    trybetunesImg.src =
-      "https://github.com/duarte-dot/image-uploads/assets/78454964/a743e946-ad63-4970-a694-f1c70b6a97b9";
-    comingsoonImg.src = "https://github.com/user-attachments/assets/0b682359-cb0a-4638-a0ee-b3a938a643b4";
-    chatsAppImg.src = "https://github.com/user-attachments/assets/67c46191-018f-4687-908e-942fc09501d3";
-    duckZeldaImg.src = "https://github.com/user-attachments/assets/6c4a4761-cfb1-47d3-819c-de7e11179679";
-    pongGameImg.src = "https://github.com/user-attachments/assets/78cc1efd-d632-4a20-99b8-d96e7d9396e9";
-    fitclubImg.src = "https://github.com/user-attachments/assets/f78d3d56-37b4-439c-8fbd-115542df0a89";
-  }
-}
-
-changePortfolioImages();
+applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
 
 themeButton.addEventListener("click", () => {
-  document.body.classList.toggle(darkTheme);
-  themeButton.classList.toggle(iconTheme);
-  changePortfolioImages();
-
-  localStorage.setItem("selected-theme", getCurrentTheme());
-  localStorage.setItem("selected-icon", getCurrentIcon());
+  const next = getCurrentTheme() === "dark" ? "light" : "dark";
+  applyTheme(next);
+  localStorage.setItem("selected-theme", next);
 });

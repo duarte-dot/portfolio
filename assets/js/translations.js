@@ -1,3 +1,9 @@
+/* CV file served for each language */
+const CV_FILES = {
+  pt: "/assets/pdf/gabrieldvr_cv.pdf",
+  en: "/assets/pdf/gabrieldvr_cv_en.pdf",
+};
+
 let traducoes = {
   greetings: {
     pt: "Olá, eu sou Gabriel",
@@ -8,8 +14,8 @@ let traducoes = {
     en: "Fullstack developer",
   },
   description: {
-    pt: "Atualmente focado em aprender engenharia de software, aprofundando meus conhecimentos nas melhores práticas de desenvolvimento, padrões de design e arquiteturas de sistemas.",
-    en: "Currently focused on learning software engineering, deepening my knowledge in development best practices, design patterns, and system architectures.",
+    pt: "Desenvolvedor Fullstack Pleno na MJV Tecnologia. Trabalho com Angular, React, Node.js/NestJS e Java, criando interfaces interativas, APIs RESTful e integrações entre sistemas.",
+    en: "Mid-level Fullstack Developer at MJV Tecnologia. I work with Angular, React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and system integrations.",
   },
   contactme: {
     pt: "Entre em contato",
@@ -28,12 +34,12 @@ let traducoes = {
     en: "Hi, my name is Gabriel Duarte",
   },
   "aboutme-p-1": {
-    pt: "Sou um desenvolvedor com experiência em diversas áreas. já me interessei por desenvolvimento de jogos, sites, software e mobile. Sei um pouco de tudo isso e sou apaixonado no que faço.",
-    en: "I’m a developer of anything. I’ve been interested in game, website, software, and mobile development, knowing a bit about all of it and passionate about what I do.",
+    pt: "Sou um Desenvolvedor Fullstack. Crio interfaces interativas e responsivas, integro APIs, implemento lógica de negócios, gerencio servidores e otimizo o desempenho de sistemas, sempre com atenção a versionamento eficiente e qualidade de código.",
+    en: "I’m a Fullstack Developer. I build interactive and responsive interfaces, integrate APIs, implement business logic, manage servers and tune system performance, always caring about clean versioning and code quality.",
   },
   "aboutme-p-2": {
-    pt: "Atualmente, estou cursando Sistemas de Informação na Universidade Veiga de Almeida (UVA), com um forte foco no aprimoramento das minhas habilidades em engenharia de software. Estou me dedicando ao aprofundamento em boas práticas de desenvolvimento, padrões de design e arquiteturas de sistemas, tanto para web quanto para mobile.",
-    en: "Currently, I am studying Information Systems at Veiga de Almeida University (UVA), with a strong focus on improving my skills in software engineering. I am dedicating myself to deepening my knowledge of best development practices, design patterns, and system architectures, both for web and mobile.",
+    pt: "Atuo profissionalmente desde 2023, passando de Junior a Pleno. Nesse caminho entreguei aplicações seguindo arquitetura hexagonal, monorepos NX com Angular e NGRX, backends Node.js/NestJS com Redis para cache e filas, APIs RESTful com Laravel e frontends React integrados a sistemas públicos como o DETRAN. Em paralelo, curso Sistemas de Informação na Universidade Veiga de Almeida (UVA).",
+    en: "I’ve been working professionally since 2023, moving from Junior to Mid-level. Along the way I’ve shipped applications following hexagonal architecture, NX monorepos with Angular and NGRX, Node.js/NestJS backends with Redis for caching and queues, RESTful APIs with Laravel, and React front-ends integrated with government systems such as DETRAN. Alongside that, I’m studying Information Systems at Veiga de Almeida University (UVA).",
   },
   "aboutme-p-3": {
     pt: "Se não me encontrar codando, provavelmente me encontrará tomando um cafézinho em alguma starbucks ☕️, aproveitando um tempo com a minha família 👩🏻‍❤️‍👨🏻, ou na academia 💪.",
@@ -43,18 +49,126 @@ let traducoes = {
     pt: "Anos <br> codando",
     en: "Years <br> coding",
   },
-  "2-years": {
-    pt: "2+ anos",
-    en: "2+ years",
+  "years-of-experience": {
+    pt: "Anos de <br> experiência",
+    en: "Years of <br> experience",
   },
   "projects-done": {
     pt: "Projetos <br> feitos",
     en: "Projects <br> done",
   },
+  "years-exp": {
+    pt: "3+ anos",
+    en: "3+ years",
+  },
+  "devops-tools": {
+    pt: "DevOps e Ferramentas",
+    en: "DevOps & Tools",
+  },
   "my-technical-level": {
     pt: "Minhas habilidades",
     en: "My skills",
   },
+
+  /* ===== EXPERIENCE ===== */
+  experience: {
+    pt: "Experiência",
+    en: "Experience",
+  },
+  "experience-nav": {
+    pt: '<i class="uil uil-briefcase nav__icon"></i> Experiência',
+    en: '<i class="uil uil-briefcase nav__icon"></i> Experience',
+  },
+  "experience-subtitle": {
+    pt: "Minha trajetória profissional",
+    en: "My professional journey",
+  },
+  "mjv-role": {
+    pt: "Desenvolvedor Fullstack Pleno",
+    en: "Mid-level Fullstack Developer",
+  },
+  "mjv-date": {
+    pt: "Julho de 2025 - Atual",
+    en: "July 2025 - Present",
+  },
+  "mjv-1": {
+    pt: "Desenvolvi e mantive aplicações seguindo a arquitetura hexagonal, promovendo maior desacoplamento e testabilidade do código.",
+    en: "Built and maintained applications following hexagonal architecture, improving decoupling and testability.",
+  },
+  "mjv-2": {
+    pt: "Trabalhei em projetos monorepo com NX, criando e gerenciando bibliotecas reutilizáveis em Angular com NGRX para gerenciamento de estado escalável e consistente.",
+    en: "Worked on NX monorepos, creating and maintaining reusable Angular libraries with NGRX for scalable state management.",
+  },
+  "mjv-3": {
+    pt: "Implementei backends em Node.js com NestJS, integrando Redis para cache e filas de mensagens, além de configurar circuit breakers para maior resiliência dos serviços.",
+    en: "Implemented Node.js/NestJS backends with Redis for caching and message queues, plus circuit breakers for service resilience.",
+  },
+  "mjv-4": {
+    pt: "Trabalhei no desenvolvimento de uma plataforma Backstage: integração com GitHub e Bitbucket, implementação de plugins e configuração de RBAC.",
+    en: "Developed a Backstage platform: GitHub and Bitbucket integration, custom plugins and RBAC configuration.",
+  },
+  "mjv-5": {
+    pt: "Participei de um projeto de automatização do deploy de aplicativos nas lojas (Play Store e Apple Store) utilizando Fastlane.",
+    en: "Automated mobile app deployment to the Play Store and Apple Store using Fastlane.",
+  },
+  "solution-role": {
+    pt: "Desenvolvedor Fullstack Pleno",
+    en: "Mid-level Fullstack Developer",
+  },
+  "solution-date": {
+    pt: "Dezembro de 2024 - Atual",
+    en: "December 2024 - Present",
+  },
+  "solution-1": {
+    pt: "Desenvolvi novas funcionalidades para o sistema de emplacamento digital de veículos, integrado ao sistema oficial do DETRAN, criando páginas dinâmicas e otimizadas com React.",
+    en: "Built new features for the digital vehicle registration system integrated with DETRAN, creating dynamic and optimized pages with React.",
+  },
+  "solution-2": {
+    pt: "Fiquei responsável pelo sistema de transferência digital de veículos do Mato Grosso, totalmente integrado às plataformas do DETRAN-MT, garantindo sua manutenção, evolução e estabilidade.",
+    en: "Owned the digital vehicle transfer system for Mato Grosso, fully integrated with DETRAN-MT platforms, handling its maintenance, evolution and stability.",
+  },
+  "solution-3": {
+    pt: "Implementei integrações robustas entre frontend e backend utilizando Java e padrões de projeto consolidados, garantindo comunicação segura e eficiente entre os sistemas.",
+    en: "Implemented robust frontend/backend integrations using Java and established design patterns, ensuring secure and efficient communication between systems.",
+  },
+  "solution-4": {
+    pt: "Configurei e gerenciei containers Docker, criando ambientes isolados e escaláveis para desenvolvimento e produção.",
+    en: "Configured and managed Docker containers, creating isolated and scalable environments for development and production.",
+  },
+  "solution-5": {
+    pt: "Participei das cerimônias ágeis do Scrum (dailies, plannings e reviews) e acompanhei as tarefas no Jira, contribuindo para o alinhamento da equipe e entregas dentro do prazo.",
+    en: "Took part in Scrum ceremonies (dailies, plannings and reviews) and tracked work in Jira, keeping the team aligned and deliveries on schedule.",
+  },
+  "crase-role": {
+    pt: "Desenvolvedor Fullstack Junior",
+    en: "Junior Fullstack Developer",
+  },
+  "crase-date": {
+    pt: "Setembro de 2023 - Dezembro de 2024",
+    en: "September 2023 - December 2024",
+  },
+  "crase-1": {
+    pt: "Otimizei e mantive o aplicativo mobile Crase Sigma, desenvolvido com Ionic e Angular, garantindo desempenho consistente entre dispositivos Android e iOS.",
+    en: "Maintained and optimized the Crase Sigma mobile app, built with Ionic and Angular, keeping performance consistent across Android and iOS.",
+  },
+  "crase-2": {
+    pt: "Migrei e integrei dados legados provenientes de sistemas em COBOL para ecossistemas modernos, criando fluxos de dados contínuos e compatíveis com sistemas antigos.",
+    en: "Migrated and integrated legacy COBOL data into modern ecosystems, building continuous data flows compatible with the older systems.",
+  },
+  "crase-3": {
+    pt: "Projetei e implementei APIs RESTful com Laravel, utilizando técnicas de cache e otimização de consultas que reduziram a latência em mais de 30%.",
+    en: "Designed and implemented RESTful APIs with Laravel, using caching and query optimization that cut latency by more than 30%.",
+  },
+  "crase-4": {
+    pt: "Configurei e gerenciei servidores Apache2 para aplicações web de alta disponibilidade, realizando ajustes de desempenho e reforço de segurança.",
+    en: "Configured and managed Apache2 servers for high-availability web applications, with performance tuning and security hardening.",
+  },
+  "crase-5": {
+    pt: "Estruturei fluxos de trabalho com Git, incluindo criação de branches, resolução de conflitos e implementação de pipelines de CI/CD para aumentar a eficiência do time.",
+    en: "Set up Git workflows including branching, conflict resolution and CI/CD pipelines to improve team efficiency.",
+  },
+
+  /* ===== PROJECTS ===== */
   projects: {
     pt: "Projetos",
     en: "Projects",
@@ -68,8 +182,8 @@ let traducoes = {
     en: '<i class="uil uil-envelope nav__icon"></i> Contact me',
   },
   "check-more": {
-    pt: 'Você pode ver mais no meu <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
-    en: 'You can check more on my <a target="_blank" href="https://github.com/duarte-dot">GitHub</a>!',
+    pt: 'Você pode ver mais no meu <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
+    en: 'You can check more on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
   },
   trybetunes: {
     pt: "Pesquise por álbuns de seus artistas favoritos e escute previews de suas músicas! Feito com React e Itunes API",
@@ -190,8 +304,15 @@ function traduzirSite(idioma) {
 
   elementos.forEach((el) => {
     var chave = el.getAttribute("translation");
-    var traducao = traducoes[chave][idioma];
+    var entrada = traducoes[chave];
 
+    /* a missing key used to throw and stop the whole translation pass */
+    if (!entrada || entrada[idioma] === undefined) {
+      console.warn(`[translations] missing "${idioma}" translation for key "${chave}"`);
+      return;
+    }
+
+    var traducao = entrada[idioma];
     const icon = el.querySelector(".button__icon");
 
     if (icon) {
@@ -204,6 +325,9 @@ function traduzirSite(idioma) {
       el.innerHTML = traducao;
     }
   });
+
+  /* keep the document language in sync for screen readers and SEO */
+  document.documentElement.lang = idioma === "pt" ? "pt-br" : "en";
 }
 
 // Verifica se já existe um valor salvo no localStorage
@@ -217,31 +341,19 @@ if (!language) {
 var changeLanguage = document.getElementById("change-language");
 var downloadCVButton = document.getElementById("cv-button");
 
+function aplicarIdioma(idioma) {
+  traduzirSite(idioma);
+  changeLanguage.innerHTML = idioma === "en" ? "🇧🇷" : "🇺🇸";
+  if (downloadCVButton) downloadCVButton.href = CV_FILES[idioma];
+}
+
 changeLanguage.addEventListener("click", function () {
-  if (language === "en") {
-    traduzirSite("pt");
-    language = "pt";
-    changeLanguage.innerHTML = "🇺🇸";
-    downloadCVButton.href = "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
-  } else {
-    traduzirSite("en");
-    language = "en";
-    changeLanguage.innerHTML = "🇧🇷";
-    downloadCVButton.href = "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
-  }
+  language = language === "en" ? "pt" : "en";
+  aplicarIdioma(language);
 
   // Salva a linguagem escolhida no localStorage
   localStorage.setItem("language", language);
 });
 
-// Atualiza o texto do botão e o conteúdo do currículo com base na linguagem atual
-if (language === "en") {
-  changeLanguage.innerHTML = "🇧🇷";
-  downloadCVButton.href = "https://drive.google.com/file/d/1ma8ymUKFTrfcmxGJ9GSvpGToFRms-KEs/view?usp=drive_link";
-} else {
-  changeLanguage.innerHTML = "🇺🇸";
-  downloadCVButton.href = "https://drive.google.com/file/d/1qSRXFSpk0aLT_OjOgwlfwLhGf9ORbU_4/view?usp=sharing";
-}
-
 // Aplica a tradução inicial com base na linguagem salva
-traduzirSite(language);
+aplicarIdioma(language);
