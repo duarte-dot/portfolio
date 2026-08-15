@@ -112,8 +112,8 @@ let traducoes = {
     en: "Automated mobile app deployment to the Play Store and Apple Store using Fastlane.",
   },
   "solution-role": {
-    pt: "Desenvolvedor Fullstack Pleno",
-    en: "Mid-level Fullstack Developer",
+    pt: "Desenvolvedor Fullstack Junior",
+    en: "Junior Fullstack Developer",
   },
   "solution-date": {
     pt: "Dezembro de 2024 - Atual",
