@@ -1,1 +1,9 @@
 node_modules
+
+# Spotify credentials and other secrets
+.env
+.env.*
+!.env.example
+
+# Vercel CLI
+.vercel

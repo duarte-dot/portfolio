@@ -475,6 +475,202 @@ img {
   justify-content: center;
 }
 
+/* ========== SPOTIFY NOW PLAYING ========== */
+/* Built entirely from the theme custom properties, so body.dark-theme is handled
+   without a single component level override. The only hardcoded colour is the
+   Spotify green, which is brand identity rather than theme. */
+.spotify {
+  --spotify-green: #1db954;
+
+  display: block;
+  max-width: 340px;
+  margin-bottom: var(--mb-2-5);
+  /* reveal is a fade instead of a pop, since the card appears after a fetch.
+     the global prefers-reduced-motion rule collapses this to nothing. */
+  animation: spotify-in 0.4s ease both;
+}
+
+/* the hidden attribute has to win over the display rules in this block */
+.spotify[hidden],
+.spotify__cover[hidden],
+.spotify__progress[hidden] {
+  display: none;
+}
+
+@keyframes spotify-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.spotify__link {
+  display: flex;
+  align-items: center;
+  column-gap: 0.85rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 12px hsla(var(--hue-color), 48%, 15%, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spotify__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px hsla(var(--hue-color), 48%, 15%, 0.16);
+}
+
+/* ===== album art + badge ===== */
+.spotify__art {
+  position: relative;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.spotify__cover {
+  width: 56px;
+  height: 56px;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.spotify__badge {
+  position: absolute;
+  right: -4px;
+  bottom: -4px;
+  display: flex;
+  padding: 2px;
+  border-radius: 50%;
+  color: var(--spotify-green);
+  /* ring in the card colour so the mark stays legible over any artwork */
+  background-color: var(--container-color);
+}
+
+.spotify__badge svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* min-width: 0 is what lets the ellipsis rules below actually take effect
+   inside the flex row */
+.spotify__data {
+  display: block;
+  min-width: 0;
+  flex: 1;
+}
+
+.spotify__status {
+  display: flex;
+  align-items: center;
+  column-gap: 0.3rem;
+  margin-bottom: 0.15rem;
+}
+
+.spotify__label {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+.spotify__meta {
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+  /* font-variant-numeric keeps the running timer from jittering as digits change */
+  font-variant-numeric: tabular-nums;
+}
+
+.spotify__meta:not(:empty)::before {
+  content: "·";
+  margin: 0 0.3rem;
+}
+
+.spotify__title,
+.spotify__artist {
+  display: block;
+  /* a long track name must not stretch the column */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spotify__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+}
+
+.spotify__artist {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+}
+
+/* ===== equalizer ===== */
+.spotify__bars {
+  display: none;
+  align-items: flex-end;
+  column-gap: 2px;
+  width: 0.7rem;
+  height: 0.7rem;
+  flex-shrink: 0;
+}
+
+.spotify--playing .spotify__bars {
+  display: flex;
+}
+
+.spotify__bars span {
+  flex: 1;
+  /* this static height is the resting state honoured by prefers-reduced-motion,
+     where the global rule collapses the animation to 0.01ms */
+  height: 60%;
+  border-radius: 1px;
+  background-color: var(--spotify-green);
+  animation: spotify-bars 1s ease-in-out infinite alternate;
+}
+
+.spotify__bars span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.spotify__bars span:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+@keyframes spotify-bars {
+  from {
+    height: 25%;
+  }
+
+  to {
+    height: 100%;
+  }
+}
+
+/* ===== progress bar ===== */
+.spotify__progress {
+  display: block;
+  height: 3px;
+  margin-top: 0.5rem;
+  border-radius: 3px;
+  background-color: var(--input-color);
+  overflow: hidden;
+}
+
+.spotify__progress-bar {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 3px;
+  background-color: var(--spotify-green);
+  /* matches the 1s repaint interval in main.js so the bar creeps smoothly */
+  transition: width 1s linear;
+}
+
 /* ========== SKILLS ========== */
 .skills__container {
   row-gap: 0;

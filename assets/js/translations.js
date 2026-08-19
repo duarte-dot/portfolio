@@ -297,6 +297,16 @@ let traducoes = {
     pt: "Experimente!",
     en: "Try it!",
   },
+
+  /* ===== SPOTIFY ===== */
+  "spotify-now-playing": {
+    pt: "Ouvindo agora",
+    en: "Now playing",
+  },
+  "spotify-last-played": {
+    pt: "Ouvi por último",
+    en: "Last played",
+  },
 };
 
 function traduzirSite(idioma) {

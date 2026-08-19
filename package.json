@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "dev": "http-server -c-1",
+    "dev:api": "vercel dev",
+    "spotify:token": "node scripts/spotify-refresh-token.js"
+  },
   "dependencies": {
     "http-server": "^14.1.1"
   }

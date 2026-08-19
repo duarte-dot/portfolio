@@ -190,6 +190,50 @@
           <p class="about__description_3" translation="aboutme-p-3">If you don’t find me coding, you’ll probably find me
             enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.</p>
 
+          <!--========== SPOTIFY NOW PLAYING ==========-->
+          <!-- Placed here on purpose: it reads as a continuation of the paragraph
+               above instead of decoration. Stays hidden until /api/spotify answers,
+               so the section looks intentional when the widget is not configured. -->
+          <div class="spotify" id="spotify" hidden>
+            <a class="spotify__link" id="spotify-link" href="https://open.spotify.com/" target="_blank"
+              rel="noopener noreferrer">
+              <span class="spotify__art">
+                <!-- src is set by main.js; an empty src="" would make some browsers
+                     re-request the page. alt is empty because the link already
+                     exposes the track name and artist as text. -->
+                <img class="spotify__cover" id="spotify-cover" alt="" width="56" height="56" hidden>
+
+                <span class="spotify__badge">
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="currentColor"
+                      d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.601 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
+                  </svg>
+                </span>
+              </span>
+
+              <span class="spotify__data">
+                <span class="spotify__status">
+                  <!-- equalizer, only shown while a track is actually playing -->
+                  <span class="spotify__bars" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </span>
+
+                  <span class="spotify__label" id="spotify-label" translation="spotify-last-played">Last played</span>
+                  <span class="spotify__meta" id="spotify-meta"></span>
+                </span>
+
+                <span class="spotify__title" id="spotify-title"></span>
+                <span class="spotify__artist" id="spotify-artist"></span>
+
+                <span class="spotify__progress" id="spotify-progress" hidden>
+                  <span class="spotify__progress-bar" id="spotify-progress-bar"></span>
+                </span>
+              </span>
+            </a>
+          </div>
+
           <div class="about__info">
             <div>
               <span class="about__info-title">5+</span>
