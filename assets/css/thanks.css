@@ -9,3 +9,75 @@
 .thanks__title {
   margin-bottom: 0;
 }
+/*========== LANGUAGE SWITCH ==========*/
+/* Mirrors the control in the main site. This page has no shared design tokens,
+   so the accent colour is inlined instead of read from a variable. */
+.lang-switch {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  margin-top: 30px;
+  padding: 3px;
+  border: 1px solid hsl(42, 8%, 65%);
+  border-radius: 2rem;
+  transition: border-color 0.3s;
+}
+
+.lang-switch:hover {
+  border-color: hsl(42, 69%, 61%);
+}
+
+.lang-switch__thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 2rem;
+  background-color: hsl(42, 69%, 61%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-switch[data-active="en"] .lang-switch__thumb {
+  transform: translateX(100%);
+}
+
+.lang-switch__option {
+  position: relative;
+  z-index: 1;
+  padding: 0.3rem 0.55rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: hsl(42, 8%, 45%);
+  font-family: inherit;
+  font-size: 0.813rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lang-switch__option:hover {
+  color: hsl(42, 8%, 15%);
+}
+
+.lang-switch__option[aria-pressed="true"] {
+  color: hsl(42, 30%, 12%);
+  cursor: default;
+}
+
+.lang-switch__option:focus-visible {
+  outline: 2px solid hsl(42, 69%, 61%);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-switch,
+  .lang-switch__thumb,
+  .lang-switch__option {
+    transition-duration: 0.01ms;
+  }
+}

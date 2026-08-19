@@ -14,8 +14,8 @@ let traducoes = {
     en: "Fullstack developer",
   },
   description: {
-    pt: "Desenvolvedor Fullstack Pleno na MJV Tecnologia. Trabalho com Angular, React, Node.js/NestJS e Java, criando interfaces interativas, APIs RESTful e integrações entre sistemas.",
-    en: "Mid-level Fullstack Developer at MJV Tecnologia. I work with Angular, React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and system integrations.",
+    pt: "Desenvolvedor Fullstack Pleno. Trabalho com Angular, React, Node.js/NestJS e Java, criando interfaces interativas, APIs RESTful e integrações entre sistemas.",
+    en: "Mid-level Fullstack Developer. I work with Angular, React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and system integrations.",
   },
   contactme: {
     pt: "Entre em contato",
@@ -29,33 +29,47 @@ let traducoes = {
     pt: '<i class="uil uil-user nav__icon"></i> Sobre mim',
     en: '<i class="uil uil-user nav__icon"></i> About',
   },
+  /* the original repeated the home greeting almost word for word, and "a bit
+     about my journey" was pure filler */
   "aboutme-subtitle": {
-    pt: "Olá, meu nome é Gabriel Duarte",
-    en: "Hi, my name is Gabriel Duarte",
+    pt: "Trajetória, código e café",
+    en: "Journey, code and coffee",
   },
+  "about-role": {
+    pt: "Desenvolvedor Fullstack Pleno",
+    en: "Mid-level Fullstack Developer",
+  },
+  "about-location": {
+    pt: "Rio de Janeiro, Brasil",
+    en: "Rio de Janeiro, Brazil",
+  },
+  "about-availability": {
+    pt: "Aberto a oportunidades remotas",
+    en: "Open to remote work",
+  },
+  "about-offclock": {
+    pt: "Fora do código",
+    en: "Off the clock",
+  },
+  "about-img-alt": {
+    pt: "Gabriel Duarte segurando seu gato",
+    en: "Gabriel Duarte holding his cat",
+  },
+  /* Told as a timeline rather than a list of adjectives. The <strong> marks the
+     places, which are what someone skimming actually looks for. */
   "aboutme-p-1": {
-    pt: "Sou um Desenvolvedor Fullstack. Crio interfaces interativas e responsivas, integro APIs, implemento lógica de negócios, gerencio servidores e otimizo o desempenho de sistemas, sempre com atenção a versionamento eficiente e qualidade de código.",
-    en: "I’m a Fullstack Developer. I build interactive and responsive interfaces, integrate APIs, implement business logic, manage servers and tune system performance, always caring about clean versioning and code quality.",
+    pt: "Comecei a estudar programação em 2021, num curso de um ano na <strong>Trybe</strong>. A primeira vaga veio em 2023: entrei como trainee na <strong>Crase Sigma</strong> e fui efetivado como Junior lá mesmo, mexendo em app mobile, APIs Laravel e dados presos em COBOL.",
+    en: "I started learning to code in 2021, on a one-year course at <strong>Trybe</strong>. The first job came in 2023: I joined <strong>Crase Sigma</strong> as a trainee and was promoted to Junior there, working on a mobile app, Laravel APIs and data locked inside COBOL.",
   },
   "aboutme-p-2": {
-    pt: "Atuo profissionalmente desde 2023, passando de Junior a Pleno. Nesse caminho entreguei aplicações seguindo arquitetura hexagonal, monorepos NX com Angular e NGRX, backends Node.js/NestJS com Redis para cache e filas, APIs RESTful com Laravel e frontends React integrados a sistemas públicos como o DETRAN. Em paralelo, curso Sistemas de Informação na Universidade Veiga de Almeida (UVA).",
-    en: "I’ve been working professionally since 2023, moving from Junior to Mid-level. Along the way I’ve shipped applications following hexagonal architecture, NX monorepos with Angular and NGRX, Node.js/NestJS backends with Redis for caching and queues, RESTful APIs with Laravel, and React front-ends integrated with government systems such as DETRAN. Alongside that, I’m studying Information Systems at Veiga de Almeida University (UVA).",
+    pt: "No fim de 2024 a <strong>Solution TI</strong> apareceu com uma chance de crescer e eu não deixei passar. Pouco depois entrei também na <strong>MJV</strong>, consultoria pela qual atendo um cliente grande do setor de seguros, focado nos sistemas internos que os próprios desenvolvedores usam. Em paralelo, curso Sistemas de Informação na <strong>UVA</strong>.",
+    en: "At the end of 2024 <strong>Solution TI</strong> came with a chance to step up and I took it. Not long after I also joined <strong>MJV</strong>, the consultancy through which I serve a large insurance client, focused on the internal systems the developers themselves use. Alongside that, I’m studying Information Systems at <strong>UVA</strong>.",
   },
+  /* the old opener ("se não me encontrar codando") repeated what the card title
+     already says, so it went */
   "aboutme-p-3": {
-    pt: "Se não me encontrar codando, provavelmente me encontrará tomando um cafézinho em alguma starbucks ☕️, aproveitando um tempo com a minha família 👩🏻‍❤️‍👨🏻, ou na academia 💪.",
-    en: "If you don’t find me coding, you’ll probably find me enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.",
-  },
-  "years-of-code": {
-    pt: "Anos <br> codando",
-    en: "Years <br> coding",
-  },
-  "years-of-experience": {
-    pt: "Anos de <br> experiência",
-    en: "Years of <br> experience",
-  },
-  "projects-done": {
-    pt: "Projetos <br> feitos",
-    en: "Projects <br> done",
+    pt: "Café na Starbucks ☕️, tempo com a família 👩🏻‍❤️‍👨🏻 e academia 💪. Também sou pai de gato, como a foto entrega.",
+    en: "Coffee at Starbucks ☕️, time with my family 👩🏻‍❤️‍👨🏻 and the gym 💪. Also a cat dad, as the photo gives away.",
   },
   "years-exp": {
     pt: "3+ anos",
@@ -91,25 +105,31 @@ let traducoes = {
     pt: "Julho de 2025 - Atual",
     en: "July 2025 - Present",
   },
+  /* Bullets written in the XYZ formula: result (X), how it is measured (Y), what
+     was done (Z). No invented numbers: the only percentage anywhere in the
+     section is the one that was already documented (crase-3).
+     <strong> marks the technologies and the one hard metric. It survives the
+     translation pass because traduzirSite() assigns innerHTML, and it is kept to
+     a couple of terms per bullet so the emphasis still means something. */
   "mjv-1": {
-    pt: "Desenvolvi e mantive aplicações seguindo a arquitetura hexagonal, promovendo maior desacoplamento e testabilidade do código.",
-    en: "Built and maintained applications following hexagonal architecture, improving decoupling and testability.",
+    pt: "Reduzi o acoplamento entre regras de negócio e integrações externas, permitindo substituir dependências sem reescrever o domínio e ampliando a cobertura de testes unitários, ao estruturar as aplicações em <strong>arquitetura hexagonal</strong> com portas e adaptadores.",
+    en: "Cut coupling between business rules and external integrations, making dependencies replaceable without rewriting the domain and widening unit test coverage, by structuring the applications around <strong>hexagonal architecture</strong> with ports and adapters.",
   },
   "mjv-2": {
-    pt: "Trabalhei em projetos monorepo com NX, criando e gerenciando bibliotecas reutilizáveis em Angular com NGRX para gerenciamento de estado escalável e consistente.",
-    en: "Worked on NX monorepos, creating and maintaining reusable Angular libraries with NGRX for scalable state management.",
+    pt: "Acelerei a entrega de novas telas nas aplicações do time, eliminando código de estado e de interface duplicado entre projetos, ao criar e manter bibliotecas <strong>Angular</strong> compartilhadas com <strong>NGRX</strong> dentro de um monorepo <strong>NX</strong>.",
+    en: "Sped up the delivery of new screens across the team's applications, removing state and UI code duplicated between projects, by building and maintaining shared <strong>Angular</strong> libraries with <strong>NGRX</strong> inside an <strong>NX</strong> monorepo.",
   },
   "mjv-3": {
-    pt: "Implementei backends em Node.js com NestJS, integrando Redis para cache e filas de mensagens, além de configurar circuit breakers para maior resiliência dos serviços.",
-    en: "Implemented Node.js/NestJS backends with Redis for caching and message queues, plus circuit breakers for service resilience.",
+    pt: "Aumentei a resiliência e o tempo de resposta dos serviços, evitando que falhas de dependências externas derrubassem fluxos críticos, ao implementar backends <strong>Node.js/NestJS</strong> com cache e filas em <strong>Redis</strong> e <strong>circuit breakers</strong> nas integrações.",
+    en: "Improved service resilience and response times, keeping external dependency failures from taking down critical flows, by implementing <strong>Node.js/NestJS</strong> backends with <strong>Redis</strong> caching and queues and <strong>circuit breakers</strong> on the integrations.",
   },
   "mjv-4": {
-    pt: "Trabalhei no desenvolvimento de uma plataforma Backstage: integração com GitHub e Bitbucket, implementação de plugins e configuração de RBAC.",
-    en: "Developed a Backstage platform: GitHub and Bitbucket integration, custom plugins and RBAC configuration.",
+    pt: "Centralizei a documentação e o catálogo de serviços da engenharia em um único portal, com acesso controlado por time, ao desenvolver uma plataforma <strong>Backstage</strong> integrada a <strong>GitHub</strong> e <strong>Bitbucket</strong>, com plugins próprios e <strong>RBAC</strong>.",
+    en: "Centralized engineering documentation and the service catalogue in a single portal with per-team access, by developing a <strong>Backstage</strong> platform integrated with <strong>GitHub</strong> and <strong>Bitbucket</strong>, with custom plugins and <strong>RBAC</strong>.",
   },
   "mjv-5": {
-    pt: "Participei de um projeto de automatização do deploy de aplicativos nas lojas (Play Store e Apple Store) utilizando Fastlane.",
-    en: "Automated mobile app deployment to the Play Store and Apple Store using Fastlane.",
+    pt: "Eliminei o processo manual de publicação dos aplicativos móveis, removendo o retrabalho e os erros de envio a cada release, ao automatizar as entregas para Play Store e App Store com <strong>Fastlane</strong>.",
+    en: "Eliminated the manual mobile release process, removing rework and submission errors on every release, by automating Play Store and App Store delivery with <strong>Fastlane</strong>.",
   },
   "solution-role": {
     pt: "Desenvolvedor Fullstack Junior",
@@ -120,24 +140,24 @@ let traducoes = {
     en: "December 2024 - Present",
   },
   "solution-1": {
-    pt: "Desenvolvi novas funcionalidades para o sistema de emplacamento digital de veículos, integrado ao sistema oficial do DETRAN, criando páginas dinâmicas e otimizadas com React.",
-    en: "Built new features for the digital vehicle registration system integrated with DETRAN, creating dynamic and optimized pages with React.",
+    pt: "Entreguei novas funcionalidades do sistema de emplacamento digital de veículos, atendendo às regras exigidas pelo sistema oficial do <strong>DETRAN</strong>, ao construir páginas dinâmicas e otimizadas com <strong>React</strong>.",
+    en: "Delivered new features for the digital vehicle registration system, meeting the rules enforced by the official <strong>DETRAN</strong> system, by building dynamic and optimized pages with <strong>React</strong>.",
   },
   "solution-2": {
-    pt: "Fiquei responsável pelo sistema de transferência digital de veículos do Mato Grosso, totalmente integrado às plataformas do DETRAN-MT, garantindo sua manutenção, evolução e estabilidade.",
-    en: "Owned the digital vehicle transfer system for Mato Grosso, fully integrated with DETRAN-MT platforms, handling its maintenance, evolution and stability.",
+    pt: "Assumi como <strong>responsável técnico</strong> o sistema de transferência digital de veículos do Mato Grosso, mantendo o serviço estável e em conformidade com as plataformas do <strong>DETRAN-MT</strong>, ao conduzir sua manutenção e evolução.",
+    en: "Took <strong>technical ownership</strong> of the digital vehicle transfer system for Mato Grosso, keeping the service stable and compliant with <strong>DETRAN-MT</strong> platforms, by running its maintenance and evolution.",
   },
   "solution-3": {
-    pt: "Implementei integrações robustas entre frontend e backend utilizando Java e padrões de projeto consolidados, garantindo comunicação segura e eficiente entre os sistemas.",
-    en: "Implemented robust frontend/backend integrations using Java and established design patterns, ensuring secure and efficient communication between systems.",
+    pt: "Garanti comunicação segura entre frontend e backend em um sistema de uso público, evitando quebras de contrato entre as camadas, ao implementar integrações em <strong>Java</strong> apoiadas em <strong>padrões de projeto</strong> consolidados.",
+    en: "Secured communication between front-end and back-end in a public-facing system, preventing contract breaks between layers, by implementing <strong>Java</strong> integrations backed by established <strong>design patterns</strong>.",
   },
   "solution-4": {
-    pt: "Configurei e gerenciei containers Docker, criando ambientes isolados e escaláveis para desenvolvimento e produção.",
-    en: "Configured and managed Docker containers, creating isolated and scalable environments for development and production.",
+    pt: "Padronizei os ambientes de desenvolvimento e produção, removendo divergências de configuração entre as máquinas do time, ao containerizar as aplicações com <strong>Docker</strong>.",
+    en: "Standardized development and production environments, removing configuration drift between the team's machines, by containerizing the applications with <strong>Docker</strong>.",
   },
   "solution-5": {
-    pt: "Participei das cerimônias ágeis do Scrum (dailies, plannings e reviews) e acompanhei as tarefas no Jira, contribuindo para o alinhamento da equipe e entregas dentro do prazo.",
-    en: "Took part in Scrum ceremonies (dailies, plannings and reviews) and tracked work in Jira, keeping the team aligned and deliveries on schedule.",
+    pt: "Mantive o time alinhado e as entregas dentro do prazo, dando visibilidade do andamento de cada tarefa, ao participar das cerimônias do <strong>Scrum</strong> (dailies, plannings e reviews) e acompanhar o fluxo no <strong>Jira</strong>.",
+    en: "Kept the team aligned and deliveries on schedule, giving visibility into the status of every task, by taking part in <strong>Scrum</strong> ceremonies (dailies, plannings and reviews) and tracking the flow in <strong>Jira</strong>.",
   },
   "crase-role": {
     pt: "Desenvolvedor Fullstack Junior",
@@ -148,24 +168,24 @@ let traducoes = {
     en: "September 2023 - December 2024",
   },
   "crase-1": {
-    pt: "Otimizei e mantive o aplicativo mobile Crase Sigma, desenvolvido com Ionic e Angular, garantindo desempenho consistente entre dispositivos Android e iOS.",
-    en: "Maintained and optimized the Crase Sigma mobile app, built with Ionic and Angular, keeping performance consistent across Android and iOS.",
+    pt: "Mantive o desempenho do aplicativo mobile Crase Sigma consistente entre <strong>Android</strong> e <strong>iOS</strong>, sem regressões entre as plataformas, ao otimizar a base em <strong>Ionic</strong> com <strong>Angular</strong> e corrigir gargalos de renderização.",
+    en: "Kept the Crase Sigma mobile app performing consistently across <strong>Android</strong> and <strong>iOS</strong>, with no regressions between platforms, by optimizing the <strong>Ionic</strong> with <strong>Angular</strong> codebase and fixing rendering bottlenecks.",
   },
   "crase-2": {
-    pt: "Migrei e integrei dados legados provenientes de sistemas em COBOL para ecossistemas modernos, criando fluxos de dados contínuos e compatíveis com sistemas antigos.",
-    en: "Migrated and integrated legacy COBOL data into modern ecosystems, building continuous data flows compatible with the older systems.",
+    pt: "Viabilizei o uso de dados legados em <strong>COBOL</strong> nos sistemas modernos da empresa, sem interromper a operação existente, ao criar fluxos contínuos de migração e integração compatíveis com os sistemas antigos.",
+    en: "Made legacy <strong>COBOL</strong> data usable by the company's modern systems without interrupting the existing operation, by building continuous migration and integration flows compatible with the older systems.",
   },
   "crase-3": {
-    pt: "Projetei e implementei APIs RESTful com Laravel, utilizando técnicas de cache e otimização de consultas que reduziram a latência em mais de 30%.",
-    en: "Designed and implemented RESTful APIs with Laravel, using caching and query optimization that cut latency by more than 30%.",
+    pt: "Reduzi a latência das APIs em <strong>mais de 30%</strong>, ao projetar e implementar endpoints <strong>RESTful</strong> em <strong>Laravel</strong> com estratégias de cache e otimização de consultas.",
+    en: "Cut API latency by <strong>more than 30%</strong>, by designing and implementing <strong>RESTful</strong> endpoints in <strong>Laravel</strong> with caching strategies and query optimization.",
   },
   "crase-4": {
-    pt: "Configurei e gerenciei servidores Apache2 para aplicações web de alta disponibilidade, realizando ajustes de desempenho e reforço de segurança.",
-    en: "Configured and managed Apache2 servers for high-availability web applications, with performance tuning and security hardening.",
+    pt: "Sustentei aplicações web em alta disponibilidade, reduzindo indisponibilidades e a exposição a falhas de configuração, ao administrar servidores <strong>Apache2</strong> com ajustes de desempenho e reforço de segurança.",
+    en: "Kept web applications highly available, reducing downtime and exposure to misconfiguration, by administering <strong>Apache2</strong> servers with performance tuning and security hardening.",
   },
   "crase-5": {
-    pt: "Estruturei fluxos de trabalho com Git, incluindo criação de branches, resolução de conflitos e implementação de pipelines de CI/CD para aumentar a eficiência do time.",
-    en: "Set up Git workflows including branching, conflict resolution and CI/CD pipelines to improve team efficiency.",
+    pt: "Aumentei a eficiência do time no versionamento, reduzindo conflitos e retrabalho de merge, ao estruturar o fluxo de branches no <strong>Git</strong> e implementar pipelines de <strong>CI/CD</strong>.",
+    en: "Improved the team's versioning efficiency, reducing merge conflicts and rework, by structuring the <strong>Git</strong> branching flow and implementing <strong>CI/CD</strong> pipelines.",
   },
 
   /* ===== PROJECTS ===== */
@@ -258,8 +278,8 @@ let traducoes = {
     en: "Virtual wallet app to monitorate your expenses. Made with React and Redux",
   },
   "duck-zelda-description": {
-    pt: "Jogo estilo zelda com pato. Feito em Java (ainda em progresso)",
-    en: "Duck zelda styled game. Made in Java (still in progress)",
+    pt: "Jogo estilo zelda com pato. Feito em Java (descontinuado)",
+    en: "Duck zelda styled game. Made in Java (discontinued)",
   },
   "pong-game-description": {
     pt: "Jogo de pong. Feito em Java",
@@ -336,6 +356,20 @@ function traduzirSite(idioma) {
     }
   });
 
+  /* alt text cannot ride on innerHTML, so images opt in through their own
+     attribute and go through the same dictionary */
+  document.querySelectorAll("[translation-alt]").forEach((el) => {
+    var chaveAlt = el.getAttribute("translation-alt");
+    var entradaAlt = traducoes[chaveAlt];
+
+    if (!entradaAlt || entradaAlt[idioma] === undefined) {
+      console.warn(`[translations] missing "${idioma}" alt translation for key "${chaveAlt}"`);
+      return;
+    }
+
+    el.setAttribute("alt", entradaAlt[idioma]);
+  });
+
   /* keep the document language in sync for screen readers and SEO */
   document.documentElement.lang = idioma === "pt" ? "pt-br" : "en";
 }
@@ -349,21 +383,47 @@ if (!language) {
 }
 
 var changeLanguage = document.getElementById("change-language");
+var languageOptions = changeLanguage
+  ? changeLanguage.querySelectorAll(".lang-switch__option")
+  : [];
 var downloadCVButton = document.getElementById("cv-button");
 
 function aplicarIdioma(idioma) {
   traduzirSite(idioma);
-  changeLanguage.innerHTML = idioma === "en" ? "🇧🇷" : "🇺🇸";
+
+  if (changeLanguage) {
+    /* drives the sliding highlight; the CSS reads this attribute */
+    changeLanguage.setAttribute("data-active", idioma);
+
+    /* aria-pressed doubles as the styling hook for the active label, so the
+       visual state and the state announced to screen readers cannot drift */
+    languageOptions.forEach(function (option) {
+      var ativo = option.getAttribute("data-lang") === idioma;
+      option.setAttribute("aria-pressed", ativo ? "true" : "false");
+    });
+  }
+
   if (downloadCVButton) downloadCVButton.href = CV_FILES[idioma];
 }
 
-changeLanguage.addEventListener("click", function () {
-  language = language === "en" ? "pt" : "en";
-  aplicarIdioma(language);
+if (changeLanguage) {
+  /* delegated so the two options share one handler */
+  changeLanguage.addEventListener("click", function (event) {
+    var option = event.target.closest(".lang-switch__option");
+    if (!option) return;
 
-  // Salva a linguagem escolhida no localStorage
-  localStorage.setItem("language", language);
-});
+    var escolhido = option.getAttribute("data-lang");
+    /* clicking the language already in use would rerun the whole translation
+       pass for nothing */
+    if (!escolhido || escolhido === language) return;
+
+    language = escolhido;
+    aplicarIdioma(language);
+
+    // Salva a linguagem escolhida no localStorage
+    localStorage.setItem("language", language);
+  });
+}
 
 // Aplica a tradução inicial com base na linguagem salva
 aplicarIdioma(language);

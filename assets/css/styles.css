@@ -88,7 +88,6 @@ body.dark-theme {
 }
 
 /* shared reset for the icon-only controls in the header */
-#change-language,
 .change-theme,
 .nav__toggle,
 .nav__close {
@@ -109,11 +108,73 @@ body.dark-theme {
   color: var(--first-color);
 }
 
-#change-language {
-  font-size: 1.25rem;
+/*========== LANGUAGE SWITCH ==========*/
+/* A segmented control instead of a single flag button: the previous version showed
+   the flag of the *target* language, which most people read as the current one.
+   Text codes also dodge the flag-emoji font gap on Windows, where the regional
+   indicator pair renders as two letter boxes. */
+.lang-switch {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 3px;
+  margin-right: var(--mb-0-75);
+  border: 1px solid var(--text-color-light);
+  border-radius: 2rem;
+  transition: border-color 0.3s;
+}
+
+.lang-switch:hover {
+  border-color: var(--first-color);
+}
+
+/* sits behind the labels and slides to whichever option is active */
+.lang-switch__thumb {
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 3px;
+  width: calc(50% - 3px);
+  border-radius: 2rem;
+  background-color: var(--first-color);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-switch[data-active="en"] .lang-switch__thumb {
+  transform: translateX(100%);
+}
+
+.lang-switch__option {
+  position: relative;
+  z-index: 1;
+  padding: 0.25rem 0.45rem;
+  border: none;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lang-switch__option:hover {
   color: var(--title-color);
-  margin-right: var(--mb-1);
-  line-height: 0;
+}
+
+/* fixed dark ink rather than --title-color, so the label keeps its contrast on
+   the yellow thumb in both light and dark themes */
+.lang-switch__option[aria-pressed="true"] {
+  color: hsl(var(--hue-color), 30%, 12%);
+  cursor: default;
+}
+
+.lang-switch__option:focus-visible {
+  outline-offset: 1px;
 }
 
 /*========== BASE ==========*/
@@ -329,10 +390,50 @@ img {
 
 .home__blob {
   width: 300px;
+  /* the drop shadow and the outline ring both reach past the 200x200 viewBox, and
+     svg clips to its viewport by default */
+  overflow: visible;
+  /* follows the masked silhouette, so the blob lifts off the page instead of
+     sitting flat on it */
+  filter: drop-shadow(0 12px 22px hsla(var(--hue-color), 55%, 38%, 0.32));
+  animation: home-blob-float 7s ease-in-out infinite;
 }
 
-.fill-blob {
-  fill: var(--first-color);
+/* slow enough to read as breathing rather than movement. The global
+   prefers-reduced-motion rule collapses it to nothing. */
+@keyframes home-blob-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* The single flat fill was the flattest thing on the page. A diagonal ramp built
+   from --hue-color gives the shape volume without adding a colour that sits
+   outside the theme, so it still follows the palette if the hue changes. */
+.home__blob-stop--from {
+  stop-color: hsl(var(--hue-color), 85%, 72%);
+}
+
+.home__blob-stop--mid {
+  stop-color: var(--first-color);
+}
+
+.home__blob-stop--to {
+  stop-color: hsl(var(--hue-color), 60%, 47%);
+}
+
+.home__blob-ring {
+  fill: none;
+  stroke: var(--first-color);
+  /* user units: the svg scales from 180px to 500px, so this lands between 1 and
+     2 device pixels */
+  stroke-width: 0.7;
+  opacity: 0.45;
 }
 
 .home__blob-img {
@@ -397,6 +498,7 @@ img {
   padding: 1rem;
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
+  cursor: pointer;
 }
 
 .button:hover {
@@ -423,56 +525,197 @@ img {
 }
 
 /* ========== ABOUT ========== */
-.about__img {
-  width: 200px;
-  border-radius: 0.5rem;
-  justify-self: center;
-  align-self: center;
-}
-
-.about__description_1 {
-  text-align: justify;
-  margin-bottom: var(--mb-2-5);
-  line-height: 1.5;
-}
-
-.about__description_2 {
-  text-align: justify;
-  margin-bottom: var(--mb-2-5);
-  line-height: 1.5;
-}
-
-.about__description_3 {
-  text-align: justify;
-  margin-bottom: var(--mb-2-5);
-  line-height: 1.5;
-}
-
-.about__info {
+/* ===== portrait ===== */
+/* about.png is a transparent cutout, so object-fit: cover is off the table: any
+   crop takes his head off. The frame is what gives the column visual weight, and
+   the cutout sits on its bottom edge like a figure standing in it. */
+.about__media {
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: var(--mb-2-5);
+  align-items: flex-end;
+  justify-content: center;
+  width: min(280px, 78%);
+  /* slightly taller than the portrait's own 466/535, so there is a bit of room
+     above his head rather than the cutout touching the top edge */
+  aspect-ratio: 4 / 5;
+  justify-self: center;
+  border-radius: 1.25rem;
+  /* Light theme gets the dot texture on its own. The subject is dark enough to
+     separate from a pale panel by itself, so there is nothing to fix here. */
+  --about-dot: hsla(var(--hue-color), 30%, 42%, 0.22);
+
+  background-image: radial-gradient(var(--about-dot) 1px, transparent 1.1px);
+  background-size: 13px 13px;
+  /* hairline ring to define the edge, plus a soft cast shadow so the panel sits
+     on the page at the same depth as the spotify card */
+  box-shadow: inset 0 0 0 1px hsla(var(--hue-color), 35%, 45%, 0.16),
+    0 14px 32px hsla(var(--hue-color), 48%, 15%, 0.12);
+  overflow: hidden;
 }
 
-.about__info-title {
-  font-size: var(--h2-font-size);
-  font-weight: var(--font-semi-bold);
-  color: var(--title-color);
+/* The dark theme is the case that actually needs help: the subject is almost
+   entirely dark (hair, cat, hoodie), so on a near black panel he merges into it.
+   A warm disc behind him restores the separation and echoes the yellow the home
+   blob puts behind the other portrait. Deliberately kept as a contained glow
+   around the head instead of filling the frame. */
+body.dark-theme .about__media {
+  /* the dots have to lift too: the light theme value disappears on near black */
+  --about-dot: hsla(var(--hue-color), 45%, 62%, 0.2);
+
+  background-image: radial-gradient(
+      58% 52% at 50% 42%,
+      hsla(var(--hue-color), 85%, 68%, 0.92) 0%,
+      hsla(var(--hue-color), 78%, 62%, 0.34) 60%,
+      transparent 78%
+    ),
+    radial-gradient(var(--about-dot) 1px, transparent 1.1px);
+  background-size: auto, 13px 13px;
 }
 
-.about__info-name {
-  font-size: var(--smaller-font-size);
-}
-
-.about__info-title,
-.about__info-name {
+.about__img {
   display: block;
-  text-align: center;
+  width: 100%;
+  height: auto;
+  /* guard for narrow frames: contain shrinks the render instead of letting
+     overflow: hidden cut his head off */
+  max-height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* ===== role / location / availability ===== */
+/* One scannable row before the prose. list-style is dropped because the pills
+   already read as separate items visually. */
+.about__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: var(--mb-1-5);
+  list-style: none;
+}
+
+.about__meta-item {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--scroll-bar-color);
+  border-radius: 2rem;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  font-size: var(--smaller-font-size);
+  line-height: 1.3;
+}
+
+/* qualified by the parent so it outranks the global `.uil { font-size: 30px }`
+   set for large screens further down the file, which would burst the pill */
+.about__meta-item .about__meta-icon {
+  color: var(--first-color);
+  font-size: 1rem;
+}
+
+/* the availability pill is the one to notice, so it gets the accent border */
+.about__meta-item--live {
+  border-color: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.about__meta-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--first-color);
+  animation: about-pulse 2s ease-in-out infinite;
+}
+
+@keyframes about-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 hsla(var(--hue-color), 69%, 61%, 0.5);
+  }
+
+  50% {
+    opacity: 0.6;
+    box-shadow: 0 0 0 5px hsla(var(--hue-color), 69%, 61%, 0);
+  }
+}
+
+/* ===== copy ===== */
+/* left aligned instead of justified: justify opens up rivers of white space in
+   a column this narrow */
+.about__description {
+  text-align: left;
+  margin-bottom: var(--mb-1-5);
+  line-height: 1.7;
+}
+
+/* the paragraphs read as a timeline, so the places are the anchors someone
+   skimming looks for. Same contrast bump used in the experience bullets. */
+.about__description strong {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+/* ===== off the clock ===== */
+.about__personal {
+  position: relative;
+  padding: 0.9rem 1rem 0.9rem 1.25rem;
+  margin-bottom: var(--mb-1-5);
+  border-radius: 0.75rem;
+  background-color: var(--input-color);
+}
+
+/* accent rule on the leading edge, so the card reads as an aside */
+.about__personal::before {
+  content: "";
+  position: absolute;
+  top: 0.9rem;
+  bottom: 0.9rem;
+  left: 0;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background-color: var(--first-color);
+}
+
+.about__personal-title {
+  display: block;
+  margin-bottom: var(--mb-0-25);
+  color: var(--title-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-semi-bold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.about__personal-text {
+  font-size: var(--small-font-size);
+  line-height: 1.6;
 }
 
 .about__buttons {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 0.75rem;
+}
+
+/* secondary action: same footprint as .button, no fill, so "Download CV" stays
+   the primary call to action */
+.button--ghost {
+  justify-content: center;
+  background-color: transparent;
+  border: 2px solid var(--first-color);
+  color: var(--first-color);
+  padding: calc(1rem - 2px);
+  min-width: 150px;
+}
+
+.button--ghost:hover {
+  background-color: var(--first-color);
+  color: #fff;
 }
 
 /* ========== SPOTIFY NOW PLAYING ========== */
@@ -482,8 +725,10 @@ img {
 .spotify {
   --spotify-green: #1db954;
 
+  /* no max-width: it lines up with the .about__personal card directly above,
+     which is a plain block filling the column. The extra room also means fewer
+     track titles get truncated. */
   display: block;
-  max-width: 340px;
   margin-bottom: var(--mb-2-5);
   /* reveal is a fade instead of a pop, since the card appears after a fetch.
      the global prefers-reduced-motion rule collapses this to nothing. */
@@ -890,6 +1135,14 @@ img {
   background-color: var(--first-color);
 }
 
+/* the bullets are body text, so the highlight is a contrast bump rather than a
+   heavy weight: bolder ink on the title colour reads as emphasis without turning
+   the paragraph into a checkerboard */
+.experience__list strong {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
 .experience__tags {
   display: flex;
   flex-wrap: wrap;
@@ -1149,6 +1402,14 @@ a {
     column-gap: 0;
   }
 
+  .lang-switch {
+    margin-right: var(--mb-0-5);
+  }
+
+  .lang-switch__option {
+    padding: 0.25rem 0.35rem;
+  }
+
   .home__content {
     grid-template-columns: 0.25fr 3fr;
   }
@@ -1181,23 +1442,23 @@ a {
     justify-self: center;
   }
 
-  .about__container,
+  /* about is deliberately not in this list: at this width the second column is
+     too narrow for the meta pills, so it stays single column until 768px where
+     the real split happens */
   .skills__container,
   .portfolio__content,
   .contact__container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .about__media {
+    width: min(320px, 62%);
+  }
 }
 
 @media screen and (min-width: 768px) {
-  #change-language {
-    font-size: 1.25rem;
-    color: var(--title-color);
+  .lang-switch {
     margin-right: var(--mb-0-5);
-    cursor: pointer;
-    border: none;
-    background-color: none;
-    line-height: 0;
   }
 
   .container {
@@ -1269,10 +1530,29 @@ a {
   }
 
   .about__container {
-    column-gap: 5rem;
+    grid-template-columns: 0.85fr 1fr;
+    column-gap: 3rem;
+    align-items: start;
   }
-  .about__img {
-    width: 450px;
+
+  /* The copy column ends up roughly twice as tall as the portrait can ever be in
+     this width, and stretching the frame to match would just be a slab of empty
+     gradient. Sticky instead: the portrait travels with the scroll and stays
+     beside whatever paragraph is being read, so the columns never look lopsided.
+     Depends on no ancestor setting overflow, which is the case here. */
+  .about__media {
+    position: sticky;
+    top: calc(var(--header-height) + 3rem);
+    width: 100%;
+  }
+
+  /* left aligned once the column is wide enough to read as a block of text */
+  .about__meta {
+    justify-content: flex-start;
+  }
+
+  .about__buttons {
+    justify-content: flex-start;
   }
 
   .experience__container {

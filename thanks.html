@@ -17,68 +17,83 @@
         i will be in touch
       </p>
       <a href="https://duarte-dot.com.br/" translation="go-back">go back</a>
-      <button
-        style="
-          cursor: pointer;
-          border: none;
-          background-color: white;
-          margin-top: 30px;
-          font-size: 20px;
-        "
-        id="translationButton"
-        onclick="toggleTranslation()"
+      <!-- language switch: both options stay visible so the active one is never ambiguous -->
+      <div
+        class="lang-switch"
+        id="lang-switch"
+        role="group"
+        aria-label="Idioma / Language"
+        data-active="en"
       >
-        🇧🇷
-      </button>
+        <span class="lang-switch__thumb" aria-hidden="true"></span>
+        <button
+          type="button"
+          class="lang-switch__option"
+          data-lang="pt"
+          aria-pressed="false"
+          title="Português (BR)"
+        >
+          PT
+        </button>
+        <button
+          type="button"
+          class="lang-switch__option"
+          data-lang="en"
+          aria-pressed="true"
+          title="English"
+        >
+          EN
+        </button>
+      </div>
     </div>
 
     <script>
-      var currentLanguage = "english"; // Mantém o controle do idioma atual
+      var translations = {
+        "thank-you": { en: "thank you", pt: "obrigado" },
+        "thank-you-subtitle": {
+          en: "i will be in touch",
+          pt: "entrarei em contato",
+        },
+        "go-back": { en: "go back", pt: "voltar" },
+      };
 
-      function toggleTranslation() {
-        // Seleciona todos os elementos com atributo "translation"
-        var elements = document.querySelectorAll("[translation]");
+      var langSwitch = document.getElementById("lang-switch");
+      var langOptions = langSwitch.querySelectorAll(".lang-switch__option");
 
-        // Define as traduções em inglês e português
-        var translations = {
-          english: {
-            "thank-you": "thank you",
-            "thank-you-subtitle": "i will be in touch",
-            "go-back": "go back",
-          },
-          portuguese: {
-            "thank-you": "obrigado",
-            "thank-you-subtitle": "entrarei em contato",
-            "go-back": "voltar",
-          },
-        };
-
-        // Alterna o idioma atual
-        currentLanguage =
-          currentLanguage === "english" ? "portuguese" : "english";
-
-        // Percorre todos os elementos e atualiza o texto para o idioma correspondente
-        elements.forEach(function (element) {
-          var translationKey = element.getAttribute("translation");
-          var translation;
-
-          // Obtém a tradução correspondente à chave de tradução e idioma atual
-          if (translationKey in translations[currentLanguage]) {
-            translation = translations[currentLanguage][translationKey];
-          } else {
-            // Se não houver tradução disponível, mantém o texto original
-            translation = element.innerText;
-          }
-
-          // Atualiza o texto do elemento com a tradução
-          element.innerText = translation;
+      function applyLanguage(lang) {
+        document.querySelectorAll("[translation]").forEach(function (element) {
+          var entry = translations[element.getAttribute("translation")];
+          if (entry && entry[lang] !== undefined) element.textContent = entry[lang];
         });
 
-        // Atualiza o texto do botão de tradução
-        var translationButton = document.getElementById("translationButton");
-        translationButton.innerText =
-          currentLanguage === "english" ? "🇧🇷" : "🇺🇸";
+        /* drives the sliding highlight, and doubles as the a11y state so the
+           visual and announced states cannot drift apart */
+        langSwitch.setAttribute("data-active", lang);
+        langOptions.forEach(function (option) {
+          var active = option.getAttribute("data-lang") === lang;
+          option.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+
+        document.documentElement.lang = lang === "pt" ? "pt-br" : "en";
       }
+
+      /* same storage key the main site uses, so the choice carries over here */
+      var currentLanguage =
+        localStorage.getItem("language") === "pt" ? "pt" : "en";
+
+      langSwitch.addEventListener("click", function (event) {
+        var option = event.target.closest(".lang-switch__option");
+        if (!option) return;
+
+        var chosen = option.getAttribute("data-lang");
+        if (!chosen || chosen === currentLanguage) return;
+
+        currentLanguage = chosen;
+        applyLanguage(currentLanguage);
+        localStorage.setItem("language", currentLanguage);
+      });
+
+      applyLanguage(currentLanguage);
     </script>
   </body>
 </html>

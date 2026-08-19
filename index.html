@@ -100,7 +100,17 @@
           aria-label="Close menu"></button>
       </div>
       <div class="nav__btns">
-        <button type="button" id="change-language" aria-label="Change language">🇧🇷</button>
+        <!-- language switch: both options stay visible so the active one is never ambiguous -->
+        <div class="lang-switch" id="change-language" role="group" aria-label="Idioma / Language" data-active="en">
+          <span class="lang-switch__thumb" aria-hidden="true"></span>
+          <button type="button" class="lang-switch__option" data-lang="pt" aria-pressed="false" title="Português (BR)">
+            PT
+          </button>
+          <button type="button" class="lang-switch__option" data-lang="en" aria-pressed="true" title="English">
+            EN
+          </button>
+        </div>
+
         <!-- theme change button -->
         <button type="button" class="uil uil-moon change-theme" id="theme-button" aria-label="Change theme"></button>
 
@@ -132,15 +142,40 @@
 
           </div>
 
+          <!-- aria-hidden because the heading right next to it already says who
+               this is, and an unlabelled <image> inside an <svg> only adds noise
+               for screen readers. -->
           <div class="home__img">
-            <svg class="home__blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <svg class="home__blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+              focusable="false">
+              <defs>
+                <!-- fill is set as an attribute rather than in styles.css on
+                     purpose: url(#id) inside an external stylesheet resolves
+                     against the stylesheet URL in Firefox, so the gradient would
+                     silently not be found. The stop colours are plain colours, so
+                     those are safe to keep in CSS and stay tied to --hue-color. -->
+                <linearGradient id="home-blob-gradient" x1="0" y1="0" x2="0.9" y2="1">
+                  <stop offset="0%" class="home__blob-stop--from" />
+                  <stop offset="55%" class="home__blob-stop--mid" />
+                  <stop offset="100%" class="home__blob-stop--to" />
+                </linearGradient>
+              </defs>
+
               <mask id="mask0" mask-type="alpha">
                 <path
                   d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z"
                   transform="translate(100 100)" />
               </mask>
+
+              <!-- Outside the mask so it does not get clipped: the same silhouette
+                   a few percent larger, drawn as a thin outline. Cheap way to give
+                   the shape depth without a second image. -->
+              <path class="home__blob-ring"
+                d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z"
+                transform="translate(100 100) scale(1.07)" />
+
               <g mask="url(#mask0)">
-                <path class="fill-blob"
+                <path fill="url(#home-blob-gradient)"
                   d="M64.5,-36.2C75.7,-18,71.2,10.3,57.8,33.1C44.5,56,22.2,73.4,0.3,73.2C-21.7,73.1,-43.4,55.3,-54.3,33.9C-65.3,12.4,-65.5,-12.7,-54.6,-30.8C-43.8,-48.8,-21.9,-59.7,2.4,-61.1C26.7,-62.5,53.4,-54.4,64.5,-36.2Z"
                   transform="translate(100 100)" />
                 <image class="home__blob-img" xlink:href="assets/img/perfil4.png" />
@@ -151,9 +186,9 @@
           <div class="home__data">
             <h1 class="home__title" translation="greetings">Hi, i'm Gabriel</h1>
             <h3 class="home__subtitle" translation="fullstack-developer">Fullstack developer</h3>
-            <p class="home__description" translation="description">Mid-level Fullstack Developer at MJV Tecnologia. I
-              work with Angular, React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and
-              system integrations.</p>
+            <p class="home__description" translation="description">Mid-level Fullstack Developer. I work with Angular,
+              React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and system
+              integrations.</p>
             <a href="#contact" class="button button--flex" translation="contactme">
               Contact Me <i class="uil uil-message button__icon"></i>
             </a>
@@ -173,27 +208,63 @@
     <!--========== ABOUT ==========-->
     <section class="about__section section" id="about">
       <h2 class="section__title" translation="aboutme">About me</h2>
-      <span class="section__subtitle" translation="aboutme-subtitle">Hi, my name is Gabriel Duarte</span>
+      <span class="section__subtitle" translation="aboutme-subtitle">Journey, code and coffee</span>
 
       <div class="about__container container grid">
-        <img src="/assets/img/about.gif" alt="" loading="lazy" class="about__img">
+        <!-- The portrait is a transparent cutout, so it cannot be cropped to match
+             the height of the text column. The frame carries that height instead:
+             a tinted panel that stretches with the row, with the cutout anchored
+             to its bottom edge. -->
+        <div class="about__media">
+          <!-- width/height match the intrinsic 466x535 file so the browser reserves
+               the right box before the image loads. alt describes the subject since
+               the text never mentions it, and translation-alt keeps it bilingual. -->
+          <img src="/assets/img/about.png" alt="Gabriel Duarte holding his cat" translation-alt="about-img-alt"
+            loading="lazy" decoding="async" width="466" height="535" class="about__img">
+        </div>
 
         <div class="about__data">
-          <p class="about__description_1" translation="aboutme-p-1">I’m a Fullstack Developer. I build interactive and
-            responsive interfaces, integrate APIs, implement business logic, manage servers and tune system performance,
-            always caring about clean versioning and code quality.</p>
-          <p class="about__description_2" translation="aboutme-p-2">I’ve been working professionally since 2023, moving
-            from Junior to Mid-level. Along the way I’ve shipped applications following hexagonal architecture, NX
-            monorepos with Angular and NGRX, Node.js/NestJS backends with Redis for caching and queues, RESTful APIs
-            with Laravel, and React front-ends integrated with government systems such as DETRAN. Alongside that, I’m
-            studying Information Systems at Veiga de Almeida University (UVA).</p>
-          <p class="about__description_3" translation="aboutme-p-3">If you don’t find me coding, you’ll probably find me
-            enjoying a coffee at Starbucks ☕️, spending time with my family 👩🏻‍❤️‍👨🏻, or at the gym 💪.</p>
+          <!-- Scannable header for the section: role, place and availability are
+               the three things a recruiter looks for before reading anything. -->
+          <!-- role="list" because list-style: none drops list semantics in Safari -->
+          <ul class="about__meta" role="list">
+            <li class="about__meta-item">
+              <i class="uil uil-briefcase-alt about__meta-icon" aria-hidden="true"></i>
+              <span translation="about-role">Mid-level Fullstack Developer</span>
+            </li>
+            <li class="about__meta-item">
+              <i class="uil uil-map-marker about__meta-icon" aria-hidden="true"></i>
+              <span translation="about-location">Rio de Janeiro, Brazil</span>
+            </li>
+            <li class="about__meta-item about__meta-item--live">
+              <span class="about__meta-dot" aria-hidden="true"></span>
+              <span translation="about-availability">Open to remote work</span>
+            </li>
+          </ul>
+
+          <p class="about__description" translation="aboutme-p-1">I started learning to code in 2021, on a one-year
+            course at <strong>Trybe</strong>. The first job came in 2023: I joined <strong>Crase Sigma</strong> as a
+            trainee and was promoted to Junior there, working on a mobile app, Laravel APIs and data locked inside
+            COBOL.</p>
+          <p class="about__description" translation="aboutme-p-2">At the end of 2024 <strong>Solution TI</strong> came
+            with a chance to step up and I took it. Not long after I also joined <strong>MJV</strong>, the consultancy
+            through which I serve a large insurance client, focused on the internal systems the developers themselves
+            use. Alongside that, I’m studying Information Systems at <strong>UVA</strong>.</p>
+
+          <!-- The personal note used to be a third paragraph and disappeared into
+               the wall of text. As its own card it keeps the personality without
+               competing with the professional copy. -->
+          <div class="about__personal">
+            <span class="about__personal-title" translation="about-offclock">Off the clock</span>
+            <p class="about__personal-text" translation="aboutme-p-3">Coffee at Starbucks ☕️, time with my family
+              👩🏻‍❤️‍👨🏻 and the gym 💪. Also a cat dad, as the photo gives away.</p>
+          </div>
 
           <!--========== SPOTIFY NOW PLAYING ==========-->
-          <!-- Placed here on purpose: it reads as a continuation of the paragraph
-               above instead of decoration. Stays hidden until /api/spotify answers,
-               so the section looks intentional when the widget is not configured. -->
+          <!-- Placed right after the personal card on purpose: it reads as part of
+               the off-the-clock story instead of decoration. Stays hidden until
+               /api/spotify answers, so the section looks intentional when the
+               widget is not configured. -->
           <div class="spotify" id="spotify" hidden>
             <a class="spotify__link" id="spotify-link" href="https://open.spotify.com/" target="_blank"
               rel="noopener noreferrer">
@@ -234,27 +305,14 @@
             </a>
           </div>
 
-          <div class="about__info">
-            <div>
-              <span class="about__info-title">5+</span>
-              <span class="about__info-name" translation="years-of-code">Years coding</span>
-            </div>
-
-            <div>
-              <span class="about__info-title">3</span>
-              <span class="about__info-name" translation="years-of-experience">Years of experience</span>
-            </div>
-
-            <div>
-              <span class="about__info-title">30+</span>
-              <span class="about__info-name" translation="projects-done">Projects done</span>
-            </div>
-          </div>
-
           <div class="about__buttons">
             <a target="_blank" rel="noopener noreferrer" href="/assets/pdf/gabrieldvr_cv.pdf" download
               class="button button--flex" id="cv-button" translation="download-cv">
               Download CV<i class="uil uil-download-alt button__icon"></i>
+            </a>
+
+            <a href="#contact" class="button button--flex button--ghost" translation="contactme">
+              Contact me<i class="uil uil-message button__icon"></i>
             </a>
           </div>
         </div>
@@ -409,16 +467,24 @@
               <span translation="mjv-date">July 2025 - Present</span>
             </div>
 
+            <!-- XYZ formula: result, how it is measured, then what was done.
+                 <strong> marks the technologies, kept to a couple per bullet. -->
             <ul class="experience__list">
-              <li translation="mjv-1">Built and maintained applications following hexagonal architecture, improving
-                decoupling and testability.</li>
-              <li translation="mjv-2">Worked on NX monorepos, creating and maintaining reusable Angular libraries with
-                NGRX for scalable state management.</li>
-              <li translation="mjv-3">Implemented Node.js/NestJS backends with Redis for caching and message queues,
-                plus circuit breakers for service resilience.</li>
-              <li translation="mjv-4">Developed a Backstage platform: GitHub and Bitbucket integration, custom plugins
-                and RBAC configuration.</li>
-              <li translation="mjv-5">Automated mobile app deployment to the Play Store and Apple Store using Fastlane.
+              <li translation="mjv-1">Cut coupling between business rules and external integrations, making dependencies
+                replaceable without rewriting the domain and widening unit test coverage, by structuring the
+                applications around <strong>hexagonal architecture</strong> with ports and adapters.</li>
+              <li translation="mjv-2">Sped up the delivery of new screens across the team’s applications, removing state
+                and UI code duplicated between projects, by building and maintaining shared <strong>Angular</strong>
+                libraries with <strong>NGRX</strong> inside an <strong>NX</strong> monorepo.</li>
+              <li translation="mjv-3">Improved service resilience and response times, keeping external dependency
+                failures from taking down critical flows, by implementing <strong>Node.js/NestJS</strong> backends with
+                <strong>Redis</strong> caching and queues and <strong>circuit breakers</strong> on the integrations.</li>
+              <li translation="mjv-4">Centralized engineering documentation and the service catalogue in a single portal
+                with per-team access, by developing a <strong>Backstage</strong> platform integrated with
+                <strong>GitHub</strong> and <strong>Bitbucket</strong>, with custom plugins and <strong>RBAC</strong>.
+              </li>
+              <li translation="mjv-5">Eliminated the manual mobile release process, removing rework and submission
+                errors on every release, by automating Play Store and App Store delivery with <strong>Fastlane</strong>.
               </li>
             </ul>
 
@@ -441,16 +507,20 @@
             </div>
 
             <ul class="experience__list">
-              <li translation="solution-1">Built new features for the digital vehicle registration system integrated
-                with DETRAN, creating dynamic and optimized pages with React.</li>
-              <li translation="solution-2">Owned the digital vehicle transfer system for Mato Grosso, fully integrated
-                with DETRAN-MT platforms, handling its maintenance, evolution and stability.</li>
-              <li translation="solution-3">Implemented robust frontend/backend integrations using Java and established
-                design patterns, ensuring secure and efficient communication between systems.</li>
-              <li translation="solution-4">Configured and managed Docker containers, creating isolated and scalable
-                environments for development and production.</li>
-              <li translation="solution-5">Took part in Scrum ceremonies (dailies, plannings and reviews) and tracked
-                work in Jira, keeping the team aligned and deliveries on schedule.</li>
+              <li translation="solution-1">Delivered new features for the digital vehicle registration system, meeting
+                the rules enforced by the official <strong>DETRAN</strong> system, by building dynamic and optimized
+                pages with <strong>React</strong>.</li>
+              <li translation="solution-2">Took <strong>technical ownership</strong> of the digital vehicle transfer
+                system for Mato Grosso, keeping the service stable and compliant with <strong>DETRAN-MT</strong>
+                platforms, by running its maintenance and evolution.</li>
+              <li translation="solution-3">Secured communication between front-end and back-end in a public-facing
+                system, preventing contract breaks between layers, by implementing <strong>Java</strong> integrations
+                backed by established <strong>design patterns</strong>.</li>
+              <li translation="solution-4">Standardized development and production environments, removing configuration
+                drift between the team’s machines, by containerizing the applications with <strong>Docker</strong>.</li>
+              <li translation="solution-5">Kept the team aligned and deliveries on schedule, giving visibility into the
+                status of every task, by taking part in <strong>Scrum</strong> ceremonies (dailies, plannings and
+                reviews) and tracking the flow in <strong>Jira</strong>.</li>
             </ul>
 
             <div class="experience__tags">
@@ -472,16 +542,21 @@
             </div>
 
             <ul class="experience__list">
-              <li translation="crase-1">Maintained and optimized the Crase Sigma mobile app, built with Ionic and
-                Angular, keeping performance consistent across Android and iOS.</li>
-              <li translation="crase-2">Migrated and integrated legacy COBOL data into modern ecosystems, building
-                continuous data flows compatible with the older systems.</li>
-              <li translation="crase-3">Designed and implemented RESTful APIs with Laravel, using caching and query
-                optimization that cut latency by more than 30%.</li>
-              <li translation="crase-4">Configured and managed Apache2 servers for high-availability web applications,
-                with performance tuning and security hardening.</li>
-              <li translation="crase-5">Set up Git workflows including branching, conflict resolution and CI/CD
-                pipelines to improve team efficiency.</li>
+              <li translation="crase-1">Kept the Crase Sigma mobile app performing consistently across
+                <strong>Android</strong> and <strong>iOS</strong>, with no regressions between platforms, by optimizing
+                the <strong>Ionic</strong> with <strong>Angular</strong> codebase and fixing rendering bottlenecks.</li>
+              <li translation="crase-2">Made legacy <strong>COBOL</strong> data usable by the company’s modern systems
+                without interrupting the existing operation, by building continuous migration and integration flows
+                compatible with the older systems.</li>
+              <li translation="crase-3">Cut API latency by <strong>more than 30%</strong>, by designing and implementing
+                <strong>RESTful</strong> endpoints in <strong>Laravel</strong> with caching strategies and query
+                optimization.</li>
+              <li translation="crase-4">Kept web applications highly available, reducing downtime and exposure to
+                misconfiguration, by administering <strong>Apache2</strong> servers with performance tuning and security
+                hardening.</li>
+              <li translation="crase-5">Improved the team’s versioning efficiency, reducing merge conflicts and rework,
+                by structuring the <strong>Git</strong> branching flow and implementing <strong>CI/CD</strong>
+                pipelines.</li>
             </ul>
 
             <div class="experience__tags">
@@ -579,7 +654,7 @@
           </div>
 
           <!--========== PORTFOLIO 4 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <!-- <div class="portfolio__content grid swiper-slide">
             <img src="/assets/img/projects/fitclub.png" alt="FitClub landing page" width="654"
               height="532" id="fitclub__img" class="portfolio__img">
 
@@ -600,7 +675,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <!--========== PORTFOLIO 5 ==========-->
           <div class="portfolio__content grid swiper-slide">
@@ -646,7 +721,7 @@
           </div>
 
           <!--========== PORTFOLIO 7 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <!-- <div class="portfolio__content grid swiper-slide">
             <img src="/assets/img/projects/forum_page.png" alt="Forum page built with React and Laravel"
               width="348" height="348" id="forumapp__img" class="portfolio__img">
 
@@ -660,7 +735,7 @@
                 <i class="uil uil-arrow-right button__icon"></i>
               </a>
             </div>
-          </div>
+          </div> -->
 
           <!--========== PORTFOLIO 8 ==========-->
           <div class="portfolio__content grid swiper-slide">
@@ -670,7 +745,7 @@
             <div class="portfolio__data">
               <h3 class="portfolio__title">Duck Zelda</h3>
               <p class="portfolio__description" translation="duck-zelda-description">Duck zelda styled game. Made in
-                Java (still in progress)</p>
+                Java (discontinued)</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/duck-zelda"
                   class="button button--flex button--small portfolio__button">
