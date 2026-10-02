@@ -1,8 +1,9 @@
-# [portfolio](https://duarte-dot.surge.sh)
+# [portfolio](https://www.duarte-dot.com.br/)
 
 meu portfólio!
 
-https://duarte-dot.surge.sh
+[https://www.duarte-dot.com.br/](https://www.duarte-dot.com.br/)
 
-![image](https://github.com/duarte-dot/portfolio/assets/78454964/2fecd284-f5f3-47b0-9866-6c7786bdd145)
+<img width="1587" height="942" alt="image" src="https://github.com/user-attachments/assets/7d0b9a75-e031-4d9e-98c1-2e0702ae8cf3" />
+
 
