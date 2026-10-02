@@ -7,15 +7,15 @@ const CV_FILES = {
 let traducoes = {
   greetings: {
     pt: "Olá, eu sou Gabriel",
-    en: "Hi, i'm Gabriel",
+    en: "Hi, I'm Gabriel",
   },
   "fullstack-developer": {
     pt: "Desenvolvedor Fullstack",
     en: "Fullstack developer",
   },
   description: {
-    pt: "Desenvolvedor Fullstack Pleno. Trabalho com Angular, React, Node.js/NestJS e Java, criando interfaces interativas, APIs RESTful e integrações entre sistemas.",
-    en: "Mid-level Fullstack Developer. I work with Angular, React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and system integrations.",
+    pt: "Sou dev fullstack pleno e gosto de Platform Engineering e Developer Experience: deixar mais fácil o dia a dia de quem desenvolve.",
+    en: "I'm a mid-level fullstack developer who enjoys Platform Engineering and Developer Experience: making day-to-day development easier for other developers.",
   },
   contactme: {
     pt: "Entre em contato",
@@ -62,8 +62,8 @@ let traducoes = {
     en: "I started learning to code in 2021, on a one-year course at <strong>Trybe</strong>. The first job came in 2023: I joined <strong>Crase Sigma</strong> as a trainee and was promoted to Junior there, working on a mobile app, Laravel APIs and data locked inside COBOL.",
   },
   "aboutme-p-2": {
-    pt: "No fim de 2024 a <strong>Solution TI</strong> apareceu com uma chance de crescer e eu não deixei passar. Pouco depois entrei também na <strong>MJV</strong>, consultoria pela qual atendo um cliente grande do setor de seguros, focado nos sistemas internos que os próprios desenvolvedores usam. Em paralelo, curso Sistemas de Informação na <strong>UVA</strong>.",
-    en: "At the end of 2024 <strong>Solution TI</strong> came with a chance to step up and I took it. Not long after I also joined <strong>MJV</strong>, the consultancy through which I serve a large insurance client, focused on the internal systems the developers themselves use. Alongside that, I’m studying Information Systems at <strong>UVA</strong>.",
+    pt: "No fim de 2024 a <strong>Solution TI</strong> apareceu com uma chance de crescer e eu não deixei passar. Pouco depois entrei também na <strong>MJV</strong>, uma consultoria. Por ela atendo um cliente grande do setor de seguros, cuidando dos sistemas internos que os desenvolvedores de lá usam. Em paralelo, curso Sistemas de Informação na <strong>UVA</strong>.",
+    en: "At the end of 2024 <strong>Solution TI</strong> offered me a chance to step up and I took it. Not long after, I also joined <strong>MJV</strong>, a consultancy. Through them I work for a large insurance company, on the internal systems its developers use. I'm also studying Information Systems at <strong>UVA</strong>.",
   },
   /* the old opener ("se não me encontrar codando") repeated what the card title
      already says, so it went */
@@ -71,13 +71,17 @@ let traducoes = {
     pt: "Café na Starbucks ☕️, tempo com a família 👩🏻‍❤️‍👨🏻 e academia 💪. Também sou pai de gato, como a foto entrega.",
     en: "Coffee at Starbucks ☕️, time with my family 👩🏻‍❤️‍👨🏻 and the gym 💪. Also a cat dad, as the photo gives away.",
   },
-  "years-exp": {
-    pt: "3+ anos",
-    en: "3+ years",
+  "skills-daily": {
+    pt: "No dia a dia",
+    en: "Day to day",
+  },
+  "skills-past": {
+    pt: "Já trabalhei com",
+    en: "Also worked with",
   },
   "devops-tools": {
-    pt: "DevOps e Ferramentas",
-    en: "DevOps & Tools",
+    pt: "DevOps e ferramentas",
+    en: "DevOps & tools",
   },
   "my-technical-level": {
     pt: "Minhas habilidades",
@@ -94,8 +98,8 @@ let traducoes = {
     en: '<i class="uil uil-briefcase nav__icon"></i> Experience',
   },
   "experience-subtitle": {
-    pt: "Minha trajetória profissional",
-    en: "My professional journey",
+    pt: "Onde já trabalhei",
+    en: "Where I've worked",
   },
   "mjv-role": {
     pt: "Desenvolvedor Fullstack Pleno",
@@ -105,31 +109,35 @@ let traducoes = {
     pt: "Julho de 2025 - Atual",
     en: "July 2025 - Present",
   },
-  /* Bullets written in the XYZ formula: result (X), how it is measured (Y), what
-     was done (Z). No invented numbers: the only percentage anywhere in the
-     section is the one that was already documented (crase-3).
-     <strong> marks the technologies and the one hard metric. It survives the
-     translation pass because traduzirSite() assigns innerHTML, and it is kept to
-     a couple of terms per bullet so the emphasis still means something. */
+  /* Each bullet says what was done, then what changed because of it, in plain
+     sentences instead of one long "result, by doing X" formula. No invented
+     numbers: every figure (day → minutes, 15+ projects, crase-3's 30%) was
+     confirmed by Gabriel. Unconfirmed metrics were dropped, not estimated.
+     MJV is ordered for Platform/DevEx roles: Fastlane and Backstage first.
+     Wording is deliberate: the GitHub Actions workflow itself wasn't his (only
+     the Fastlane lanes), and the Backstage portal was a team rebuild.
+     <strong> marks the main technology and the hard metrics only; the full
+     stack is in the tags below each job. It survives the translation pass
+     because traduzirSite() assigns innerHTML. */
   "mjv-1": {
-    pt: "Reduzi o acoplamento entre regras de negócio e integrações externas, permitindo substituir dependências sem reescrever o domínio e ampliando a cobertura de testes unitários, ao estruturar as aplicações em <strong>arquitetura hexagonal</strong> com portas e adaptadores.",
-    en: "Cut coupling between business rules and external integrations, making dependencies replaceable without rewriting the domain and widening unit test coverage, by structuring the applications around <strong>hexagonal architecture</strong> with ports and adapters.",
+    pt: "Desenvolvi as lanes de <a href='https://fastlane.tools' target='_blank' rel='noopener noreferrer'><strong>Fastlane</strong></a>, rodando em GitHub Actions, que aplicam o DexProtector e publicam os apps tanto para teste, no Firebase e no TestFlight, quanto nas lojas, na App Store e na Google Play. Levar um build mobile até teste caiu de <strong>quase um dia de trabalho para minutos</strong>, e os devs deixaram de fazer a proteção e a distribuição à mão.",
+    en: "Built the <a href='https://fastlane.tools' target='_blank' rel='noopener noreferrer'><strong>Fastlane</strong></a> lanes, running on GitHub Actions, that apply DexProtector and ship the apps both to testing, through Firebase and TestFlight, and to the stores, on the App Store and Google Play. Getting a mobile build into testing went from <strong>almost a full working day to minutes</strong>, and developers no longer do the hardening and distribution by hand.",
   },
   "mjv-2": {
-    pt: "Acelerei a entrega de novas telas nas aplicações do time, eliminando código de estado e de interface duplicado entre projetos, ao criar e manter bibliotecas <strong>Angular</strong> compartilhadas com <strong>NGRX</strong> dentro de um monorepo <strong>NX</strong>.",
-    en: "Sped up the delivery of new screens across the team's applications, removing state and UI code duplicated between projects, by building and maintaining shared <strong>Angular</strong> libraries with <strong>NGRX</strong> inside an <strong>NX</strong> monorepo.",
+    pt: "Reconstruí com o time o portal <a href='https://backstage.io' target='_blank' rel='noopener noreferrer'><strong>Backstage</strong></a>, integrado ao GitHub e ao Bitbucket, com plugins próprios e RBAC. É nele que <strong>milhares de devs</strong> criam projetos, encontram serviços e documentação e gerenciam os acessos de cada time.",
+    en: "Rebuilt the <a href='https://backstage.io' target='_blank' rel='noopener noreferrer'><strong>Backstage</strong></a> portal with the team, integrated with GitHub and Bitbucket, with custom plugins and RBAC. It's where <strong>thousands of developers</strong> create projects, find services and docs, and manage access for each team.",
   },
   "mjv-3": {
-    pt: "Aumentei a resiliência e o tempo de resposta dos serviços, evitando que falhas de dependências externas derrubassem fluxos críticos, ao implementar backends <strong>Node.js/NestJS</strong> com cache e filas em <strong>Redis</strong> e <strong>circuit breakers</strong> nas integrações.",
-    en: "Improved service resilience and response times, keeping external dependency failures from taking down critical flows, by implementing <strong>Node.js/NestJS</strong> backends with <strong>Redis</strong> caching and queues and <strong>circuit breakers</strong> on the integrations.",
+    pt: "Criei e mantive bibliotecas <strong>Angular</strong> compartilhadas, com NgRx, num monorepo Nx. Elas tiraram o código de estado e de interface que estava duplicado em <strong>mais de 15 projetos</strong>.",
+    en: "Built and maintained shared <strong>Angular</strong> libraries with NgRx in an Nx monorepo. They removed state and UI code duplicated across <strong>15+ projects</strong>.",
   },
   "mjv-4": {
-    pt: "Centralizei a documentação e o catálogo de serviços da engenharia em um único portal, com acesso controlado por time, ao desenvolver uma plataforma <strong>Backstage</strong> integrada a <strong>GitHub</strong> e <strong>Bitbucket</strong>, com plugins próprios e <strong>RBAC</strong>.",
-    en: "Centralized engineering documentation and the service catalogue in a single portal with per-team access, by developing a <strong>Backstage</strong> platform integrated with <strong>GitHub</strong> and <strong>Bitbucket</strong>, with custom plugins and <strong>RBAC</strong>.",
+    pt: "Implementei backends em <strong>Node.js/NestJS</strong> com cache e filas no Redis e circuit breakers nas integrações. O tempo de resposta caiu, falhas em dependências externas pararam de derrubar fluxos críticos e o time passou a ter menos incidentes.",
+    en: "Implemented <strong>Node.js/NestJS</strong> backends with Redis caching and queues, plus circuit breakers on the integrations. Response times dropped, external dependency failures stopped taking down critical flows, and the team now deals with fewer incidents.",
   },
   "mjv-5": {
-    pt: "Eliminei o processo manual de publicação dos aplicativos móveis, removendo o retrabalho e os erros de envio a cada release, ao automatizar as entregas para Play Store e App Store com <strong>Fastlane</strong>.",
-    en: "Eliminated the manual mobile release process, removing rework and submission errors on every release, by automating Play Store and App Store delivery with <strong>Fastlane</strong>.",
+    pt: "Estruturei as aplicações em <strong>arquitetura hexagonal</strong>, com portas e adaptadores. Assim o time troca uma integração externa sem reescrever regra de negócio, e a cobertura de testes unitários subiu.",
+    en: "Structured the applications around <strong>hexagonal architecture</strong> (ports and adapters), so the team can swap an external integration without rewriting business rules. Unit test coverage went up as well.",
   },
   "solution-role": {
     pt: "Desenvolvedor Fullstack Junior",
@@ -140,24 +148,24 @@ let traducoes = {
     en: "December 2024 - Present",
   },
   "solution-1": {
-    pt: "Entreguei novas funcionalidades do sistema de emplacamento digital de veículos, atendendo às regras exigidas pelo sistema oficial do <strong>DETRAN</strong>, ao construir páginas dinâmicas e otimizadas com <strong>React</strong>.",
-    en: "Delivered new features for the digital vehicle registration system, meeting the rules enforced by the official <strong>DETRAN</strong> system, by building dynamic and optimized pages with <strong>React</strong>.",
+    pt: "Entreguei funcionalidades novas no sistema de emplacamento digital de veículos, com páginas em <strong>React</strong> que seguem as regras exigidas pelo sistema oficial do DETRAN.",
+    en: "Shipped new features for the digital vehicle registration system, building <strong>React</strong> pages that follow the rules enforced by the official DETRAN system.",
   },
   "solution-2": {
-    pt: "Assumi como <strong>responsável técnico</strong> o sistema de transferência digital de veículos do Mato Grosso, mantendo o serviço estável e em conformidade com as plataformas do <strong>DETRAN-MT</strong>, ao conduzir sua manutenção e evolução.",
-    en: "Took <strong>technical ownership</strong> of the digital vehicle transfer system for Mato Grosso, keeping the service stable and compliant with <strong>DETRAN-MT</strong> platforms, by running its maintenance and evolution.",
+    pt: "Assumi como <strong>responsável técnico</strong> o sistema de transferência digital de veículos do Mato Grosso. Cuido da manutenção e da evolução dele e mantenho o serviço estável e em conformidade com as plataformas do DETRAN-MT.",
+    en: "Took <strong>technical ownership</strong> of Mato Grosso's digital vehicle transfer system. I maintain and extend it, and keep it stable and compliant with DETRAN-MT's platforms.",
   },
   "solution-3": {
-    pt: "Garanti comunicação segura entre frontend e backend em um sistema de uso público, evitando quebras de contrato entre as camadas, ao implementar integrações em <strong>Java</strong> apoiadas em <strong>padrões de projeto</strong> consolidados.",
-    en: "Secured communication between front-end and back-end in a public-facing system, preventing contract breaks between layers, by implementing <strong>Java</strong> integrations backed by established <strong>design patterns</strong>.",
+    pt: "Implementei em <strong>Java</strong> as integrações entre frontend e backend de um sistema de uso público, usando padrões de projeto para manter a comunicação segura e o contrato entre as camadas sem quebras.",
+    en: "Implemented the front-end to back-end integrations in <strong>Java</strong> for a public-facing system, using design patterns to keep communication secure and the contract between layers from breaking.",
   },
   "solution-4": {
-    pt: "Padronizei os ambientes de desenvolvimento e produção, removendo divergências de configuração entre as máquinas do time, ao containerizar as aplicações com <strong>Docker</strong>.",
-    en: "Standardized development and production environments, removing configuration drift between the team's machines, by containerizing the applications with <strong>Docker</strong>.",
+    pt: "Containerizei as aplicações com <strong>Docker</strong>. Desenvolvimento e produção passaram a usar o mesmo ambiente, sem diferença de configuração entre as máquinas do time.",
+    en: "Containerized the applications with <strong>Docker</strong>, so development and production share the same environment and config no longer drifts between the team's machines.",
   },
   "solution-5": {
-    pt: "Mantive o time alinhado e as entregas dentro do prazo, dando visibilidade do andamento de cada tarefa, ao participar das cerimônias do <strong>Scrum</strong> (dailies, plannings e reviews) e acompanhar o fluxo no <strong>Jira</strong>.",
-    en: "Kept the team aligned and deliveries on schedule, giving visibility into the status of every task, by taking part in <strong>Scrum</strong> ceremonies (dailies, plannings and reviews) and tracking the flow in <strong>Jira</strong>.",
+    pt: "Participo das cerimônias de <strong>Scrum</strong> (dailies, plannings e reviews) e acompanho as tarefas no Jira, o que deixa o andamento visível para o time e ajuda a manter as entregas no prazo.",
+    en: "Take part in <strong>Scrum</strong> ceremonies (dailies, plannings and reviews) and track tasks in Jira, which keeps progress visible to the team and helps keep deliveries on schedule.",
   },
   "crase-role": {
     pt: "Desenvolvedor Fullstack Junior",
@@ -168,24 +176,24 @@ let traducoes = {
     en: "September 2023 - December 2024",
   },
   "crase-1": {
-    pt: "Mantive o desempenho do aplicativo mobile Crase Sigma consistente entre <strong>Android</strong> e <strong>iOS</strong>, sem regressões entre as plataformas, ao otimizar a base em <strong>Ionic</strong> com <strong>Angular</strong> e corrigir gargalos de renderização.",
-    en: "Kept the Crase Sigma mobile app performing consistently across <strong>Android</strong> and <strong>iOS</strong>, with no regressions between platforms, by optimizing the <strong>Ionic</strong> with <strong>Angular</strong> codebase and fixing rendering bottlenecks.",
+    pt: "Otimizei a base do app mobile da Crase Sigma, feito em <strong>Ionic</strong> com Angular, e corrigi gargalos de renderização. O app manteve o mesmo desempenho no Android e no iOS, sem regressão em nenhuma das duas plataformas.",
+    en: "Optimized the Crase Sigma mobile app's <strong>Ionic</strong>/Angular codebase and fixed rendering bottlenecks, so it performed the same on Android and iOS with no regressions on either.",
   },
   "crase-2": {
-    pt: "Viabilizei o uso de dados legados em <strong>COBOL</strong> nos sistemas modernos da empresa, sem interromper a operação existente, ao criar fluxos contínuos de migração e integração compatíveis com os sistemas antigos.",
-    en: "Made legacy <strong>COBOL</strong> data usable by the company's modern systems without interrupting the existing operation, by building continuous migration and integration flows compatible with the older systems.",
+    pt: "Criei fluxos contínuos de migração e integração para os sistemas novos da empresa usarem dados legados em <strong>COBOL</strong>. Os fluxos continuam compatíveis com os sistemas antigos, e a operação não precisou parar.",
+    en: "Built continuous migration and integration flows so the company's newer systems could use legacy <strong>COBOL</strong> data. The flows stayed compatible with the old systems, and operations never had to stop.",
   },
   "crase-3": {
-    pt: "Reduzi a latência das APIs em <strong>mais de 30%</strong>, ao projetar e implementar endpoints <strong>RESTful</strong> em <strong>Laravel</strong> com estratégias de cache e otimização de consultas.",
-    en: "Cut API latency by <strong>more than 30%</strong>, by designing and implementing <strong>RESTful</strong> endpoints in <strong>Laravel</strong> with caching strategies and query optimization.",
+    pt: "Projetei e implementei endpoints REST em <strong>Laravel</strong> com cache e consultas otimizadas, o que reduziu a latência das APIs em <strong>mais de 30%</strong>.",
+    en: "Designed and built REST endpoints in <strong>Laravel</strong> with caching and optimized queries, cutting API latency by <strong>more than 30%</strong>.",
   },
   "crase-4": {
-    pt: "Sustentei aplicações web em alta disponibilidade, reduzindo indisponibilidades e a exposição a falhas de configuração, ao administrar servidores <strong>Apache2</strong> com ajustes de desempenho e reforço de segurança.",
-    en: "Kept web applications highly available, reducing downtime and exposure to misconfiguration, by administering <strong>Apache2</strong> servers with performance tuning and security hardening.",
+    pt: "Administrei servidores <strong>Apache2</strong>, ajustando desempenho e segurança. As aplicações web passaram a ficar menos tempo fora do ar e menos expostas a erros de configuração.",
+    en: "Administered <strong>Apache2</strong> servers, tuning performance and hardening security. The web apps had less downtime and less exposure to misconfiguration.",
   },
   "crase-5": {
-    pt: "Aumentei a eficiência do time no versionamento, reduzindo conflitos e retrabalho de merge, ao estruturar o fluxo de branches no <strong>Git</strong> e implementar pipelines de <strong>CI/CD</strong>.",
-    en: "Improved the team's versioning efficiency, reducing merge conflicts and rework, by structuring the <strong>Git</strong> branching flow and implementing <strong>CI/CD</strong> pipelines.",
+    pt: "Organizei o fluxo de branches no <strong>Git</strong> e implementei pipelines de CI/CD, o que diminuiu os conflitos e o retrabalho de merge no time.",
+    en: "Set up the team's <strong>Git</strong> branching flow and implemented CI/CD pipelines, which cut down on merge conflicts and rework.",
   },
 
   /* ===== PROJECTS ===== */
@@ -202,16 +210,16 @@ let traducoes = {
     en: '<i class="uil uil-envelope nav__icon"></i> Contact me',
   },
   "check-more": {
-    pt: 'Você pode ver mais no meu <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
-    en: 'You can check more on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
+    pt: 'Tem mais no meu <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
+    en: 'There\'s more on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
   },
   trybetunes: {
-    pt: "Pesquise por álbuns de seus artistas favoritos e escute previews de suas músicas! Feito com React e Itunes API",
-    en: "Search for albums by your favorite artists and listen to previews of their songs! Made with React and Itunes API",
+    pt: "Pesquise álbuns dos seus artistas favoritos e ouça prévias das músicas. Feito com React e a API do iTunes.",
+    en: "Search albums by your favorite artists and listen to song previews. Built with React and the iTunes API.",
   },
   "contact-me": {
     pt: "Entre em contato",
-    en: "Contact-me",
+    en: "Contact me",
   },
   "get-in-touch": {
     pt: "Me manda uma mensagem!",
@@ -234,16 +242,16 @@ let traducoes = {
     en: "Name",
   },
   email: {
-    pt: "Seu Email",
-    en: "Your Email",
+    pt: "Seu e-mail",
+    en: "Your email",
   },
   message: {
     pt: "Mensagem",
     en: "Message",
   },
   "rj-br": {
-    pt: "Rio de Janeiro - Brasil",
-    en: "Rio de Janeiro - Brazil",
+    pt: "Rio de Janeiro, Brasil",
+    en: "Rio de Janeiro, Brazil",
   },
   "send-message": {
     pt: "Enviar mensagem",
@@ -258,52 +266,52 @@ let traducoes = {
     en: "Soon",
   },
   "piratas-lanches-description": {
-    pt: "Piratas Lanches é um cardápio online que criei para o lanchonete do meu pai, com um design temático de pirata, categorias organizadas e uma interface simples para que os clientes possam explorar rapidamente os sanduíches, bebidas e outros itens diretamente do celular.",
-    en: "Piratas Lanches is an online menu I built for my father’s snack bar, with a pirate-themed design, organized categories, and a simple interface so customers can quickly explore sandwiches, drinks, and other items directly from their phone.",
+    pt: "Cardápio online que fiz para a lanchonete do meu pai. Tem tema de pirata e categorias organizadas, para o cliente achar rápido os sanduíches, as bebidas e o resto direto do celular.",
+    en: "An online menu I built for my dad's snack bar. It has a pirate theme and organized categories, so customers can quickly find sandwiches, drinks and everything else from their phone.",
   },
   "forum-description": {
-    pt: "Página de fórum com frontend. Feito em React e Laravel",
-    en: "Forum page. Made with React and Laravel",
+    pt: "Página de fórum feita com React e Laravel.",
+    en: "Forum page built with React and Laravel.",
   },
   "lovu-app-description": {
-    pt: "É uma plataforma onde você pode criar um site personalizado para o seu parceiro romântico. Adicione fotos, músicas, vídeos e mensagens sinceras que representem sua história e os momentos especiais que vocês compartilharam. Uma forma única e digital de celebrar o amor e criar memórias inesquecíveis.",
-    en: "It’s a platform where you can create a personalized website for your romantic partner. Add photos, music, videos, and heartfelt messages that represent your story and the special moments you’ve shared. A unique and digital way to celebrate love and create unforgettable memories.",
+    pt: "Plataforma para criar um site personalizado para quem você ama, com fotos, músicas, vídeos e mensagens sobre a história de vocês.",
+    en: "A platform for building a personalized website for your partner, with photos, music, videos and messages about your story together.",
   },
   "chats-app-description": {
-    pt: "App de Chat. Feito em Next com Upstash Redis",
-    en: "Chat app. Made with Next and Upstash Redis",
+    pt: "App de chat feito com Next.js e Upstash Redis.",
+    en: "Chat app built with Next.js and Upstash Redis.",
   },
   "trybe-wallet-description": {
-    pt: "Aplicativo de carteira virtual para monitorar seus gastos. Feito em React e Redux",
-    en: "Virtual wallet app to monitorate your expenses. Made with React and Redux",
+    pt: "Carteira virtual para acompanhar seus gastos. Feita com React e Redux.",
+    en: "Virtual wallet to keep track of your expenses. Built with React and Redux.",
   },
   "duck-zelda-description": {
-    pt: "Jogo estilo zelda com pato. Feito em Java (descontinuado)",
-    en: "Duck zelda styled game. Made in Java (discontinued)",
+    pt: "Jogo no estilo Zelda com um pato. Feito em Java (descontinuado).",
+    en: "A Zelda-style game starring a duck. Made in Java (discontinued).",
   },
   "pong-game-description": {
-    pt: "Jogo de pong. Feito em Java",
-    en: "Pong game. Made in Java",
+    pt: "Pong feito em Java.",
+    en: "Pong, made in Java.",
   },
   "fitclub-description": {
-    pt: "Projeto frontend de um Fitclub. Feito com React",
-    en: "Fitclub frontend project. Made with React",
+    pt: "Frontend do projeto Fitclub, feito com React.",
+    en: "Frontend for the Fitclub project, built with React.",
   },
   "coming-soon": {
     pt: "Vem aí",
     en: "Coming soon",
   },
   "coming-soon-description": {
-    pt: "Mais projetos estão por vir!",
-    en: "More projects are coming soon!",
+    pt: "Enquanto isso, o resto está no GitHub.",
+    en: "In the meantime, the rest is on GitHub.",
   },
   "thank-you": {
     pt: "obrigado",
     en: "thank you",
   },
   "thank-you-subtitle": {
-    pt: "entrarei em contato",
-    en: "i will be in touch",
+    pt: "logo te respondo",
+    en: "i'll get back to you soon",
   },
   "go-back": {
     pt: "voltar",

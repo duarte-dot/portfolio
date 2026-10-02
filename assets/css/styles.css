@@ -935,27 +935,17 @@ body.dark-theme .about__media {
 }
 
 /* ========== SKILLS ========== */
+/* Every group is open: breadth reads at a glance, and the two tiers inside
+   each group say where the depth is. Chips are plain text in the site palette. */
 .skills__container {
-  row-gap: 0;
+  row-gap: 2.5rem;
 }
 
 .skills__header {
   display: flex;
   align-items: center;
-  margin-bottom: var(--mb-2-5);
-  cursor: pointer;
-  /* reset, since this is a <button> for keyboard accessibility */
-  width: 100%;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  font-family: inherit;
-  text-align: left;
-}
-
-.skills__header-text {
-  display: flex;
-  flex-direction: column;
+  gap: var(--mb-0-75);
+  margin-bottom: var(--mb-1-5);
 }
 
 .skills__group-title {
@@ -964,110 +954,58 @@ body.dark-theme .about__media {
   font-weight: var(--font-semi-bold);
 }
 
-.skills__icon,
-.skills__arrow {
+.skills__icon {
   font-size: 2rem;
   color: var(--first-color);
 }
 
-.skills__icon {
-  margin-right: var(--mb-0-75);
-}
-
-.skills__subtitle {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
-}
-
-.skills__arrow {
-  margin-left: auto;
-  transition: 0.4s;
+.skills__tier {
+  margin-bottom: var(--mb-0-5);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--first-color);
 }
 
 .skills__list {
+  display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-content: flex-start;
+  margin-bottom: var(--mb-1-5);
 }
 
-.skills__badge {
-  height: 28px;
-  width: auto;
+.skills__list:last-child {
+  margin-bottom: 0;
 }
 
-.skills__titles {
-  display: flex;
-  justify-content: space-between;
+.skills__list li {
+  padding: 0.375rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  font-size: var(--small-font-size);
+  line-height: 1.3;
 }
 
-.skills__name {
-  font-size: var(--normal-font-size);
+/* the tier you lean on: filled, strong text */
+.skills__list--daily li {
+  background-color: hsl(var(--hue-color), 70%, 91%);
+  color: var(--title-color);
   font-weight: var(--font-medium);
 }
 
-.skills__bar,
-.skills__percentage {
-  height: 5px;
-  border-radius: 0.25rem;
+/* the wider range: outline only, quieter text */
+.skills__list--past li {
+  border-color: hsl(var(--hue-color), 30%, 84%);
+  color: var(--text-color);
 }
 
-.skills__bar {
-  background-color: var(--first-color-lighter);
+body.dark-theme .skills__list--daily li {
+  background-color: var(--input-color);
 }
 
-.skills__percentage {
-  display: block;
-  background-color: var(--first-color);
-}
-
-.skills__html {
-  width: 100%;
-}
-
-.skills__css {
-  width: 100%;
-}
-
-.skills__js {
-  width: 85%;
-}
-
-.skills__react {
-  width: 85%;
-}
-
-.skills__sql {
-  width: 70%;
-}
-
-.skills__typescript {
-  width: 70%;
-}
-
-.skills__docker {
-  width: 80%;
-}
-
-.skills__nodejs {
-  width: 90%;
-}
-
-.skills__python {
-  width: 90%;
-}
-
-.skills__close .skills__list {
-  height: 0;
-  overflow: hidden;
-}
-
-.skills__open .skills__list {
-  height: max-content;
-  margin-bottom: var(--mb-2-5);
-}
-
-.skills__open .skills__arrow {
-  transform: rotate(-180deg);
+body.dark-theme .skills__list--past li {
+  border-color: var(--container-color);
 }
 
 /* ========== EXPERIENCE ========== */
@@ -1161,6 +1099,26 @@ body.dark-theme .about__media {
   font-weight: var(--font-semi-bold);
 }
 
+/* links to tools recruiters may not know; the global reset strips underlines,
+   so they get one back here or they would be indistinguishable from bold text */
+.experience__list a {
+  color: var(--title-color);
+  text-decoration: underline;
+  text-decoration-color: var(--first-color);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.experience__list a:hover,
+.experience__list a:focus-visible {
+  color: var(--first-color);
+}
+
+.experience__list a strong {
+  color: inherit;
+}
+
 .experience__tags {
   display: flex;
   flex-wrap: wrap;
@@ -1185,23 +1143,60 @@ body.dark-theme .experience__item::before {
 }
 
 /* ========== PORTFOLIO ========== */
+/* Project picker: every project name is visible at once and the panel shows the
+   selected one. Chip strip below 1024px, vertical list beside the panel above. */
 .portfolio__container {
+  --portfolio-ease: cubic-bezier(0.23, 1, 0.32, 1);
   overflow: initial;
 }
 
-.portfolio__content {
-  padding: 0 1.5rem;
-  padding-bottom: 30px;
+/* All panels share one grid cell, so the box is always as tall as the tallest
+   project and the page below never jumps when the selection changes. */
+.portfolio__panels {
+  display: grid;
 }
 
+.portfolio__content {
+  grid-area: 1 / 1;
+  align-items: center;
+  align-content: start;
+  padding: 0 1.5rem;
+  transition: opacity 200ms var(--portfolio-ease),
+    transform 200ms var(--portfolio-ease), filter 200ms var(--portfolio-ease);
+}
+
+/* .grid sets display, so hidden has to be restyled here. visibility (not display)
+   keeps the panel in the cell, and still takes it out of focus order and the
+   accessibility tree. The outgoing panel leaves faster than the new one arrives. */
+.portfolio__panel[hidden] {
+  display: grid;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(4px);
+  filter: blur(2px);
+  transition: opacity 120ms ease, transform 120ms ease, filter 120ms ease,
+    visibility 0s linear 120ms;
+}
+
+/* keyboard switching is instant, see selectProject() */
+.portfolio__container.is-instant .portfolio__content {
+  transition-duration: 0s;
+  transition-delay: 0s;
+}
+
+.portfolio__panel:focus-visible {
+  outline-offset: 4px;
+}
+
+/* Same 4:3 box for every screenshot, so a square logo and a wide illustration
+   take the same space and the text column lines up. No frame behind it. */
 .portfolio__img {
   width: 265px;
-  /* the width/height attributes on the markup are only there so the browser can
-     reserve space; height must stay auto so the aspect ratio is preserved */
   height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
   border-radius: 0.5rem;
   justify-self: center;
-  /* margin-bottom: var(--mb-2); */
 }
 
 .portfolio__title {
@@ -1210,59 +1205,121 @@ body.dark-theme .experience__item::before {
 }
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
-}
-
-.portfolio__button:hover .button__icon {
-  transform: translateX(0.25rem);
-}
-
-.portfolio__button {
-  margin-bottom: 15px;
+  margin-bottom: var(--mb-1-5);
 }
 
 .portfolio__buttons {
   display: flex;
-  max-width: fit-content;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  content: "";
+.portfolio__button {
+  transition: background-color 160ms ease, color 160ms ease,
+    transform 160ms var(--portfolio-ease);
 }
 
-.swiper-portfolio-icon {
-  font-size: 2rem;
-  color: var(--first-color);
+.portfolio__button.button--ghost {
+  min-width: 0;
 }
 
-.swiper-button-prev {
-  left: -0.5rem;
+.portfolio__button:active {
+  transform: scale(0.97);
 }
 
-.swiper-container-horizontal > .swiper-pagination- {
-  bottom: 2.5rem;
+.portfolio__button .button__icon {
+  transition: transform 160ms var(--portfolio-ease);
 }
 
-.swiper-pagination-bullet {
-  opacity: 0.8;
-  background-color: var(--text-color-light) !important;
+@media (hover: hover) and (pointer: fine) {
+  .portfolio__button:hover .button__icon {
+    transform: translateX(0.25rem);
+  }
 }
 
-.swiper-pagination-bullet-active {
-  background-color: var(--first-color) !important;
+.portfolio__tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 1.5rem;
+  margin-bottom: var(--mb-2);
+  scroll-padding-inline: 1.5rem;
+  scrollbar-width: none;
+  /* fade on the right edge says "there is more" on narrow screens */
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 2.5rem), transparent);
 }
 
-.swiper-pagination {
-  max-width: 150px;
-  margin-left: 30%;
+.portfolio__tabs::-webkit-scrollbar {
+  display: none;
 }
 
-.swiper-button-prev,
-.swiper-button-next,
-.swiper-pagination-bullet {
-  outline: none;
+.portfolio__tab {
+  position: relative;
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.3rem 0.875rem 0.3rem 0.3rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background-color: var(--input-color);
+  color: var(--text-color);
+  font-family: inherit;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease,
+    color 160ms ease, transform 160ms var(--portfolio-ease);
+}
+
+.portfolio__tab[aria-selected="true"] {
+  border-color: var(--first-color);
+  color: var(--title-color);
+}
+
+.portfolio__tab:active {
+  transform: scale(0.97);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .portfolio__tab[aria-selected="false"]:hover {
+    color: var(--title-color);
+    border-color: var(--text-color-light);
+  }
+}
+
+.portfolio__thumb {
+  width: 28px;
+  height: 28px;
+  flex: none;
+  padding: 3px;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: var(--body-color);
+  /* the selected thumb picks up the same gold ring as the tab */
+  box-shadow: 0 0 0 1px transparent;
+  transition: box-shadow 160ms ease;
+}
+
+.portfolio__tab[aria-selected="true"] .portfolio__thumb {
+  box-shadow: 0 0 0 1px var(--first-color);
+}
+
+.portfolio__thumb--piratas,
+.portfolio__thumb--pong,
+.portfolio__thumb--duck {
+  padding: 0;
+  object-fit: cover;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* keep the fade, drop the movement */
+  .portfolio__panel[hidden] {
+    transform: none;
+    filter: none;
+  }
 }
 
 /* ===== CONTACT ===== */
@@ -1441,10 +1498,6 @@ a {
   .home__blob {
     max-width: 180px;
   }
-
-  .skills__titles {
-    font-size: var(--normal-font-size);
-  }
 }
 
 /* MEDIUM DEVICES */
@@ -1487,12 +1540,32 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* side by side, the image row is as tall as the longest text; centring the
+     row in the shared panel cell keeps every image's centre on the same line */
+  .portfolio__content {
+    align-content: center;
+  }
+
+  /* two columns here, so the third group takes the full row below */
+  .skills__content:last-child {
+    grid-column: 1 / -1;
+  }
+
   .about__media {
     width: min(320px, 62%);
   }
 }
 
 @media screen and (min-width: 768px) {
+  .skills__container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+
+  .skills__content:last-child {
+    grid-column: auto;
+  }
+
   .lang-switch {
     margin-right: var(--mb-0-5);
   }
@@ -1599,14 +1672,6 @@ a {
     width: 320px;
   }
 
-  #rickandmorty__img {
-    border-radius: 8px;
-  }
-
-  .swiper-pagination {
-    margin-left: 40%;
-  }
-
   /* Two columns, not three: the footer has two children. The third track was
      left over from a .footer__links block that no longer exists in the markup,
      and with .footer__socials pinned to column 3 it left a dead column in the
@@ -1679,5 +1744,74 @@ a {
 
   .portfolio__img {
     width: 350px;
+  }
+
+  .portfolio__container {
+    max-width: 968px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    column-gap: 2rem;
+    align-items: center;
+  }
+
+  /* list on the right like the old "next" arrow, but first in the DOM so
+     keyboard and screen reader users meet the picker before the panel */
+  .portfolio__tabs {
+    grid-column: 2;
+    grid-row: 1;
+    flex-direction: column;
+    gap: 0.25rem;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  /* quieter than the chips: only the selected row gets a surface, plus a gold
+     bar on its edge, so the list reads as one index instead of seven buttons */
+  .portfolio__tab {
+    padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+    border-radius: 0.75rem;
+    background-color: transparent;
+    font-size: var(--normal-font-size);
+  }
+
+  .portfolio__tab[aria-selected="true"] {
+    border-color: transparent;
+    background-color: var(--input-color);
+  }
+
+  .portfolio__tab::before {
+    content: "";
+    position: absolute;
+    left: -0.75rem;
+    top: 25%;
+    bottom: 25%;
+    width: 3px;
+    border-radius: 3px;
+    background-color: var(--first-color);
+    opacity: 0;
+    transform: scaleY(0.4);
+    transition: opacity 160ms ease, transform 200ms var(--portfolio-ease);
+  }
+
+  .portfolio__tab[aria-selected="true"]::before {
+    opacity: 1;
+    transform: none;
+  }
+
+  .portfolio__thumb {
+    width: 36px;
+    height: 36px;
+  }
+
+  .portfolio__img {
+    max-width: 100%;
+  }
+
+  .portfolio__panels {
+    grid-column: 1;
+    grid-row: 1;
   }
 }

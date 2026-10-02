@@ -10,9 +10,6 @@
   <!--========== UNICONS ==========-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-  <!--========== SWIPER CSS ==========-->
-  <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css">
-
   <!--========== CSS ==========-->
   <link rel="stylesheet" href="/assets/css/styles.css">
 
@@ -184,13 +181,11 @@
           </div>
 
           <div class="home__data">
-            <h1 class="home__title" translation="greetings">Hi, i'm Gabriel</h1>
+            <h1 class="home__title" translation="greetings">Hi, I'm Gabriel</h1>
             <h3 class="home__subtitle" translation="fullstack-developer">Fullstack developer</h3>
-            <p class="home__description" translation="description">Mid-level Fullstack Developer. I work with Angular,
-              React, Node.js/NestJS and Java, building interactive interfaces, RESTful APIs and system
-              integrations.</p>
+            <p class="home__description" translation="description">I'm a mid-level fullstack developer who enjoys Platform Engineering and Developer Experience: making day-to-day development easier for other developers.</p>
             <a href="#contact" class="button button--flex" translation="contactme">
-              Contact Me <i class="uil uil-message button__icon"></i>
+              Contact me <i class="uil uil-message button__icon"></i>
             </a>
           </div>
         </div>
@@ -246,10 +241,7 @@
             course at <strong>Trybe</strong>. The first job came in 2023: I joined <strong>Crase Sigma</strong> as a
             trainee and was promoted to Junior there, working on a mobile app, Laravel APIs and data locked inside
             COBOL.</p>
-          <p class="about__description" translation="aboutme-p-2">At the end of 2024 <strong>Solution TI</strong> came
-            with a chance to step up and I took it. Not long after I also joined <strong>MJV</strong>, the consultancy
-            through which I serve a large insurance client, focused on the internal systems the developers themselves
-            use. Alongside that, I’m studying Information Systems at <strong>UVA</strong>.</p>
+          <p class="about__description" translation="aboutme-p-2">At the end of 2024 <strong>Solution TI</strong> offered me a chance to step up and I took it. Not long after, I also joined <strong>MJV</strong>, a consultancy. Through them I work for a large insurance company, on the internal systems its developers use. I'm also studying Information Systems at <strong>UVA</strong>.</p>
 
           <!-- The personal note used to be a third paragraph and disappeared into
                the wall of text. As its own card it keeps the personality without
@@ -325,133 +317,57 @@
       <span class="section__subtitle" translation="my-technical-level">My skills</span>
 
       <div class="skills__container container grid">
-        <!--========== SKILLS 1 - FRONTEND ==========-->
-        <div class="skills__content skills__open">
-          <button type="button" class="skills__header" aria-expanded="true">
-            <i class="uil uil-brackets-curly skills__icon"></i>
+        <article class="skills__content">
+          <h3 class="skills__header">
+            <i class="uil uil-brackets-curly skills__icon" aria-hidden="true"></i>
+            <span class="skills__group-title">Frontend</span>
+          </h3>
+          <p class="skills__tier" translation="skills-daily">Day to day</p>
+          <ul class="skills__list skills__list--daily" role="list">
+            <li>TypeScript</li><li>Angular</li><li>React</li><li>Tailwind CSS</li><li>HTML5</li><li>CSS3</li>
+          </ul>
+          <p class="skills__tier" translation="skills-past">Also worked with</p>
+          <ul class="skills__list skills__list--past" role="list">
+            <li>JavaScript</li><li>NgRx</li><li>Next.js</li><li>Redux</li><li>Ionic</li><li>Bootstrap</li><li>Testing Library</li>
+          </ul>
+        </article>
 
-            <div class="skills__header-text">
-              <h3 class="skills__group-title">Frontend</h3>
-              <span class="skills__subtitle" translation="years-exp">3+ years</span>
-            </div>
+        <article class="skills__content">
+          <h3 class="skills__header">
+            <i class="uil uil-server-network skills__icon" aria-hidden="true"></i>
+            <span class="skills__group-title">Backend</span>
+          </h3>
+          <p class="skills__tier" translation="skills-daily">Day to day</p>
+          <ul class="skills__list skills__list--daily" role="list">
+            <li>Node.js</li><li>NestJS</li><li>Java</li><li>Redis</li>
+          </ul>
+          <p class="skills__tier" translation="skills-past">Also worked with</p>
+          <ul class="skills__list skills__list--past" role="list">
+            <li>Express</li><li>PHP</li><li>Laravel</li><li>Python</li><li>MySQL</li><li>PostgreSQL</li><li>Sequelize</li><li>Jest</li><li>Mocha</li>
+          </ul>
+        </article>
 
-            <i class="uil uil-angle-down skills__arrow"></i>
-          </button>
-
-          <div class="skills__list flex">
-            <img class="skills__badge" loading="lazy" alt="HTML5"
-              src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=HTML5&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="CSS3"
-              src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="JavaScript"
-              src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=JavaScript&logoColor=black" />
-            <img class="skills__badge" loading="lazy" alt="TypeScript"
-              src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Angular"
-              src="https://img.shields.io/badge/Angular-0F0F11.svg?style=for-the-badge&logo=Angular&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="NgRx"
-              src="https://img.shields.io/badge/NgRx-BA2BD2.svg?style=for-the-badge&logo=ngrx&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="React"
-              src="https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black" />
-            <img class="skills__badge" loading="lazy" alt="Next.js"
-              src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Redux"
-              src="https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Ionic"
-              src="https://img.shields.io/badge/Ionic-3880FF.svg?style=for-the-badge&logo=Ionic&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Tailwind CSS"
-              src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=tailwindcss&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Bootstrap"
-              src="https://img.shields.io/badge/Bootstrap-7952B3.svg?style=for-the-badge&logo=Bootstrap&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Testing Library"
-              src="https://img.shields.io/badge/Testing%20Library-E33332.svg?style=for-the-badge&logo=Testing-Library&logoColor=white" />
-          </div>
-        </div>
-
-        <!--========== SKILLS 2 - BACKEND ==========-->
-        <div class="skills__content skills__close">
-          <button type="button" class="skills__header" aria-expanded="false">
-            <i class="uil uil-server-network skills__icon"></i>
-
-            <div class="skills__header-text">
-              <h3 class="skills__group-title">Backend</h3>
-              <span class="skills__subtitle" translation="years-exp">3+ years</span>
-            </div>
-
-            <i class="uil uil-angle-down skills__arrow"></i>
-          </button>
-
-          <div class="skills__list flex">
-            <img class="skills__badge" loading="lazy" alt="Node.js"
-              src="https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="NestJS"
-              src="https://img.shields.io/badge/NestJS-E0234E.svg?style=for-the-badge&logo=nestjs&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Express"
-              src="https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Java"
-              src="https://img.shields.io/badge/Java-ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="PHP"
-              src="https://img.shields.io/badge/PHP-777BB4.svg?style=for-the-badge&logo=PHP&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Laravel"
-              src="https://img.shields.io/badge/Laravel-FF2D20.svg?style=for-the-badge&logo=Laravel&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Python"
-              src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=Python&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Redis"
-              src="https://img.shields.io/badge/Redis-FF4438.svg?style=for-the-badge&logo=Redis&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="MySQL"
-              src="https://img.shields.io/badge/MySQL-4479A1.svg?style=for-the-badge&logo=MySQL&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="PostgreSQL"
-              src="https://img.shields.io/badge/PostgreSQL-4169E1.svg?style=for-the-badge&logo=PostgreSQL&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Sequelize"
-              src="https://img.shields.io/badge/Sequelize-52B0E7.svg?style=for-the-badge&logo=Sequelize&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Jest"
-              src="https://img.shields.io/badge/Jest-C21325.svg?style=for-the-badge&logo=Jest&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Mocha"
-              src="https://img.shields.io/badge/Mocha-8D6748.svg?style=for-the-badge&logo=Mocha&logoColor=white" />
-          </div>
-        </div>
-
-        <!--========== SKILLS 3 - DEVOPS & TOOLS ==========-->
-        <div class="skills__content skills__close">
-          <button type="button" class="skills__header" aria-expanded="false">
-            <i class="uil uil-processor skills__icon"></i>
-
-            <div class="skills__header-text">
-              <h3 class="skills__group-title" translation="devops-tools">DevOps &amp; Tools</h3>
-              <span class="skills__subtitle" translation="years-exp">3+ years</span>
-            </div>
-
-            <i class="uil uil-angle-down skills__arrow"></i>
-          </button>
-
-          <div class="skills__list flex">
-            <img class="skills__badge" loading="lazy" alt="Docker"
-              src="https://img.shields.io/badge/Docker-2496ED.svg?style=for-the-badge&logo=Docker&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Nx"
-              src="https://img.shields.io/badge/Nx-143055.svg?style=for-the-badge&logo=nx&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Git"
-              src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=Git&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="GitHub"
-              src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Bitbucket"
-              src="https://img.shields.io/badge/Bitbucket-0052CC.svg?style=for-the-badge&logo=Bitbucket&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Apache"
-              src="https://img.shields.io/badge/Apache-D22128.svg?style=for-the-badge&logo=Apache&logoColor=white" />
-            <img class="skills__badge" loading="lazy" alt="Backstage"
-              src="https://img.shields.io/badge/Backstage-9BF0E1.svg?style=for-the-badge&logo=backstage&logoColor=black" />
-            <img class="skills__badge" loading="lazy" alt="Fastlane"
-              src="https://img.shields.io/badge/Fastlane-00F200.svg?style=for-the-badge&logo=fastlane&logoColor=black" />
-            <img class="skills__badge" loading="lazy" alt="Jira"
-              src="https://img.shields.io/badge/Jira-0052CC.svg?style=for-the-badge&logo=Jira&logoColor=white" />
-          </div>
-        </div>
+        <article class="skills__content">
+          <h3 class="skills__header">
+            <i class="uil uil-processor skills__icon" aria-hidden="true"></i>
+            <span class="skills__group-title" translation="devops-tools">DevOps &amp; tools</span>
+          </h3>
+          <p class="skills__tier" translation="skills-daily">Day to day</p>
+          <ul class="skills__list skills__list--daily" role="list">
+            <li>Git</li><li>GitHub</li><li>Bitbucket</li><li>Docker</li><li>Jira</li><li>Backstage</li><li>Fastlane</li>
+          </ul>
+          <p class="skills__tier" translation="skills-past">Also worked with</p>
+          <ul class="skills__list skills__list--past" role="list">
+            <li>Nx</li><li>Apache</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <!--========== EXPERIENCE ==========-->
     <section class="experience section" id="experience">
       <h2 class="section__title" translation="experience">Experience</h2>
-      <span class="section__subtitle" translation="experience-subtitle">My professional journey</span>
+      <span class="section__subtitle" translation="experience-subtitle">Where I've worked</span>
 
       <div class="experience__container container">
 
@@ -470,26 +386,15 @@
             <!-- XYZ formula: result, how it is measured, then what was done.
                  <strong> marks the technologies, kept to a couple per bullet. -->
             <ul class="experience__list">
-              <li translation="mjv-1">Cut coupling between business rules and external integrations, making dependencies
-                replaceable without rewriting the domain and widening unit test coverage, by structuring the
-                applications around <strong>hexagonal architecture</strong> with ports and adapters.</li>
-              <li translation="mjv-2">Sped up the delivery of new screens across the team’s applications, removing state
-                and UI code duplicated between projects, by building and maintaining shared <strong>Angular</strong>
-                libraries with <strong>NGRX</strong> inside an <strong>NX</strong> monorepo.</li>
-              <li translation="mjv-3">Improved service resilience and response times, keeping external dependency
-                failures from taking down critical flows, by implementing <strong>Node.js/NestJS</strong> backends with
-                <strong>Redis</strong> caching and queues and <strong>circuit breakers</strong> on the integrations.</li>
-              <li translation="mjv-4">Centralized engineering documentation and the service catalogue in a single portal
-                with per-team access, by developing a <strong>Backstage</strong> platform integrated with
-                <strong>GitHub</strong> and <strong>Bitbucket</strong>, with custom plugins and <strong>RBAC</strong>.
-              </li>
-              <li translation="mjv-5">Eliminated the manual mobile release process, removing rework and submission
-                errors on every release, by automating Play Store and App Store delivery with <strong>Fastlane</strong>.
-              </li>
+              <li translation="mjv-1">Built the <a href="https://fastlane.tools" target="_blank" rel="noopener noreferrer"><strong>Fastlane</strong></a> lanes, running on GitHub Actions, that apply DexProtector and ship the apps both to testing, through Firebase and TestFlight, and to the stores, on the App Store and Google Play. Getting a mobile build into testing went from <strong>almost a full working day to minutes</strong>, and developers no longer do the hardening and distribution by hand.</li>
+              <li translation="mjv-2">Rebuilt the <a href="https://backstage.io" target="_blank" rel="noopener noreferrer"><strong>Backstage</strong></a> portal with the team, integrated with GitHub and Bitbucket, with custom plugins and RBAC. It's where <strong>thousands of developers</strong> create projects, find services and docs, and manage access for each team.</li>
+              <li translation="mjv-3">Built and maintained shared <strong>Angular</strong> libraries with NgRx in an Nx monorepo. They removed state and UI code duplicated across <strong>15+ projects</strong>.</li>
+              <li translation="mjv-4">Implemented <strong>Node.js/NestJS</strong> backends with Redis caching and queues, plus circuit breakers on the integrations. Response times dropped, external dependency failures stopped taking down critical flows, and the team now deals with fewer incidents.</li>
+              <li translation="mjv-5">Structured the applications around <strong>hexagonal architecture</strong> (ports and adapters), so the team can swap an external integration without rewriting business rules. Unit test coverage went up as well.</li>
             </ul>
 
             <div class="experience__tags">
-              <span>Angular</span><span>NGRX</span><span>NX</span><span>NestJS</span><span>Node.js</span><span>Redis</span><span>Backstage</span><span>Fastlane</span>
+              <span>Fastlane</span><span>GitHub Actions</span><span>Backstage</span><span>Angular</span><span>NgRx</span><span>Nx</span><span>NestJS</span><span>Node.js</span><span>Redis</span>
             </div>
           </div>
         </article>
@@ -507,20 +412,11 @@
             </div>
 
             <ul class="experience__list">
-              <li translation="solution-1">Delivered new features for the digital vehicle registration system, meeting
-                the rules enforced by the official <strong>DETRAN</strong> system, by building dynamic and optimized
-                pages with <strong>React</strong>.</li>
-              <li translation="solution-2">Took <strong>technical ownership</strong> of the digital vehicle transfer
-                system for Mato Grosso, keeping the service stable and compliant with <strong>DETRAN-MT</strong>
-                platforms, by running its maintenance and evolution.</li>
-              <li translation="solution-3">Secured communication between front-end and back-end in a public-facing
-                system, preventing contract breaks between layers, by implementing <strong>Java</strong> integrations
-                backed by established <strong>design patterns</strong>.</li>
-              <li translation="solution-4">Standardized development and production environments, removing configuration
-                drift between the team’s machines, by containerizing the applications with <strong>Docker</strong>.</li>
-              <li translation="solution-5">Kept the team aligned and deliveries on schedule, giving visibility into the
-                status of every task, by taking part in <strong>Scrum</strong> ceremonies (dailies, plannings and
-                reviews) and tracking the flow in <strong>Jira</strong>.</li>
+              <li translation="solution-1">Shipped new features for the digital vehicle registration system, building <strong>React</strong> pages that follow the rules enforced by the official DETRAN system.</li>
+              <li translation="solution-2">Took <strong>technical ownership</strong> of Mato Grosso's digital vehicle transfer system. I maintain and extend it, and keep it stable and compliant with DETRAN-MT's platforms.</li>
+              <li translation="solution-3">Implemented the front-end to back-end integrations in <strong>Java</strong> for a public-facing system, using design patterns to keep communication secure and the contract between layers from breaking.</li>
+              <li translation="solution-4">Containerized the applications with <strong>Docker</strong>, so development and production share the same environment and config no longer drifts between the team's machines.</li>
+              <li translation="solution-5">Take part in <strong>Scrum</strong> ceremonies (dailies, plannings and reviews) and track tasks in Jira, which keeps progress visible to the team and helps keep deliveries on schedule.</li>
             </ul>
 
             <div class="experience__tags">
@@ -542,21 +438,11 @@
             </div>
 
             <ul class="experience__list">
-              <li translation="crase-1">Kept the Crase Sigma mobile app performing consistently across
-                <strong>Android</strong> and <strong>iOS</strong>, with no regressions between platforms, by optimizing
-                the <strong>Ionic</strong> with <strong>Angular</strong> codebase and fixing rendering bottlenecks.</li>
-              <li translation="crase-2">Made legacy <strong>COBOL</strong> data usable by the company’s modern systems
-                without interrupting the existing operation, by building continuous migration and integration flows
-                compatible with the older systems.</li>
-              <li translation="crase-3">Cut API latency by <strong>more than 30%</strong>, by designing and implementing
-                <strong>RESTful</strong> endpoints in <strong>Laravel</strong> with caching strategies and query
-                optimization.</li>
-              <li translation="crase-4">Kept web applications highly available, reducing downtime and exposure to
-                misconfiguration, by administering <strong>Apache2</strong> servers with performance tuning and security
-                hardening.</li>
-              <li translation="crase-5">Improved the team’s versioning efficiency, reducing merge conflicts and rework,
-                by structuring the <strong>Git</strong> branching flow and implementing <strong>CI/CD</strong>
-                pipelines.</li>
+              <li translation="crase-1">Optimized the Crase Sigma mobile app's <strong>Ionic</strong>/Angular codebase and fixed rendering bottlenecks, so it performed the same on Android and iOS with no regressions on either.</li>
+              <li translation="crase-2">Built continuous migration and integration flows so the company's newer systems could use legacy <strong>COBOL</strong> data. The flows stayed compatible with the old systems, and operations never had to stop.</li>
+              <li translation="crase-3">Designed and built REST endpoints in <strong>Laravel</strong> with caching and optimized queries, cutting API latency by <strong>more than 30%</strong>.</li>
+              <li translation="crase-4">Administered <strong>Apache2</strong> servers, tuning performance and hardening security. The web apps had less downtime and less exposure to misconfiguration.</li>
+              <li translation="crase-5">Set up the team's <strong>Git</strong> branching flow and implemented CI/CD pipelines, which cut down on merge conflicts and rework.</li>
             </ul>
 
             <div class="experience__tags">
@@ -570,33 +456,52 @@
 
     <!--========== PORTFOLIO ==========-->
     <section class="portfolio section" id="portfolio">
-      <h2 class="section__title" translation="projects">Projects</h2>
-      <span class="section__subtitle" translation="check-more">You can check more on my <a target="_blank" rel="noopener noreferrer"
-          href="https://github.com/duarte-dot">GitHub</a>!</span>
+      <h2 class="section__title" id="portfolio-title" translation="projects">Projects</h2>
+      <span class="section__subtitle" translation="check-more">There's more on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!</span>
 
 
-      <!--
-        Do NOT add loading="lazy" to the slide images below.
-        Swiper runs with cssMode: true, so the wrapper is a native scroll container.
-        A lazy image that starts loading mid-scroll makes the browser abort the
-        programmatic scroll and snap back, which breaks the next/prev buttons
-        (the first click only nudges ~38px instead of advancing a slide).
-      -->
-      <div class="portfolio__container container swiper mySwiper">
-        <div class="swiper-wrapper">
+      <div class="portfolio__container container">
+        <div class="portfolio__tabs" role="tablist" aria-labelledby="portfolio-title">
+          <button type="button" class="portfolio__tab" role="tab" id="tab-piratas" aria-controls="panel-piratas" aria-selected="true" tabindex="0">
+            <img src="/assets/img/projects/piratas_lanches.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--piratas">
+            <span>Piratas Lanches</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-lovu" aria-controls="panel-lovu" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/lovu.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--lovu">
+            <span>Lovu</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-chats" aria-controls="panel-chats" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/chats.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--chats">
+            <span>Chats app</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-trybetunes" aria-controls="panel-trybetunes" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/trybetunes.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--trybetunes">
+            <span>Trybe Tunes</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-pong" aria-controls="panel-pong" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/pong.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--pong">
+            <span>Pong</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-duck" aria-controls="panel-duck" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/duck_zelda.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--duck">
+            <span>Duck Zelda</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-soon" aria-controls="panel-soon" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/coming_soon.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--soon">
+            <span translation="coming-soon">Coming soon!</span>
+          </button>
+        </div>
+
+        <div class="portfolio__panels">
 
           <!--========== PORTFOLIO 1 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-piratas" aria-labelledby="tab-piratas" tabindex="0">
             <img src="/assets/img/projects/piratas_lanches.png" alt="Piratas Lanches online menu"
               width="2048" height="1364" id="pirataslanches__img" class="portfolio__img">
 
             <div class="portfolio__data">
               <h3 class="portfolio__title">Piratas Lanches</h3>
-              <p class="portfolio__description" translation="piratas-lanches-description">
-                 Piratas Lanches is an online menu I built for my father’s snack bar, with a pirate-themed design,
-                 organized categories, and a simple interface so customers can quickly explore sandwiches,
-                 drinks, and other items directly from their phone.
-              </p>
+              <p class="portfolio__description" translation="piratas-lanches-description">An online menu I built for my dad's snack bar. It has a pirate theme and organized categories, so customers can quickly find sandwiches, drinks and everything else from their phone.</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://pirataslanches.com.br"
                   class="button button--flex button--small portfolio__button" translation="try-it">
@@ -608,17 +513,13 @@
           </div>
 
           <!--========== PORTFOLIO 2 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-lovu" aria-labelledby="tab-lovu" tabindex="0" hidden>
             <img src="/assets/img/projects/lovu.png" alt="Lovu app" width="300" height="300"
               id="lovuapp__img" class="portfolio__img">
 
             <div class="portfolio__data">
               <h3 class="portfolio__title">Lovu</h3>
-              <p class="portfolio__description" translation="lovu-app-description">
-                It’s a platform where you can create a personalized website for your romantic partner. 
-                Add photos, music, videos, and heartfelt messages that represent your story and the special moments you’ve shared. 
-                A unique and digital way to celebrate love and create unforgettable memories.
-              </p>
+              <p class="portfolio__description" translation="lovu-app-description">A platform for building a personalized website for your partner, with photos, music, videos and messages about your story together.</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://lovuapp.com.br"
                   class="button button--flex button--small portfolio__button" translation="try-it">
@@ -630,14 +531,13 @@
           </div>
 
           <!--========== PORTFOLIO 3 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-chats" aria-labelledby="tab-chats" tabindex="0" hidden>
             <img src="/assets/img/projects/chats.png" alt="Chats app" width="500" height="500"
               id="chatsapp__img" class="portfolio__img">
 
             <div class="portfolio__data">
               <h3 class="portfolio__title">Chats app</h3>
-              <p class="portfolio__description" translation="chats-app-description">Chat app. Made with Next and Upstash
-                Redis</p>
+              <p class="portfolio__description" translation="chats-app-description">Chat app built with Next.js and Upstash Redis.</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://chats.duarte-dot.com.br/login"
                   class="button button--flex button--small portfolio__button" translation="try-it">
@@ -645,8 +545,8 @@
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/chat-app"
-                  class="button button--flex button--small portfolio__button">
-                  Github Doc
+                  class="button button--flex button--small portfolio__button button--ghost">
+                  GitHub
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
@@ -670,7 +570,7 @@
                 </a>
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/fitclub"
                   class="button button--flex button--small portfolio__button">
-                  Github Doc
+                  GitHub
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
@@ -678,14 +578,13 @@
           </div> -->
 
           <!--========== PORTFOLIO 5 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-trybetunes" aria-labelledby="tab-trybetunes" tabindex="0" hidden>
             <img src="/assets/img/projects/trybetunes.png" alt="Trybe Tunes music search" width="800"
               height="800" id="trybetunes__img" class="portfolio__img">
 
             <div class="portfolio__data">
               <h3 class="portfolio__title">Trybe Tunes</h3>
-              <p class="portfolio__description" translation="trybetunes">Search for albums by your favorite artists and
-                listen to previews of their songs! Made with React and ITunes API</p>
+              <p class="portfolio__description" translation="trybetunes">Search albums by your favorite artists and listen to song previews. Built with React and the iTunes API.</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://trybetunes.duarte-dot.com.br"
                   class="button button--flex button--small portfolio__button" translation="try-it">
@@ -693,8 +592,8 @@
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/trybe-tunes"
-                  class="button button--flex button--small portfolio__button">
-                  Github Doc
+                  class="button button--flex button--small portfolio__button button--ghost">
+                  GitHub
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
@@ -703,17 +602,17 @@
 
 
           <!--========== PORTFOLIO 6 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-pong" aria-labelledby="tab-pong" tabindex="0" hidden>
             <img src="/assets/img/projects/pong.png" alt="Pong game made in Java" width="348"
               height="348" id="pong__img" class="portfolio__img">
 
             <div class="portfolio__data">
               <h3 class="portfolio__title">Pong</h3>
-              <p class="portfolio__description" translation="pong-game-description">Pong game. Made in Java</p>
+              <p class="portfolio__description" translation="pong-game-description">Pong, made in Java.</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/pong"
                   class="button button--flex button--small portfolio__button">
-                  Github Doc
+                  GitHub
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
@@ -738,18 +637,17 @@
           </div> -->
 
           <!--========== PORTFOLIO 8 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-duck" aria-labelledby="tab-duck" tabindex="0" hidden>
             <img src="/assets/img/projects/duck_zelda.png" alt="Duck Zelda game made in Java" width="303"
               height="295" id="duckzelda__img" class="portfolio__img">
 
             <div class="portfolio__data">
               <h3 class="portfolio__title">Duck Zelda</h3>
-              <p class="portfolio__description" translation="duck-zelda-description">Duck zelda styled game. Made in
-                Java (discontinued)</p>
+              <p class="portfolio__description" translation="duck-zelda-description">A Zelda-style game starring a duck. Made in Java (discontinued).</p>
               <div class="portfolio__buttons">
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/duck-zelda"
                   class="button button--flex button--small portfolio__button">
-                  Github Doc
+                  GitHub
                   <i class="uil uil-arrow-right button__icon"></i>
                 </a>
               </div>
@@ -757,28 +655,22 @@
           </div>
 
           <!--========== PORTFOLIO 9 ==========-->
-          <div class="portfolio__content grid swiper-slide">
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-soon" aria-labelledby="tab-soon" tabindex="0" hidden>
             <img src="/assets/img/projects/coming_soon.png" alt="More projects coming soon" width="348"
               height="348" id="comingsoon__img" class="portfolio__img" />
 
             <div class="portfolio__data">
               <h3 class="portfolio__title" translation="coming-soon">Coming soon!</h3>
-              <p class="portfolio__description" translation="coming-soon-description">More projects are coming soon!</p>
-              <a href="#portfolio" translation="soon" class="button button--flex button--small portfolio__button">
-                Soon
+              <p class="portfolio__description" translation="coming-soon-description">In the meantime, the rest is on GitHub.</p>
+              <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot"
+                class="button button--flex button--small portfolio__button">
+                GitHub
                 <i class="uil uil-arrow-right button__icon"></i>
               </a>
             </div>
           </div>
 
         </div>
-        <div class="swiper-button-next">
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-        </div>
-        <div class="swiper-button-prev">
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-        </div>
-        <div class="swiper-pagination"></div>
       </div>
     </section>
 
@@ -812,7 +704,7 @@
               <i class="uil uil-location-point contact__icon"></i>
               <div>
                 <h3 class="contact__title" translation="location">Location</h3>
-                <span class="contact__subtitle" translation="rj-br">Rio de Janeiro - Brazil</span>
+                <span class="contact__subtitle" translation="rj-br">Rio de Janeiro, Brazil</span>
               </div>
             </div>
           </div>
@@ -826,7 +718,7 @@
               <input type="text" name="name" class="contact__input" id="name" required>
             </div>
             <div class="contact__content">
-              <label for="email" class="contact__label" translation="email">Your Email</label>
+              <label for="email" class="contact__label" translation="email">Your email</label>
               <input type="email" name="email" class="contact__input" id="email" required>
             </div>
             <div class="contact__content">
@@ -879,8 +771,6 @@
   </a>
 
 
-  <!--========== SWIPER JS ==========-->
-  <script src="/assets/js/swiper-bundle.min.js"></script>
 
 
   <!--========== MAIN JS ==========-->

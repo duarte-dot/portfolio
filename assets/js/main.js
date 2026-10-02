@@ -25,44 +25,35 @@ const navLink = document.querySelectorAll(".nav__link");
 
 navLink.forEach((n) => n.addEventListener("click", () => setMenu(false)));
 
-/* ========== ACCORDION SKILLS ========== */
-const skillsContent = document.querySelectorAll(".skills__content");
-const skillsHeader = document.querySelectorAll(".skills__header");
+/* ========== PORTFOLIO TABS ========== */
+const portfolioTabs = [...document.querySelectorAll(".portfolio__tab")];
 
-function toggleSkills() {
-  const parent = this.parentNode;
-  const wasOpen = parent.classList.contains("skills__open");
-
-  skillsContent.forEach((content) => {
-    content.classList.remove("skills__open");
-    content.classList.add("skills__close");
-    const header = content.querySelector(".skills__header");
-    if (header) header.setAttribute("aria-expanded", "false");
+function selectProject(tab, fromKeyboard) {
+  // keyboard switching is repeated fast, so it skips the crossfade
+  tab.closest(".portfolio__container").classList.toggle("is-instant", !!fromKeyboard);
+  portfolioTabs.forEach((t) => {
+    const active = t === tab;
+    t.setAttribute("aria-selected", active);
+    t.tabIndex = active ? 0 : -1;
+    document.getElementById(t.getAttribute("aria-controls")).hidden = !active;
   });
-
-  /* clicking the open panel closes it, otherwise open the clicked one */
-  if (!wasOpen) {
-    parent.classList.remove("skills__close");
-    parent.classList.add("skills__open");
-    this.setAttribute("aria-expanded", "true");
-  }
+  if (fromKeyboard) tab.focus();
+  tab.scrollIntoView({ block: "nearest", inline: "nearest" });
 }
 
-skillsHeader.forEach((el) => {
-  el.addEventListener("click", toggleSkills);
-});
-
-/* ========== PORTFOLIO SWIPER ========== */
-let swiper = new Swiper(".portfolio__container", {
-  cssMode: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
+portfolioTabs.forEach((tab, i) => {
+  tab.addEventListener("click", () => selectProject(tab));
+  tab.addEventListener("keydown", (e) => {
+    const last = portfolioTabs.length - 1;
+    const next = {
+      ArrowRight: i + 1, ArrowDown: i + 1,
+      ArrowLeft: i - 1, ArrowUp: i - 1,
+      Home: 0, End: last,
+    }[e.key];
+    if (next === undefined) return;
+    e.preventDefault();
+    selectProject(portfolioTabs[(next + last + 1) % (last + 1)], true);
+  });
 });
 
 /* ========== CHANGE BACKGROUND HEADER ========== */
