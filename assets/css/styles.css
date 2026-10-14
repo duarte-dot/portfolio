@@ -1199,6 +1199,16 @@ body.dark-theme .experience__item::before {
   justify-self: center;
 }
 
+/* small eyebrow above the title, same accent label as the skills tiers */
+.portfolio__year {
+  display: block;
+  margin-bottom: var(--mb-0-25);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  letter-spacing: 0.08em;
+  color: var(--first-color);
+}
+
 .portfolio__title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);

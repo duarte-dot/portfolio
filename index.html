@@ -474,6 +474,14 @@
             <img src="/assets/img/projects/lovu.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--lovu">
             <span>Lovu</span>
           </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-duck" aria-controls="panel-duck" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/duck_zelda.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--duck">
+            <span>Duck Zelda</span>
+          </button>
+          <button type="button" class="portfolio__tab" role="tab" id="tab-pong" aria-controls="panel-pong" aria-selected="false" tabindex="-1">
+            <img src="/assets/img/projects/pong.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--pong">
+            <span>Pong</span>
+          </button>
           <button type="button" class="portfolio__tab" role="tab" id="tab-chats" aria-controls="panel-chats" aria-selected="false" tabindex="-1">
             <img src="/assets/img/projects/chats.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--chats">
             <span>Chats app</span>
@@ -481,14 +489,6 @@
           <button type="button" class="portfolio__tab" role="tab" id="tab-trybetunes" aria-controls="panel-trybetunes" aria-selected="false" tabindex="-1">
             <img src="/assets/img/projects/trybetunes.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--trybetunes">
             <span>Trybe Tunes</span>
-          </button>
-          <button type="button" class="portfolio__tab" role="tab" id="tab-pong" aria-controls="panel-pong" aria-selected="false" tabindex="-1">
-            <img src="/assets/img/projects/pong.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--pong">
-            <span>Pong</span>
-          </button>
-          <button type="button" class="portfolio__tab" role="tab" id="tab-duck" aria-controls="panel-duck" aria-selected="false" tabindex="-1">
-            <img src="/assets/img/projects/duck_zelda.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--duck">
-            <span>Duck Zelda</span>
           </button>
           <button type="button" class="portfolio__tab" role="tab" id="tab-soon" aria-controls="panel-soon" aria-selected="false" tabindex="-1">
             <img src="/assets/img/projects/coming_soon.png" alt="" width="36" height="36" class="portfolio__thumb portfolio__thumb--soon">
@@ -498,12 +498,13 @@
 
         <div class="portfolio__panels">
 
-          <!--========== PORTFOLIO 0 ==========-->
+          <!--========== PORTFOLIO 1 ==========-->
           <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-leaguewatcher" aria-labelledby="tab-leaguewatcher" tabindex="0">
             <img src="/assets/img/projects/league_watcher.png" alt="League Watcher logo" width="512" height="512"
               id="leaguewatcher__img" class="portfolio__img">
 
             <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2026">2026</time>
               <h3 class="portfolio__title">League Watcher</h3>
               <p class="portfolio__description" translation="league-watcher-description">A Windows app that automatically records your League of Legends matches and lets you review them on a timeline of kills, deaths and objectives synced to the video. You can cut clips and upload replays to the website to share them.</p>
               <ul class="portfolio__tech" role="list">
@@ -524,12 +525,13 @@
             </div>
           </div>
 
-          <!--========== PORTFOLIO 1 ==========-->
+          <!--========== PORTFOLIO 2 ==========-->
           <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-piratas" aria-labelledby="tab-piratas" tabindex="0" hidden>
             <img src="/assets/img/projects/piratas_lanches.png" alt="Piratas Lanches online menu"
               width="2048" height="1364" id="pirataslanches__img" class="portfolio__img">
 
             <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2026">2026</time>
               <h3 class="portfolio__title">Piratas Lanches</h3>
               <p class="portfolio__description" translation="piratas-lanches-description">An online menu I built for my dad's snack bar. It has a pirate theme and organized categories, so customers can quickly find sandwiches, drinks and everything else from their phone.</p>
               <ul class="portfolio__tech" role="list">
@@ -546,12 +548,13 @@
             </div>
           </div>
 
-          <!--========== PORTFOLIO 2 ==========-->
+          <!--========== PORTFOLIO 3 ==========-->
           <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-lovu" aria-labelledby="tab-lovu" tabindex="0" hidden>
             <img src="/assets/img/projects/lovu.png" alt="Lovu app" width="300" height="300"
               id="lovuapp__img" class="portfolio__img">
 
             <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2026">2026</time>
               <h3 class="portfolio__title">Lovu</h3>
               <p class="portfolio__description" translation="lovu-app-description">A platform for building a personalized website for your partner, with photos, music, videos and messages about your story together.</p>
               <ul class="portfolio__tech" role="list">
@@ -568,12 +571,57 @@
             </div>
           </div>
 
-          <!--========== PORTFOLIO 3 ==========-->
+          <!--========== PORTFOLIO 4 ==========-->
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-duck" aria-labelledby="tab-duck" tabindex="0" hidden>
+            <img src="/assets/img/projects/duck_zelda.png" alt="Duck Zelda game made in Java" width="303"
+              height="295" id="duckzelda__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2024">2024</time>
+              <h3 class="portfolio__title">Duck Zelda</h3>
+              <p class="portfolio__description" translation="duck-zelda-description">A Zelda-style game starring a duck (discontinued).</p>
+              <ul class="portfolio__tech" role="list">
+                <li>Java</li>
+              </ul>
+              <div class="portfolio__buttons">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/duck-zelda"
+                  class="button button--flex button--small portfolio__button">
+                  GitHub
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 5 ==========-->
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-pong" aria-labelledby="tab-pong" tabindex="0" hidden>
+            <img src="/assets/img/projects/pong.png" alt="Pong game made in Java" width="348"
+              height="348" id="pong__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2024">2024</time>
+              <h3 class="portfolio__title">Pong</h3>
+              <p class="portfolio__description" translation="pong-game-description">The classic Pong.</p>
+              <ul class="portfolio__tech" role="list">
+                <li>Java</li>
+              </ul>
+              <div class="portfolio__buttons">
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/pong"
+                  class="button button--flex button--small portfolio__button">
+                  GitHub
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!--========== PORTFOLIO 6 ==========-->
           <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-chats" aria-labelledby="tab-chats" tabindex="0" hidden>
             <img src="/assets/img/projects/chats.png" alt="Chats app" width="500" height="500"
               id="chatsapp__img" class="portfolio__img">
 
             <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2023">2023</time>
               <h3 class="portfolio__title">Chats app</h3>
               <p class="portfolio__description" translation="chats-app-description">A chat app.</p>
               <ul class="portfolio__tech" role="list">
@@ -595,7 +643,36 @@
             </div>
           </div>
 
-          <!--========== PORTFOLIO 4 ==========-->
+          <!--========== PORTFOLIO 7 ==========-->
+          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-trybetunes" aria-labelledby="tab-trybetunes" tabindex="0" hidden>
+            <img src="/assets/img/projects/trybetunes.png" alt="Trybe Tunes music search" width="800"
+              height="800" id="trybetunes__img" class="portfolio__img">
+
+            <div class="portfolio__data">
+              <time class="portfolio__year" datetime="2022">2022</time>
+              <h3 class="portfolio__title">Trybe Tunes</h3>
+              <p class="portfolio__description" translation="trybetunes">Search albums by your favorite artists and listen to song previews.</p>
+              <ul class="portfolio__tech" role="list">
+                <li>React</li>
+                <li>iTunes API</li>
+              </ul>
+              <div class="portfolio__buttons">
+                <a target="_blank" rel="noopener noreferrer" href="https://trybetunes.duarte-dot.com.br"
+                  class="button button--flex button--small portfolio__button" translation="try-it">
+                  Try it!
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/trybe-tunes"
+                  class="button button--flex button--small portfolio__button button--ghost">
+                  GitHub
+                  <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!--========== PORTFOLIO 8 ==========-->
           <!-- <div class="portfolio__content grid swiper-slide">
             <img src="/assets/img/projects/fitclub.png" alt="FitClub landing page" width="654"
               height="532" id="fitclub__img" class="portfolio__img">
@@ -619,56 +696,7 @@
             </div>
           </div> -->
 
-          <!--========== PORTFOLIO 5 ==========-->
-          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-trybetunes" aria-labelledby="tab-trybetunes" tabindex="0" hidden>
-            <img src="/assets/img/projects/trybetunes.png" alt="Trybe Tunes music search" width="800"
-              height="800" id="trybetunes__img" class="portfolio__img">
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Trybe Tunes</h3>
-              <p class="portfolio__description" translation="trybetunes">Search albums by your favorite artists and listen to song previews.</p>
-              <ul class="portfolio__tech" role="list">
-                <li>React</li>
-                <li>iTunes API</li>
-              </ul>
-              <div class="portfolio__buttons">
-                <a target="_blank" rel="noopener noreferrer" href="https://trybetunes.duarte-dot.com.br"
-                  class="button button--flex button--small portfolio__button" translation="try-it">
-                  Try it!
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </a>
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/trybe-tunes"
-                  class="button button--flex button--small portfolio__button button--ghost">
-                  GitHub
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-
-          <!--========== PORTFOLIO 6 ==========-->
-          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-pong" aria-labelledby="tab-pong" tabindex="0" hidden>
-            <img src="/assets/img/projects/pong.png" alt="Pong game made in Java" width="348"
-              height="348" id="pong__img" class="portfolio__img">
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Pong</h3>
-              <p class="portfolio__description" translation="pong-game-description">The classic Pong.</p>
-              <ul class="portfolio__tech" role="list">
-                <li>Java</li>
-              </ul>
-              <div class="portfolio__buttons">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/pong"
-                  class="button button--flex button--small portfolio__button">
-                  GitHub
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!--========== PORTFOLIO 7 ==========-->
+          <!--========== PORTFOLIO 9 ==========-->
           <!-- <div class="portfolio__content grid swiper-slide">
             <img src="/assets/img/projects/forum_page.png" alt="Forum page built with React and Laravel"
               width="348" height="348" id="forumapp__img" class="portfolio__img">
@@ -685,28 +713,7 @@
             </div>
           </div> -->
 
-          <!--========== PORTFOLIO 8 ==========-->
-          <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-duck" aria-labelledby="tab-duck" tabindex="0" hidden>
-            <img src="/assets/img/projects/duck_zelda.png" alt="Duck Zelda game made in Java" width="303"
-              height="295" id="duckzelda__img" class="portfolio__img">
-
-            <div class="portfolio__data">
-              <h3 class="portfolio__title">Duck Zelda</h3>
-              <p class="portfolio__description" translation="duck-zelda-description">A Zelda-style game starring a duck (discontinued).</p>
-              <ul class="portfolio__tech" role="list">
-                <li>Java</li>
-              </ul>
-              <div class="portfolio__buttons">
-                <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot/duck-zelda"
-                  class="button button--flex button--small portfolio__button">
-                  GitHub
-                  <i class="uil uil-arrow-right button__icon"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!--========== PORTFOLIO 9 ==========-->
+          <!--========== PORTFOLIO 10 ==========-->
           <div class="portfolio__content grid portfolio__panel" role="tabpanel" id="panel-soon" aria-labelledby="tab-soon" tabindex="0" hidden>
             <img src="/assets/img/projects/coming_soon.png" alt="More projects coming soon" width="348"
               height="348" id="comingsoon__img" class="portfolio__img" />
