@@ -1307,6 +1307,7 @@ body.dark-theme .experience__item::before {
   box-shadow: 0 0 0 1px var(--first-color);
 }
 
+.portfolio__thumb--leaguewatcher,
 .portfolio__thumb--piratas,
 .portfolio__thumb--pong,
 .portfolio__thumb--duck {
