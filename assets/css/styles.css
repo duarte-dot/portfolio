@@ -1208,6 +1208,27 @@ body.dark-theme .experience__item::before {
   margin-bottom: var(--mb-1-5);
 }
 
+/* technologies sit between the prose and the buttons, pulled up a little so
+   they read as part of the description; same pill look as the about meta row */
+.portfolio__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: calc(-1 * var(--mb-0-5)) 0 var(--mb-1-5);
+  list-style: none;
+}
+
+.portfolio__tech li {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--scroll-bar-color);
+  border-radius: 2rem;
+  background-color: var(--container-color);
+  color: var(--text-color);
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  line-height: 1.3;
+}
+
 .portfolio__buttons {
   display: flex;
   flex-wrap: wrap;

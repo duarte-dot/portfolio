@@ -214,8 +214,8 @@ let traducoes = {
     en: 'There\'s more on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/duarte-dot">GitHub</a>!',
   },
   trybetunes: {
-    pt: "Pesquise álbuns dos seus artistas favoritos e ouça prévias das músicas. Feito com React e a API do iTunes.",
-    en: "Search albums by your favorite artists and listen to song previews. Built with React and the iTunes API.",
+    pt: "Pesquise álbuns dos seus artistas favoritos e ouça prévias das músicas.",
+    en: "Search albums by your favorite artists and listen to song previews.",
   },
   "contact-me": {
     pt: "Entre em contato",
@@ -266,36 +266,36 @@ let traducoes = {
     en: "Soon",
   },
   "league-watcher-description": {
-    pt: "App para Windows que grava sozinho suas partidas de League of Legends e deixa revisar cada uma numa timeline de abates, mortes e objetivos sincronizada com o vídeo. Dá para recortar clipes e enviar os replays para o site para compartilhar. Feito com Electron, React, TypeScript e um helper de áudio em C++.",
-    en: "A Windows app that automatically records your League of Legends matches and lets you review them on a timeline of kills, deaths and objectives synced to the video. You can cut clips and upload replays to the website to share them. Built with Electron, React, TypeScript and a C++ audio helper.",
+    pt: "App para Windows que grava sozinho suas partidas de League of Legends e deixa revisar cada uma numa timeline de abates, mortes e objetivos sincronizada com o vídeo. Dá para recortar clipes e enviar os replays para o site para compartilhar.",
+    en: "A Windows app that automatically records your League of Legends matches and lets you review them on a timeline of kills, deaths and objectives synced to the video. You can cut clips and upload replays to the website to share them.",
   },
   "piratas-lanches-description": {
-    pt: "Cardápio online que fiz para a lanchonete do meu pai. Tem tema de pirata e categorias organizadas, para o cliente achar rápido os sanduíches, as bebidas e o resto direto do celular. Feito com React e TypeScript.",
-    en: "An online menu I built for my dad's snack bar. It has a pirate theme and organized categories, so customers can quickly find sandwiches, drinks and everything else from their phone. Built with React and TypeScript.",
+    pt: "Cardápio online que fiz para a lanchonete do meu pai. Tem tema de pirata e categorias organizadas, para o cliente achar rápido os sanduíches, as bebidas e o resto direto do celular.",
+    en: "An online menu I built for my dad's snack bar. It has a pirate theme and organized categories, so customers can quickly find sandwiches, drinks and everything else from their phone.",
   },
   "forum-description": {
     pt: "Página de fórum feita com React e Laravel.",
     en: "Forum page built with React and Laravel.",
   },
   "lovu-app-description": {
-    pt: "Plataforma para criar um site personalizado para quem você ama, com fotos, músicas, vídeos e mensagens sobre a história de vocês. Feito com React e TypeScript.",
-    en: "A platform for building a personalized website for your partner, with photos, music, videos and messages about your story together. Built with React and TypeScript.",
+    pt: "Plataforma para criar um site personalizado para quem você ama, com fotos, músicas, vídeos e mensagens sobre a história de vocês.",
+    en: "A platform for building a personalized website for your partner, with photos, music, videos and messages about your story together.",
   },
   "chats-app-description": {
-    pt: "App de chat feito com Next.js e Upstash Redis.",
-    en: "Chat app built with Next.js and Upstash Redis.",
+    pt: "App de chat.",
+    en: "A chat app.",
   },
   "trybe-wallet-description": {
     pt: "Carteira virtual para acompanhar seus gastos. Feita com React e Redux.",
     en: "Virtual wallet to keep track of your expenses. Built with React and Redux.",
   },
   "duck-zelda-description": {
-    pt: "Jogo no estilo Zelda com um pato. Feito em Java (descontinuado).",
-    en: "A Zelda-style game starring a duck. Made in Java (discontinued).",
+    pt: "Jogo no estilo Zelda com um pato (descontinuado).",
+    en: "A Zelda-style game starring a duck (discontinued).",
   },
   "pong-game-description": {
-    pt: "Pong feito em Java.",
-    en: "Pong, made in Java.",
+    pt: "O clássico Pong.",
+    en: "The classic Pong.",
   },
   "fitclub-description": {
     pt: "Frontend do projeto Fitclub, feito com React.",
